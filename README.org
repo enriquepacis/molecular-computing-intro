@@ -1,0 +1,254 @@
+# -*- coding: utf-8 -*-
+# -*- mode: org -*-
+#+startup: overview indent
+
+#+title: README.org
+
+* Introduction
+
+This is my stab at developing introductory notes so that researchers can quickly
+learn about molecular Quantum-dot Cellular Automata (QCA).
+
+My main tools are as
+follows:
+1. LyX. This is my main content-development plantform.
+2. [[https://github.com/enriquepacis/lyx2html][lyx2html]]. This is a repo to be installed as a submodule. ~lyx2html~ help me
+   make a nice website based on LyX content.
+   
+
+* GitHub
+This section is mainly a tool for myself so that I can keep notes and scripts
+that help me maintain the project in GitHub.
+
+** Maintenance
+
+*** Git status
+
+#+begin_src zsh :results output
+  git status
+#+end_src
+
+#+RESULTS:
+#+begin_example
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.#README.org
+	lyx/quant-comp-quant-info.lyx
+	lyx/quant-comp-quant-info.lyx~
+
+nothing added to commit but untracked files present (use "git add" to track)
+#+end_example
+
+*** Remote-local Sync (Main Repo)
+
+#+begin_src zsh :results output
+  ls lyx/org-html-themes/org
+#+end_src
+
+#+RESULTS:
+: 'heme-bigblow-local.setup
+: theme-bigblow.setup
+: theme-readtheorg-local.setup
+: theme-readtheorg.setup
+
+#+begin_src zsh :results output
+  source ~/.zshrc
+  git add lyx/*.lyx
+  git commit -m "Adds lyx content"
+  git pull
+  git push
+#+end_src
+
+#+RESULTS:
+: [main d910342] Adds lyx content
+:  1 file changed, 161 insertions(+)
+:  create mode 100644 lyx/quant-comp-quant-info.lyx
+: Already up to date.
+
+*** Submodule Management
+
+**** Pulling Changes from the Remote Submodule Repo
+
+***** Pull Latest Changes for all Git Submodules
+
+#+begin_src zsh :results output
+  git submodule update --remote
+#+end_src
+
+**** Pushing Changes to the Submodule
+The need may arise to enhance or modify the submodule in the course of
+developing the main project. This may be done in the following way:
+1. Commit and Push Changes within the Submodule Repository:
+   1. Navigate into the submodule's directory:
+   2. Make your desired changes to the submodule's files and Stage the changes.
+   3. Commit the changes
+2. Pushing changes to the ~lyx2org~ submodule.
+   If you’ve written some great functions and you think everyone should have
+   them:
+   1. Test them rigorously, and make sure they don’t break any other functions.
+   2. Push your changes up to the main submodule repo.
+   3. Navigate to the ~lyx2org~ folder in the terminal
+   4. Use ~git add <filename>~ for any file you modified and wish to contribute
+      to the main repository for everyone
+   5. Type ~git commit -m "Some commit message."
+   6. Type ~git push origin HEAD:main~, followed by ~ENTER~ in the terminal.
+
+   If using Emacs Org-mode, we can update this code block and execute it:
+   #+begin_src zsh :results output
+     pwd
+     cd lyx/lyx2html # navigate to lyx2org submodule directory
+     git add lyx2html/*.py
+     git commit -m "Adds flexibility to handle Schrödinger"
+     git push origin HEAD:main
+     # Point the main repo to the latest subrepo
+     cd ../.. # Go back to main repo directory
+     git add lyx/lyx2html
+     git commit -m "Update submodule to latest version"
+     git pull
+     git push
+   #+end_src
+
+   #+RESULTS:
+   : /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/textbooks/quantum field theory
+   : [main 963aead] Adds flexibility to handle Schrödinger
+   :  1 file changed, 6 insertions(+), 1 deletion(-)
+   : [main f972ee8] Update submodule to latest version
+   :  1 file changed, 1 insertion(+), 1 deletion(-)
+   : Already up to date.
+
+   Now, we want to make the main repo point to the updated submodule. To do
+   this, we navigate to the main repo directory
+   #+begin_src zsh :results output
+     pwd
+     git add lyx/lyx2org
+     git commit -m "Update submodule to latest version"
+     git pull
+     git push
+   #+end_src
+
+   #+RESULTS:
+   : /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/2025/ELC 4366-5396 - Quantum Mechanics/mobius-quantum
+   : [main eacf85a] Update submodule to latest version
+   :  1 file changed, 1 insertion(+), 1 deletion(-)
+   : Already up to date.
+
+   There may be another method for updating all at once. Maybe we do the
+   following:
+   1. Add/commit submodule changes:
+      1. Naviage to the submodule directory
+      2. Add/commit changes
+   2. Navigate to the main module directory
+      
+
+#+begin_src zsh :results output
+  source ~/.zshrc
+  pwd
+  ls
+  cd lyx
+  pwd
+  ls css
+
+#+end_src
+
+#+RESULTS:
+: /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/2025/ELC 4366-5396 - Quantum Mechanics/mobius-quantum
+: README.org
+: lyx
+: /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/2025/ELC 4366-5396 - Quantum Mechanics/mobius-quantum/lyx
+: custom_blocks.css
+
+** Initialization
+
+*** DONE Establishing a New Repo
+
+#+RESULTS:
+: /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/topics/quantum-computing/quant-comp-quant-info
+
+#+begin_src zsh :results output
+  source ~/.zshrc
+  git init
+  git add README.org
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin https://github.com/enriquepacis/molecular-computing-intro.git
+  git push -u origin main
+#+end_src
+
+#+RESULTS:
+: Initialized empty Git repository in /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/topics/quantum-computing/quant-comp-quant-info/.git/
+: [main (root-commit) df58e65] first commit
+:  1 file changed, 276 insertions(+)
+:  create mode 100644 README.org
+: branch 'main' set up to track 'origin/main'.
+
+*** DONE Adding A Submodule to a Project
+
+#+begin_src zsh :results output
+  pwd
+#+end_src
+
+#+RESULTS:
+: /Users/enrique_blair/Library/CloudStorage/Box-Box/Teaching/topics/quantum-field-theory-lyx-html
+
+To add a submodule, we navigate to the root directory, and we use
+
+#+begin_src zsh :results output
+  source ~/.zshrc
+
+  # git submodule add <submodule_repo_url> <path_in_parent_repo>
+  git submodule add https://github.com/enriquepacis/lyx2org.git lyx/lyx2org
+  git commit -m "Add lyx2org as a submodule"
+#+end_src
+
+#+RESULTS:
+: [main f3200ca] Add lyx2org as a submodule
+:  2 files changed, 4 insertions(+)
+:  create mode 100644 .gitmodules
+:  create mode 160000 lyx/lyx2org
+
+This verifies the addition of the submodule:
+#+begin_src zsh :results output
+  ls lyx/lyx2html
+#+end_src
+
+#+RESULTS:
+: development.org
+: html
+: latex
+: lyx
+: lyx2html.py
+
+Here, we update the main repo to have the submodule.
+#+begin_src zsh :results output
+  git add .gitmodules lyx/lyx2org
+  git commit -m "Add/Update submodule lyx2org"
+  git push origin main
+#+end_src
+
+#+RESULTS:
+#+begin_example
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.#README.org
+	lyx/quant-comp-quant-info.lyx
+	lyx/quant-comp-quant-info.lyx~
+
+nothing added to commit but untracked files present (use "git add" to track)
+#+end_example
+
+* Development
+
+** ~lyx~ directory
+
+#+begin_src zsh :results output
+  mkdir lyx
+#+end_src
+
+#+RESULTS:
