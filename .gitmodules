@@ -1,3 +1,6 @@
 [submodule "lyx/lyx2org"]
 	path = lyx/lyx2org
 	url = https://github.com/enriquepacis/lyx2org.git
+[submodule "PyQCA"]
+	path = PyQCA
+	url = https://github.com/PyQCADev/PyQCA.git
