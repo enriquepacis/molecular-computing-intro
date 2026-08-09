@@ -1,0 +1,2719 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Time Dependence of the QHO
+\end_layout
+
+\begin_layout Itemize
+So far,
+ we looked only at the eigenstates of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ for the QHO
+\end_layout
+
+\begin_layout Itemize
+Let us now consider the time dependence of the QHO
+\end_layout
+
+\begin_layout Subsection
+Time Dependence of an Eigenstate of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Consider the time dependence of 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ prepared in an eigenstate state:
+ 
+\begin_inset Formula $\ket{\psi(0}=\ket{\psi_{n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The time dependence is 
+\begin_inset Formula 
+\begin{align*}
+\ket{\psi\left(t\right)} & =e^{-i\hat{H}t/\hbar}\ket{\psi_{n}}\\
+ & =\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left(-\frac{it}{\hbar}\right)^{k}\hat{H}^{k}\right)\ket{\psi_{n}}=\sum_{k=0}^{\infty}\frac{1}{k!}\left(-\frac{it}{\hbar}\right)^{k}\hat{H}^{k}\ket{\psi_{n}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Notice that
+\begin_inset Formula 
+\begin{align*}
+\hat{H}^{k}\ket{\psi_{n}} & =\hat{H}^{k-1}\hat{H}\ket{\psi_{n}}\stackrel{\left(\ref{eq:qho-tise-braket}\right)}{=}\hat{H}^{k-1}E_{n}\ket{\psi_{n}}=E_{n}\hat{H}^{k-1}\ket{\psi_{n}}\\
+ & =E_{n}\hat{H}^{k-2}\hat{H}\ket{\psi_{n}}=E_{n}^{2}\hat{H}^{k-2}\ket{\psi_{n}}\cdots\\
+ & =E_{n}^{k}\ket{\psi_{n}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ our time evolution becomes
+\begin_inset Formula 
+\begin{align}
+\ket{\psi\left(t\right)} & =\sum_{k=0}^{\infty}\frac{1}{k!}\left(-\frac{it}{\hbar}\right)^{k}E_{n}^{k}\ket{\psi_{n}}=\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left(-\frac{it}{\hbar}\right)^{k}E_{n}^{k}\right)\ket{\psi_{n}}\nonumber \\
+ & =e^{-itE_{n}/\hbar}\ket{\psi_{n}}\label{eq:EigenstateEvolution}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We have turned a matrix exponential into a scalar exponential,
+ because the time evolution operator acts on 
+\begin_inset Formula $\ket{\psi_{n}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We can show that the probability distribution for an eigenstate of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is constant.
+ It is easier to do this in the functional form of 
+\begin_inset Formula $\psi_{n}\left(x,t\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|\psi_{n}\left(x,t\right)\right|^{2}=\psi_{n}^{\ast}\left(x,t\right)\psi_{n}\left(x,t\right)=e^{it\hat{H}/\hbar}\psi_{n}^{\ast}\left(x\right)e^{-it\hat{H}/\hbar}\psi_{n}\left(x\right)=\psi_{n}^{\ast}\left(x\right)\psi_{n}\left(x\right)=\left|\psi_{n}\left(x\right)\right|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ the time evolution of the probability distribution 
+\begin_inset Formula $\left|\psi_{n}\left(x,t\right)\right|^{2}$
+\end_inset
+
+ for an eigenstate of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is time independent
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Time Dependence of non-eigenstates of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can form noneigenstates of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ by making superpositions of eigenstates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 8.3
+\end_layout
+
+\begin_layout Plain Layout
+Find the probability distribution of
+\begin_inset Formula 
+\[
+\psi\left(x,t\right)=\psi_{m}\left(x\right)e^{-iE_{m}t/\hbar}+\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Here,
+ we follow the pattern from before:
+\begin_inset Formula 
+\begin{align*}
+\left|\psi\left(x,t\right)\right|^{2} & =\left|\psi_{m}\left(x\right)e^{-iE_{m}t/\hbar}+\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}\right|^{2}\\
+ & =\left(\psi_{m}\left(x\right)e^{-iE_{m}t/\hbar}+\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}\right)^{\ast}\left(\psi_{m}\left(x\right)e^{-iE_{m}t/\hbar}+\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}\right)\\
+ & =\left(\psi_{m}^{\ast}\left(x\right)e^{iE_{m}t/\hbar}+\psi_{n}^{\ast}\left(x\right)e^{iE_{n}t/\hbar}\right)\left(\psi_{m}\left(x\right)e^{-iE_{m}t/\hbar}+\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}\right)\\
+ & =\psi_{m}^{\ast}\left(x\right)\psi_{m}\left(x\right)+\psi_{m}^{\ast}\left(x\right)\psi_{n}\left(x\right)e^{-i\left(E_{n}-E_{m}\right)t/\hbar}+\psi_{m}\left(x\right)\psi_{n}^{\ast}\left(x\right)e^{-i\left(E_{m}-E_{n}\right)t/\hbar}+\psi_{n}^{\ast}\left(x\right)\psi_{n}\left(x\right)\\
+ & =\left|\psi_{m}\right|^{2}+\psi_{m}^{\ast}\left(x\right)\psi_{n}\left(x\right)e^{-i\left(E_{n}-E_{m}\right)t/\hbar}+\psi_{m}\left(x\right)\psi_{n}^{\ast}\left(x\right)e^{-i\left(E_{m}-E_{n}\right)t/\hbar}+\left|\psi_{n}\right|^{2}
+\end{align*}
+
+\end_inset
+
+Notice that the superposition of two eigenstates now has a time-dependent probability distribution.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Time Dependence of Various initial Conditions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 8.4
+\end_layout
+
+\begin_layout Plain Layout
+Find the probability distribution of a system prepared in the initial state
+\begin_inset Formula 
+\[
+\psi\left(x,0\right)=\sum_{n=0}^{N}c_{n}\psi_{n}\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Apply the time evolution operator:
+\begin_inset Formula 
+\begin{align*}
+\psi\left(x,t\right) & =e^{-it\hat{H}/\hbar}\psi\left(x,0\right)=e^{-it\hat{H}/\hbar}\sum_{n=0}^{N}c_{n}\psi_{n}\left(x\right)\\
+ & =\sum_{n=0}^{N}c_{n}e^{-it\hat{H}/\hbar}\psi_{n}\left(x\right)\\
+ & \stackrel{\left(\ref{eq:EigenstateEvolution}\right)}{=}\sum_{n=0}^{N}c_{n}e^{-itE_{n}/\hbar}\psi_{n}\left(x\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 8.5
+\end_layout
+
+\begin_layout Plain Layout
+Plot the time-dependent probability distributions over position and energy for a quantum harmonic oscillator for three different initial states:
+\begin_inset Formula 
+\begin{equation}
+\psi_{a}\left(x,0\right)=\psi_{2}\left(x\right)\label{eq:psi0_stationary}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\psi_{b}\left(x,0\right)=\frac{1}{\sqrt{2}}\left(\psi_{1}\left(x\right)+\psi_{2}\left(x\right)\right),\;\text{and}\label{eq:psi0_arbitrary}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\psi_{c}\left(x,0\right)=D\left(\alpha\right)\psi_{0}\left(x\right),\label{eq:psi0_glauber}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $D\left(\alpha\right)$
+\end_inset
+
+ is the displacement operator,
+\begin_inset Formula 
+\[
+D\left(\alpha\right)=e^{\alpha\hat{a}^{\dagger}-\alpha\hat{a}}
+\]
+
+\end_inset
+
+for a complex parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ You should see that the state 
+\begin_inset Formula $\psi_{c}\left(x,0\right)$
+\end_inset
+
+ is a coherent state or 
+\begin_inset Quotes eld
+\end_inset
+
+Glauber state,
+\begin_inset Quotes erd
+\end_inset
+
+ and it behaves like a classical oscillator.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The instructor solution is given below,
+ with results plotted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+from scipy.linalg import expm
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( Q ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of Q.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( Q.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def elementary_vector( n:int ,
+ d:int ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns the n-th elementary vector in a
+\end_layout
+
+\begin_layout Plain Layout
+
+       d-dimensional vector space
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Args
+\end_layout
+
+\begin_layout Plain Layout
+
+         n:
+ index of elementary vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+         d:
+ dimension of elementary vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns an np.ndarray()
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    v = np.zeros([d,
+ 1],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+    v[n,
+ 0] = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return v
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def displacement_operator( alpha ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns the displacement operator for the
+\end_layout
+
+\begin_layout Plain Layout
+
+       quantum harmonic oscillator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Args
+\end_layout
+
+\begin_layout Plain Layout
+
+         alpha:
+ complex displacement parameter
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns an NxN np.ndarray()
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return expm( alpha*a - alpha*ad )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def state_to_probability( psi,
+ verbose=False):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Convert a state vector to a probability
+\end_layout
+
+\begin_layout Plain Layout
+
+       distribution.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Args
+\end_layout
+
+\begin_layout Plain Layout
+
+         psi:
+ a state vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns an (N,) np.ndarray()
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    temp = np.conj(np.array(psi)) * np.array(psi)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return temp.flatten().real
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def expectation_value( op,
+ psi ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Return the expectation value for an
+\end_layout
+
+\begin_layout Plain Layout
+
+       operator op.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Args
+\end_layout
+
+\begin_layout Plain Layout
+
+         psi:
+ a state vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns real expectation value
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    temp = dag( psi ) @ op @ psi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return temp[0,0].real
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar = 6.58E-16 # [eV*s] the reduced Planck constant
+\end_layout
+
+\begin_layout Plain Layout
+
+c_nms = 2.997E17 # [nm/s] speed of light
+\end_layout
+
+\begin_layout Plain Layout
+
+c_cms = 2.997E10 # [nm/s] speed of light
+\end_layout
+
+\begin_layout Plain Layout
+
+amu2eV = 931.5E6 # [eV/amu] mass-to-energy conversion
+\end_layout
+
+\begin_layout Plain Layout
+
+kB = 8.617E-5 # [eV/K]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+f_invcm = 300 # [inv cm] frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+m_amu = 6 # [amu] mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculations
+\end_layout
+
+\begin_layout Plain Layout
+
+f = f_invcm * c_cms # [Hz] oscillator frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+T = 1/f # [s] oscillator period
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nt=75 # number of time points
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 5*T,
+ nt) # time vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+w = 2*np.pi*f # [rad/s] oscillator ang freq
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hw = hbar * w # [eV] energy quantization
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m = m_amu * amu2eV / c_nms**2 # [eV*s^2/nm^2] mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Id = np.eye(N) # [] Identity operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# lowering oeprator
+\end_layout
+
+\begin_layout Plain Layout
+
+a = np.diag(np.sqrt(range(1,N)),
+ 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# raising operator
+\end_layout
+
+\begin_layout Plain Layout
+
+ad = dag( a )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+H = hw*(ad @ a + 0.5*Id) # [eV]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Eval,
+ Psin = np.linalg.eigh( H ) # [eV,
+ ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Position operator (not the NOT operator)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.sqrt(hbar/(2*m*w)) * (a + ad)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Xo = np.sqrt(hbar/ (m*w)) # Characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Eigenvalues of this operator are the possible
+\end_layout
+
+\begin_layout Plain Layout
+
+# outcomes of a position measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+# Eigenvectors are returned as a matrix UEX
+\end_layout
+
+\begin_layout Plain Layout
+
+Xval,
+ UEX = np.linalg.eigh( X ) # [nm,
+ ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+UXE = dag( UEX ) # change basis:
+ energy to position
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(3,
+ 2) # array of six plots
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Establish three initital states
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the n-th energy eigenstate
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0a = elementary_vector(2,
+ N)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0b = (1/np.sqrt(2))*( elementary_vector( 2,
+ N ) 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         + elementary_vector( 3,
+ N ) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0c = displacement_operator( 1 ) @  elementary_vector( 0,
+ N )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Wrap the three intial states in a vector so we can iterate
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0 = [psi0a,
+ psi0b,
+ psi0c]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage vector for energy,
+ position distribution
+\end_layout
+
+\begin_layout Plain Layout
+
+pdistE = [np.zeros( (N,
+ nt) )] * 3
+\end_layout
+
+\begin_layout Plain Layout
+
+pdistX = [np.zeros( (N,
+ nt) )] * 3
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((3,
+ nt))
+\end_layout
+
+\begin_layout Plain Layout
+
+pos_exp = np.zeros((3,
+ nt))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# meshes for 2D plotting
+\end_layout
+
+\begin_layout Plain Layout
+
+tt,
+ xx = np.meshgrid(t.flatten()/T,
+ Xval/Xo,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+_,
+ EE = np.meshgrid(t.flatten()/T,
+ Eval/hw,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 3,
+ 2 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Loop over each initial condition
+\end_layout
+
+\begin_layout Plain Layout
+
+for ic_idx in range(3):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Loop over each time step
+\end_layout
+
+\begin_layout Plain Layout
+
+    for it,
+ tv in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        # time-dependent state
+\end_layout
+
+\begin_layout Plain Layout
+
+        psit = expm( -1j*tv*H/hbar) @ psi0[ic_idx]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        # probability distribution over energy
+\end_layout
+
+\begin_layout Plain Layout
+
+        pdistE[ic_idx][:,it] = state_to_probability( psit ).flatten()
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+        # probability distribution over position
+\end_layout
+
+\begin_layout Plain Layout
+
+        pdistX[ic_idx][:,it] = state_to_probability( UXE @ psit ).flatten()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        # energy expectation value [eV]
+\end_layout
+
+\begin_layout Plain Layout
+
+        Et[ic_idx,
+ it] = expectation_value( H,
+ psit )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        # position exepcation value [nm]
+\end_layout
+
+\begin_layout Plain Layout
+
+        pos_exp[ic_idx,
+ it] = expectation_value( X,
+ psit )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[ic_idx,0].contourf(tt,
+ EE,pdistE[ic_idx],
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[ic_idx,0].plot(t/T,
+ Et[ic_idx]/hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[ic_idx,0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[ic_idx,1].contourf(tt,
+ xx,
+ pdistX[ic_idx],
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[ic_idx,1].plot(t/T,
+ pos_exp[ic_idx]/Xo,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[ic_idx,1].set_ylabel(r'$X/X_o$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if ic_idx == 2:
+\end_layout
+
+\begin_layout Plain Layout
+
+        ax[ic_idx,0].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+        ax[ic_idx,1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_evolution_vari_ic.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../Research/QuantComp/QMechQInfo/lyx/img/qho_evolution_vari_ic.png
+	width 95col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probability distributions are plotted for the ground states defined in Equations (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:psi0_stationary"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)-(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:psi0_glauber"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ The top row is for 
+\begin_inset Formula $\psi_{a}\left(x,0\right)=\psi_{n}\left(x\right)$
+\end_inset
+
+ ;
+ the middle row is for a linear combination of eigenstates;
+ and the bottom row is for a Glauber state as the initial condition.
+ The expectation value of energy or position is plotted in white.
+ The code that produced this is given in the code above.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Notice that in all cases,
+ the expectation value of energy is constant
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These systems are closed quantum systems,
+ where energy cannot enter or exit
+\end_layout
+
+\begin_layout Itemize
+Energy is conserved
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To get to dissipative models that allow energy to escape into the environment,
+ we take two steps:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First,
+ move from state-vector formalism with the Schrödinger equation to the density matrix formalism with the quantum Liouville equation
+\end_layout
+
+\begin_layout Itemize
+Extend the quantum Liouville equation to the Lindblad equation
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Time Dependence of the QHO using the Quantum Liouville Equation
+\end_layout
+
+\begin_layout Itemize
+We calculate the time-dependence of the QHO using density operator formalism
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We use some code tools I developed to model QHOs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Code that does this calculation is provided below
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+.
+ Results are shown in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-2"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Now we import from a custom module I wrote
+\end_layout
+
+\begin_layout Plain Layout
+
+# These are found in the directory "../org/PyQCA/"
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd() # bookmark this working directory
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.harmonicoscillator import HarmonicOscillator as QHO
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import linearalgebra as la
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import constants as const
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.timeevolution import quantum_liouville
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# select the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+start = 'coherent'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 75
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create a QHO object
+\end_layout
+
+\begin_layout Plain Layout
+
+# Uses default m = 6 amu and f = 300 inv cm
+\end_layout
+
+\begin_layout Plain Layout
+
+# This also creates all the operators:
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Hamiltonian,
+ raising and lowering,
+\end_layout
+
+\begin_layout Plain Layout
+
+#   position,
+ momentum
+\end_layout
+
+\begin_layout Plain Layout
+
+# It also calculates the characteristic
+\end_layout
+
+\begin_layout Plain Layout
+
+#   length and energy
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc = QHO(N=N)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X0 = qosc.Q0 # [nm] characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T = qosc.T # oscillation period
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 3*T,
+ nt).flatten()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage arrays
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE = np.zeros([N,
+ nt]) # prob dist over energy
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX = np.zeros([N,
+ nt]) # prob dist over position
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Prepare the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+if start == 'eigenstate':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'coherent':
+\end_layout
+
+\begin_layout Plain Layout
+
+    d = 1 + 1j # displacement
+\end_layout
+
+\begin_layout Plain Layout
+
+    D = qosc.displacement_operator(d)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Recall that D|0> "selects" the first column of D
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = D @ qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'arbitrary':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = la.normalize( qosc.energy_state(1) + qosc.energy_state(2) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Exponential time evolution (state-vector formalism)
+\end_layout
+
+\begin_layout Plain Layout
+
+for it,
+ tt in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ut = sp.linalg.expm(-1j * qosc.H * tt / const.hbar )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = Ut @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+    psitX = qosc.change_basis(psit,
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE[:,it] = la.state_to_probability(psit).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX[:,it] = la.state_to_probability(psitX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et[it] = la.expectation_value( qosc.H,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt[it] = la.expectation_value( qosc.X,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tt,
+ xx = np.meshgrid(t.flatten()/qosc.T,
+ qosc.Xval,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+_,
+ EE = np.meshgrid(t.flatten()/T,
+ qosc.Eval/qosc.hw,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ EE,
+ PDE,
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ xx,
+ PDX,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$x$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+\end_layout
+
+\begin_layout Plain Layout
+
+                       "qho_evolution_unitary_PD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Quantum Liouville evolution    
+\end_layout
+
+\begin_layout Plain Layout
+
+from odeintw import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = la.density_matrix(psi0) # form a density operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Integrate the solution
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(quantum_liouville,
+ rho0,
+ t,
+ args=(qosc.H,) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_ode = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_ode = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_ode = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_ode = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_ode[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_ode[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_ode[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_ode[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Postprocessing
+\end_layout
+
+\begin_layout Plain Layout
+
+print(type(sol))
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sol.shape)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sol[0].shape)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ xx/qosc.Q0,
+ PDX,
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Xt/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$X/X_0$ (expm)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ xx/X0,
+ PDX_ode,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Xt_ode/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$X/X_0$ (ODE)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_class_test_evolution_unitary_vs_ODE_XPD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ EE,
+ PDE,
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Et/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (expm)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ EE,
+ PDE_ode,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et_ode/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (ODE)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_class_test_evolution_unitary_vs_ODE_EPD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This uses numpy to calculate the time evolution of the QHO using the quantum Liouville equation.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:qho-dynamics-density-operator"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can make some observations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-2"
+
+\end_inset
+
+ shows that the time dynamics according to the Schrödinger equation match those of the quantum Liouville equation
+\end_layout
+
+\begin_layout Itemize
+These dynamics describe a closed system,
+ where the energy is conserved within the system,
+ as shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-3"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_class_test_evolution_unitary_vs_ODE_XPD.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dynamics calculated using the quantum Liouville equation match those calculated using the Schrödinger equation.
+ This result is shown in the position basis.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_class_test_evolution_unitary_vs_ODE_EPD.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dynamics calculated using the quantum Liouville equation match those calculated using the Schrödinger equation.
+ This result is shown in the energy basis.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

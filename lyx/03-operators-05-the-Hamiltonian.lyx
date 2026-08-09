@@ -1,0 +1,5952 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Itemize
+The Hamiltonian,
+ 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+,
+ is an important operator because it appears in two essentially important equations from quantum mechanics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+time-dependent Schrödinger equation
+\series default
+ (TDSE),
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\ket{\psi}=-\frac{i}{\hbar}\hat{H}\ket{\psi}\label{eq:TDSE}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $i$
+\end_inset
+
+ is an imaginary number and 
+\begin_inset Formula $\hbar$
+\end_inset
+
+ is the 
+\series bold
+reduced Planck constant
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is constant in time,
+ i.e.,
+ 
+\begin_inset Formula $d\hat{H}/dt=0$
+\end_inset
+
+,
+ then,
+ given an initial state 
+\begin_inset Formula $\ket{\psi\left(0\right)}$
+\end_inset
+
+,
+ it can be shown that the state at some later time 
+\begin_inset Formula $t$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi\left(t\right)}=\exp\left(-\frac{i}{\hbar}\hat{H}t\right)\ket{\psi\left(0\right)}.\label{eq:TDSE-Solution-Const-H}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This may often be written as
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi\left(t\right)}=\hat{U}\left(t\right)\ket{\psi\left(0\right)},\label{eq:TDSE-Solution-Const-H-compact}
+\end{equation}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{equation}
+\hat{U}\left(t\right)=\exp\left(-\frac{i}{\hbar}\hat{H}t\right)\label{eq:TimeEvolutionOperator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is not constant,
+ we need other methods to calculate 
+\begin_inset Formula $\ket{\psi\left(t\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+time-independent Schrödinger equation
+\series default
+,
+\begin_inset Formula 
+\begin{equation}
+\hat{H}\ket{\psi_{n}}=E_{n}\ket{\psi_{n}}\label{eq:TISE}
+\end{equation}
+
+\end_inset
+
+also is a very important equation in quantum mechanics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solutions to the time-independent Schrödinger equation (TISE) involve finding the eigenenergies 
+\begin_inset Formula $\left\{ E_{n}\right\} $
+\end_inset
+
+ and their associated eigenstates,
+ 
+\begin_inset Formula $\left\{ \ket{\psi_{n}}\right\} .$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is a direct application of linear algebra
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We often write the Hamiltonian as a matrix
+\end_layout
+
+\begin_layout Itemize
+Then,
+ finding 
+\begin_inset Formula $\ket{\psi_{n}}$
+\end_inset
+
+ and the corresponding 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+ is a matter of finding the eigenvalues and eigenvectors of the matrix 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The quantum state 
+\begin_inset Formula $\ket{\psi_{n}}$
+\end_inset
+
+ is said to be the eigenstate associated with eigenenergy 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These have a VERY important role to play in all of physics and chemistry
+\end_layout
+
+\begin_layout Itemize
+The eigenstates and eigenenergies are the reason electrons do not simply collapse to a point and rest against the nucleus of an atom:
+ this state does not have an energy equal to an allowed energy,
+ and thus,
+ this state is forbidden!
+\end_layout
+
+\begin_layout Itemize
+The eigenstates of electrons in atoms determine how atoms interact with one another
+\end_layout
+
+\begin_layout Itemize
+Without the eigenstates and eigenenergies from quantum mechanics and linear algebra,
+ chemistry would be VERY boring,
+ and biological life as we know it would be impossible,
+ and the universe would be very uninteresting
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Warning:
+ the Hamiltonian 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is not the same as the Hadamard transformation,
+ 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Hamiltonian 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is used to describe the energetics of a quantum system
+\end_layout
+
+\begin_layout Itemize
+The Hadamard 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ is used in quantum information processing applications
+\end_layout
+
+\begin_layout Itemize
+Pay close attention so you can distinguish when we are talking about a Hamiltonian or a Hadamard operation
+\end_layout
+
+\begin_layout Itemize
+For clarity,
+ I will attempt to use two different symbols,
+ 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+,
+ to help us distinguish between the Hadamard operation and the Hamiltonian
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We will focus on the simpler of the two equations,
+ the time-independent Schrödinger equation of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TISE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Notice that Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TISE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) is nothing more than an eigenvalue problem,
+ with eigenvalues 
+\begin_inset Formula $\left\{ E_{n}\right\} $
+\end_inset
+
+ and eigenstates 
+\begin_inset Formula $\left\{ \ket{\psi_{n}}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the context of quantum mechanics,
+ the eigenvalues 
+\begin_inset Formula $\left\{ E_{n}\right\} $
+\end_inset
+
+ are given the name 
+\series bold
+eigenenergies
+\series default
+,
+ since they are energies in fact
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ the eigenenergies have units of energy
+\end_layout
+
+\begin_layout Itemize
+The eigenenergies of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ specify the only values that can be obtained on a measurement of the total system energy
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Because of this,
+ the eigenenergies may be thought of as 
+\begin_inset Quotes eld
+\end_inset
+
+allowed energies
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Other energies can never be measured and are said to be 
+\begin_inset Quotes eld
+\end_inset
+
+forbidden energies
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Quantum states 
+\begin_inset Formula $\left\{ \ket{\psi_{n}}\right\} $
+\end_inset
+
+ are unitless,
+ and 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+ has units of energy
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ must also have units of energy
+\end_layout
+
+\begin_layout Subsection
+The electron-volt:
+ a Unit of Energy
+\end_layout
+
+\begin_layout Itemize
+Electron-volts are more appropriate for quantum systems than Joules
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall the Volt is an energy per unit charge:
+\begin_inset Formula 
+\begin{equation}
+1\;\text{V}=\frac{1\;\text{J}}{1\;\text{C}}\label{eq:defineVolt}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The electron-volt (eV) is an energy per unit charge times a chage,
+ which is an energy:
+\begin_inset Formula 
+\[
+1\;\text{eV}=\frac{1\;\text{J}}{1\;\text{C}}q_{e},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $q_{e}$
+\end_inset
+
+ is the fundamental charge:
+\begin_inset Formula 
+\begin{equation}
+q_{e}=1.602\times10^{-19}\;\text{C}\label{eq:FundamentalCharge}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ we can covert eV to J:
+\begin_inset Formula 
+\begin{equation}
+1\;\text{eV}=\frac{1\;\text{J}}{1\;\text{C}}\left(1.602\times10^{-19}\;\text{C}\right)=1.602\times10^{-19}\;\text{J}\label{eq:eV2J}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+The Matrix Elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The matrix elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ have certain meanings
+\end_layout
+
+\begin_layout Itemize
+The diagonal elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ are denoted 
+\begin_inset Formula $\braket{n|\hat{H}|n}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These are called 
+\series bold
+occupation energies
+\series default
+ because they are the potential energy of the system when it occupies state 
+\begin_inset Formula $\ket{n}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The off-diagonal elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ are denoted 
+\begin_inset Formula $\braket{m|\hat{H}|n}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These are called 
+\series bold
+transition energies
+\series default
+ because they are kinetic eneriges for a transition of the system from state 
+\begin_inset Formula $\ket{m}$
+\end_inset
+
+ to state 
+\begin_inset Formula $\ket{n}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.9
+\end_layout
+
+\begin_layout Plain Layout
+Consider the computational molecule of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TwoDotStates"
+
+\end_inset
+
+.
+ Write the Hamiltonian for this two-state molecule given that state 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ is an energy 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ higher than state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+,
+ and the transition energy for 
+\begin_inset Formula $\ket{0}\rightarrow\ket{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ket{1}\rightarrow\ket{0}$
+\end_inset
+
+ is 
+\begin_inset Formula $-\gamma$
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/qca-two-state-system.png
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The two states of a computational molecule.
+ Black circles represent quantum dots,
+ which trap a mobile charge.
+ Two dots are separated by length 
+\begin_inset Formula $a$
+\end_inset
+
+,
+ and the connecting bar denotes a tunneling path between the dots.
+ A red disc represents a mobile electron.
+ The system has two classical states,
+ which encode a bit.
+ Fixed neutralizing charge present on each dot is represented as green filling in the dot.
+ This indicates the presence of 
+\begin_inset Formula $+q_{e}/2$
+\end_inset
+
+ on each dot.
+ This keeps the molecules overall neutral,
+ and we will not explicitly illustrate the neutralizing charge henceforth.
+ Thus,
+ when a mobile electron occupies a dot,
+ the net charge on the dot is 
+\begin_inset Formula $-q_{e}/2$
+\end_inset
+
+.
+ The other (unoccupied) dot has the fixed neutralizing charge uncovered,
+ so its net charge is 
+\begin_inset Formula $+q_{e}/2$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TwoDotStates"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+We first write the Hamiltonian in terms of its four matrix elements:
+\begin_inset Formula 
+\[
+\hat{H}=\left[\begin{array}{cc}
+H_{00} & H_{01}\\
+H_{10} & H_{11}
+\end{array}\right]=\left[\begin{array}{cc}
+\braket{0|\hat{H}|0} & \braket{0|\hat{H}|1}\\
+\braket{1|\hat{H}|0} & \braket{1|\hat{H}|1}
+\end{array}\right]
+\]
+
+\end_inset
+
+The problem statement encodes for us the following relationships:
+\begin_inset Formula 
+\begin{equation}
+\braket{1|\hat{H}|1}-\braket{0|\hat{H}|0}=\Delta,\label{eq:Detuning}
+\end{equation}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\braket{1|\hat{H}|0}=\braket{0|\hat{H}|1}=-\gamma
+\]
+
+\end_inset
+
+Since the occupation energies 
+\begin_inset Formula $\braket{n|\hat{H}|n}$
+\end_inset
+
+ are potential energies,
+ we get to pick the reference potential energy,
+ i.e.,
+ we can choose the value of zero potential energy.
+ This is equivalent to choosing a ground node in the circuit.
+ Let us define the zero to be the midway point between 
+\begin_inset Formula $\braket{1|\hat{H}|1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\braket{0|\hat{H}|0}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+0\equiv\frac{1}{2}\left(\braket{1|\hat{H}|1}+\braket{0|\hat{H}|0}\right)\label{eq:ChooseQCAZero}
+\end{equation}
+
+\end_inset
+
+We can eliminate 
+\begin_inset Formula $\braket{0|\hat{H}|0}$
+\end_inset
+
+ using Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Detuning"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ to obtain 
+\begin_inset Formula $\braket{1|\hat{H}|1}-\Delta=\braket{0|\hat{H}|0}$
+\end_inset
+
+ so that Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ChooseQCAZero"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ becomes
+\begin_inset Formula 
+\[
+0\equiv\frac{1}{2}\left(\braket{1|\hat{H}|1}+\braket{1|\hat{H}|1}-\Delta\right)\quad\rightarrow\quad\braket{1|\hat{H}|1}=\frac{\Delta}{2}.
+\]
+
+\end_inset
+
+Similarly,
+ we can use Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Detuning"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ to obtain 
+\begin_inset Formula $\braket{1|\hat{H}|1}=\braket{0|\hat{H}|0}+\Delta$
+\end_inset
+
+,
+ which gives us
+\begin_inset Formula 
+\[
+0\equiv\frac{1}{2}\left(\braket{0|\hat{H}|0}+\Delta+\braket{0|\hat{H}|0}\right)\quad\rightarrow\quad\braket{0|\hat{H}|0}=-\frac{\Delta}{2}
+\]
+
+\end_inset
+
+Thus,
+ we can use Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmax"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmayz"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ to write the Hamiltonian as
+\begin_inset Formula 
+\begin{equation}
+\hat{H}=\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right]=-\gamma\sigma_{x}+\frac{\Delta}{2}\sigma_{z}\label{eq:DrivenCellHamiltonian-QMconvention}
+\end{equation}
+
+\end_inset
+
+Here,
+ we have used 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{z}$
+\end_inset
+
+ to write the Hamiltonian in a nicer form.
+ Notice that we are using the quantum mechanics convention of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmayz"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Graphics :noexport:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang american
+Graphic for Exercise 3.9
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'qca-two-state-system'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot00ctr) at (-1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot01ctr) at (-1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (fncAnchor) at (2.5*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (mcAnchor) at (0*
+\backslash
+ra,
+ 1*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot00) at (dot00ctr) [schemdotstyle,
+ fill=black!20!green] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot01) at (dot01ctr) [schemdotstyle,
+ fill=black!20!green] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q0) at (dot00ctr) [chargestyle,
+ fill=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot00) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1*
+\backslash
+ra) {
+\backslash
+large $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1.625*
+\backslash
+ra) {
+\backslash
+large $P = -1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle,
+ fill=black!20!green] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.5*
+\backslash
+
+\backslash
+ra,
+ -0.5*
+\backslash
+
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle,
+ fill=black!20!green] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+
+\backslash
+node [anchor=west] at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot11ctr) [chargestyle,
+ fill=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=north] at (1.5*
+\backslash
+ra,
+ -1*
+\backslash
+ra) {
+\backslash
+large $
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=north] at (1.5*
+\backslash
+ra,
+ -1.625*
+\backslash
+ra) {
+\backslash
+large $P = 1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-2*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) -- ++(0,
+ -1*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor=east] at (-2*
+\backslash
+ra,
+ 0) {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node at (fncAnchor) [anchor=west,
+\end_layout
+
+\begin_layout Plain Layout
+
+       text width=3cm,
+ color=black!30!green] {Neutralizing charge:
+ $+q_e/2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node at (mcAnchor) [anchor=south,
+\end_layout
+
+\begin_layout Plain Layout
+
+       text width=4cm,
+ color=red] {Mobile charge:
+ $-q_e$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ ->,
+ color=black!30!green] (fncAnchor) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ ->,
+ color=black!30!green] (fncAnchor) -- (dot10);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ ->,
+ color=black!30!green] (fncAnchor) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ ->,
+ color=black!30!green] (fncAnchor) -- (dot00);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ ->,
+ color=red] (mcAnchor) -- (q0);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ ->,
+ color=red] (mcAnchor) -- (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\lang american
+Graphic for Exercise 3.14
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-two-dot-cell'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD0ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD1ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot0ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot1ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD0) at (dotD0ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD1) at (dotD1ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ dashed] (dotD0) -- (dotD1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (-0.5*
+\backslash
+ra,
+ -1) {driver};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % 
+\backslash
+node (q0) at (dotD0) [chargestyle,
+ fill=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1*
+\backslash
+ra) {
+\backslash
+large $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1.625*
+\backslash
+ra) {
+\backslash
+large $P = -1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot0) at (dot0ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot1) at (dot1ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot0) -- (dot1);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {target};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-1*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(0,
+ -1*
+\backslash
+ra) node [midway,
+ left] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'LaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Ground State
+\end_layout
+
+\begin_layout Itemize
+The physics of the real world dictate that there is a 
+\series bold
+lowest eigenenergy
+\series default
+ for a given physical system,
+ and it is called the 
+\series bold
+ground state energy
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The ground state energy is indexed using either 
+\begin_inset Formula $n=0$
+\end_inset
+
+ or 
+\begin_inset Formula $n=1$
+\end_inset
+
+,
+ depending on the context (different physical systems have different conventions)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a trapped particle in a box,
+ we typically use 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ as the ground state energy
+\end_layout
+
+\begin_layout Itemize
+For a particle trapped in a parabolic potential (quantum harmonic oscillator),
+ we usually label the ground state energy 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ associated with the ground state energy 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+ or 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ is called the 
+\series bold
+ground state
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.10
+\end_layout
+
+\begin_layout Plain Layout
+Calculate the ground state of the molecule from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TwoDotStates"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ by hand.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+We can do this by finding the eigenvalues and the eigenvectors of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+.
+ To find the eigenvalues,
+ use
+\begin_inset Formula 
+\[
+\det\left(\hat{H}-E_{n}\mathbf{1}\right)=0
+\]
+
+\end_inset
+
+Using the elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ we found,
+ we write
+\begin_inset Formula 
+\begin{align*}
+0 & =\det\left(\hat{H}-E_{n}\mathbf{1}\right)=\det\left(\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right]-E_{n}\left[\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]\right)=\left|\begin{array}{cc}
+-\frac{\Delta}{2}-E_{n} & -\gamma\\
+-\gamma & \frac{\Delta}{2}-E_{n}
+\end{array}\right|\\
+ & =\left(-\frac{\Delta}{2}-E_{n}\right)\left(\frac{\Delta}{2}-E_{n}\right)-\gamma^{2}\\
+ & =-\frac{\Delta^{2}}{4}+E_{n}^{2}-\gamma^{2}
+\end{align*}
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+E_{n}=\pm\sqrt{\frac{\Delta^{2}}{4}+\gamma^{2}}=\pm\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}
+\]
+
+\end_inset
+
+The ground state energy,
+ 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+,
+ is the lower of these values,
+ and the first excited state energy is higher:
+\begin_inset Formula 
+\begin{align*}
+E_{1} & =-\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\\
+E_{2} & =\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}
+\end{align*}
+
+\end_inset
+
+Now that we have 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+,
+ we can use it in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TISE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ along with 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ to find 
+\begin_inset Formula $\ket{\psi_{1}}$
+\end_inset
+
+.
+ Write the time-independent Schrödinger equation for 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{1}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\hat{H}\ket{\psi_{1}} & =E_{1}\ket{\psi_{1}}\nonumber \\
+ & \downarrow\nonumber \\
+\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right]\left[\begin{array}{c}
+a\\
+b
+\end{array}\right] & =-\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\left[\begin{array}{c}
+a\\
+b
+\end{array}\right]\nonumber \\
+ & \downarrow\nonumber \\
+-\frac{\Delta}{2}a-\gamma b & =-a\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\label{eq:QCAEigVectRow01}\\
+-\gamma a+\frac{\Delta}{2}b & =-b\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\label{eq:QCAEigVectRow02}
+\end{align}
+
+\end_inset
+
+If we take 
+\begin_inset Formula $b=1$
+\end_inset
+
+,
+ then
+\begin_inset Formula 
+\begin{equation}
+a=\frac{\Delta+\sqrt{\Delta^{2}+4\gamma^{2}}}{2\gamma}\label{eq:QCATwoDotParameter_a}
+\end{equation}
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\ket{\psi_{0}}=\left[\begin{array}{c}
+a\\
+b
+\end{array}\right]=\left[\begin{array}{c}
+a\\
+1
+\end{array}\right]=a\ket{0}+\ket{1}.
+\]
+
+\end_inset
+
+We need to normalize this:
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi_{0}^{\prime}}=\frac{\ket{\psi_{0}}}{\sqrt{\braket{\psi_{0}|\psi_{0}}}}=\frac{1}{\sqrt{a^{2}+1}}\left[\begin{array}{c}
+a\\
+1
+\end{array}\right]\label{eq:NormalizedGroundState}
+\end{equation}
+
+\end_inset
+
+We could write the normalized ground state out in greater detail by substituting 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QCATwoDotParameter_a"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ into Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:NormalizedGroundState"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ but things would just get messier,
+ so let's not.
+ It can be shown that the probability of measuring 0 and 1 are as follows:
+\begin_inset Formula 
+\begin{align*}
+p\left(0\right) & =\frac{a^{2}}{a^{2}+1}=\frac{1}{2}\left(1+\frac{\Delta}{\sqrt{4\gamma^{2}+\Delta^{2}}}\right)\\
+p\left(1\right) & =\frac{1}{a^{2}+1}=\frac{1}{2}\left(1-\frac{\Delta}{\sqrt{4\gamma^{2}+\Delta^{2}}}\right)
+\end{align*}
+
+\end_inset
+
+Recall that we are using the quantum mechanics convention of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmayz"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ for 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Expectation Values
+\end_layout
+
+\begin_layout Itemize
+Let an operator 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ describes an observable quantity,
+ and let 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ have eigenvalues 
+\begin_inset Formula $q$
+\end_inset
+
+ with associated eigenstates 
+\begin_inset Formula $\ket{q}$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Q}\ket{q}=q\ket{q}\label{eq:ObservableEigenvalue}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The eigenvalues 
+\begin_inset Formula $\left\{ q\right\} $
+\end_inset
+
+ are the only possible results of a measurement
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ describes a measurement,
+ the possible measured values must be real
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ the eigenvalues of 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ must be real quantities
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If the eigenvalues 
+\begin_inset Formula $\left\{ q\right\} $
+\end_inset
+
+ of observable 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ are unique,
+ then the eigenstates 
+\begin_inset Formula $\left\{ \ket{q}\right\} $
+\end_inset
+
+ form an orthonormal basis for the Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ of our quantum system:
+\begin_inset Formula 
+\begin{equation}
+\braket{q|q^{\prime}}=\delta_{q,q^{\prime}}=\begin{cases}
+1, & q=q^{\prime}\\
+0, & q\neq q^{\prime}
+\end{cases}\label{eq:KroneckerDeltaObservable}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+An arbitrary state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ may be expanded over the eigenbasis 
+\begin_inset Formula $\left\{ \ket{q}\right\} $
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi}=\sum_{q}c_{q}\ket{q},\label{eq:AribtrarySuperpositionEigenbasisO}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+c_{q}=\braket{q|\psi}
+\]
+
+\end_inset
+
+ are amplitudes,
+ and the probability for measuring 
+\begin_inset Formula $q$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{equation}
+p\left(q\right)=\left|c_{q}\right|^{2}=c_{q}^{\ast}c_{q}\label{eq:MeasurementProbability}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ for physically meaningful probabilities,
+ we require normalization
+\begin_inset Formula 
+\[
+\sum_{q}p\left(q\right)=\sum_{q}c_{q}^{\ast}c_{q}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Given a state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ the expectation value of 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ is defined as
+\begin_inset Formula 
+\begin{equation}
+\braket{\mathbf{Q}}=\braket{\psi|\mathbf{Q}|\psi}\label{eq:ExpectationValueStateVector}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Expand this using Equation
+\begin_inset Formula 
+\begin{align*}
+\braket{\mathbf{Q}} & =\left(\sum_{q^{\prime}}c_{q^{\prime}}^{\ast}\bra{q^{\prime}}\right)\mathbf{Q}\left(\sum_{q}c_{q}\bra{q}\right)\\
+ & =\sum_{q,q^{\prime}}c_{q^{\prime}}^{\ast}c_{q}\braket{q^{\prime}|\mathbf{Q}|q}\\
+ & =\sum_{q,q^{\prime}}c_{q^{\prime}}^{\ast}c_{q}q\braket{q^{\prime}|q}\\
+ & =\sum_{q,q^{\prime}}c_{q^{\prime}}^{\ast}c_{q}q\delta_{q^{\prime},q}\\
+ & =\sum_{q}c_{q}^{\ast}c_{q}q=\sum_{q}p\left(q\right)q
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ we used 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ObservableEigenvalue"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:KroneckerDeltaObservable"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:MeasurementProbability"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The astute reader will understand what is happening here:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\braket{\mathbf{Q}}$
+\end_inset
+
+ is the weighted sum of measurement outcomes,
+ 
+\begin_inset Formula $\left\{ q\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Each outcome is weighted by its probability of measurement
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ we interpret 
+\begin_inset Formula $\braket{\mathbf{Q}}$
+\end_inset
+
+ as the mean value of measurement outcomes for a large ensemble of measurements
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Another name for 
+\begin_inset Formula $\braket{\mathbf{Q}}$
+\end_inset
+
+ is the 
+\series bold
+expected value
+\series default
+ (you might recall this from your class on probability and statistics)
+\end_layout
+
+\begin_layout Itemize
+In quantum mechanics,
+ we call 
+\begin_inset Formula $\braket{\mathbf{Q}}$
+\end_inset
+
+ the 
+\series bold
+expectation value
+\series default
+ of 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ given 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ or simply the expectation value of 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.11
+\end_layout
+
+\begin_layout Plain Layout
+Calculate 
+\begin_inset Formula $\braket{\mathbf{Z}}$
+\end_inset
+
+ for the following wave functions:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\ket{\psi}=c_{0}\ket{0}+c_{1}\ket{1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We can do this by finding the eigenvalues and the eigenvectors of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+.
+ To find the eigenvalues,
+ use
+\begin_inset Formula 
+\[
+\det\left(\hat{H}-E_{n}\mathbf{1}\right)=0
+\]
+
+\end_inset
+
+Using the elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ we found,
+ we write
+\begin_inset Formula 
+\begin{align*}
+0 & =\det\left(\hat{H}-E_{n}\mathbf{1}\right)=\det\left(\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right]-E_{n}\left[\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]\right)=\left|\begin{array}{cc}
+-\frac{\Delta}{2}-E_{n} & -\gamma\\
+-\gamma & \frac{\Delta}{2}-E_{n}
+\end{array}\right|\\
+ & =\left(-\frac{\Delta}{2}-E_{n}\right)\left(\frac{\Delta}{2}-E_{n}\right)-\gamma^{2}\\
+ & =-\frac{\Delta^{2}}{4}+E_{n}^{2}-\gamma^{2}
+\end{align*}
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+E_{n}=\pm\sqrt{\frac{\Delta^{2}}{4}+\gamma^{2}}=\pm\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}
+\]
+
+\end_inset
+
+The ground state energy,
+ 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+,
+ is the lower of these values,
+ and the first excited state energy is higher:
+\begin_inset Formula 
+\begin{align*}
+E_{1} & =-\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\\
+E_{2} & =\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}
+\end{align*}
+
+\end_inset
+
+Now that we have 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+,
+ we can use it in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TISE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ along with 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ to find 
+\begin_inset Formula $\ket{\psi_{1}}$
+\end_inset
+
+.
+ Write the time-independent Schrödinger equation for 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{1}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\hat{H}\ket{\psi_{1}} & =E_{1}\ket{\psi_{1}}\nonumber \\
+ & \downarrow\nonumber \\
+\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right]\left[\begin{array}{c}
+a\\
+b
+\end{array}\right] & =-\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\left[\begin{array}{c}
+a\\
+b
+\end{array}\right]\nonumber \\
+ & \downarrow\nonumber \\
+-\frac{\Delta}{2}a-\gamma b & =-a\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\label{eq:QCAEigVectRow01-1}\\
+-\gamma a+\frac{\Delta}{2}b & =-b\frac{1}{2}\sqrt{\Delta^{2}+4\gamma^{2}}\label{eq:QCAEigVectRow02-1}
+\end{align}
+
+\end_inset
+
+If we take 
+\begin_inset Formula $b=1$
+\end_inset
+
+,
+ then
+\begin_inset Formula 
+\begin{equation}
+a=\frac{\Delta+\sqrt{\Delta^{2}+4\gamma^{2}}}{2\gamma}\label{eq:QCATwoDotParameter_a-1}
+\end{equation}
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\ket{\psi_{0}}=\left[\begin{array}{c}
+a\\
+b
+\end{array}\right]=\left[\begin{array}{c}
+a\\
+1
+\end{array}\right]=a\ket{0}+\ket{1}.
+\]
+
+\end_inset
+
+We need to normalize this:
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi_{0}^{\prime}}=\frac{\ket{\psi_{0}}}{\sqrt{\braket{\psi_{0}|\psi_{0}}}}=\frac{1}{\sqrt{a^{2}+1}}\left[\begin{array}{c}
+a\\
+1
+\end{array}\right]\label{eq:NormalizedGroundState-1}
+\end{equation}
+
+\end_inset
+
+We could write the normalized ground state out in greater detail by substituting 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QCATwoDotParameter_a-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ into Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:NormalizedGroundState-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ but things would just get messier,
+ so let's not.
+ It can be shown that the probability of measuring 0 and 1 are as follows:
+\begin_inset Formula 
+\begin{align*}
+p\left(0\right) & =\frac{a^{2}}{a^{2}+1}=\frac{1}{2}\left(1+\frac{\Delta}{\sqrt{4\gamma^{2}+\Delta^{2}}}\right)\\
+p\left(1\right) & =\frac{1}{a^{2}+1}=\frac{1}{2}\left(1-\frac{\Delta}{\sqrt{4\gamma^{2}+\Delta^{2}}}\right)
+\end{align*}
+
+\end_inset
+
+Recall that we are using the quantum mechanics convention of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmayz"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ for 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\ket{\psi}=\ket{0}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We write 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ in their matrix representations in the computational basis:
+\begin_inset Formula 
+\[
+\ket{\psi}\leftrightarrow\left[\begin{array}{c}
+1\\
+0
+\end{array}\right];\qquad\mathbf{Z}\leftrightarrow\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]
+\]
+
+\end_inset
+
+Thus:
+\begin_inset Formula 
+\begin{align*}
+\braket{\mathbf{Z}} & =\left[\begin{array}{cc}
+1 & 0\end{array}\right]\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]=1
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\ket{\psi}=\ket{1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We write 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ in their matrix representations in the computational basis:
+\begin_inset Formula 
+\[
+\ket{\psi}\leftrightarrow\left[\begin{array}{c}
+0\\
+1
+\end{array}\right];\qquad\mathbf{Z}\leftrightarrow\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]
+\]
+
+\end_inset
+
+Thus:
+\begin_inset Formula 
+\begin{align*}
+\braket{\mathbf{Z}} & =\left[\begin{array}{cc}
+0 & 1\end{array}\right]\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]=-1
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.12
+\end_layout
+
+\begin_layout Plain Layout
+Calculate the (normalized) ground state,
+ 
+\begin_inset Formula $\ket{\psi_{0}^{\prime}}$
+\end_inset
+
+ of the molecule from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TwoDotStates"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ using Python.
+ Let 
+\begin_inset Formula $\gamma=0.05\;\text{eV}$
+\end_inset
+
+,
+ and choose different values of 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ over the domain 
+\begin_inset Formula $-0.5\;\text{eV}<\Delta<0.5\;\text{eV}$
+\end_inset
+
+.
+ For each value of 
+\begin_inset Formula $\Delta,$
+\end_inset
+
+ plot the polarization,
+ 
+\begin_inset Formula $P=\braket{\psi_{0}^{\prime}|\sigma_{z}|\psi_{0}^{\prime}}$
+\end_inset
+
+.
+ See Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DrivenCellHamiltonian-QMconvention"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QCATwoDotParameter_a"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:NormalizedGroundState"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The instructor solution is shown below:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/DrivenCellPython.png
+	width 42col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A Python calculation of the polarization of the ground state of a QCA cell as a function of the detuning 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ We compare the hand (analytic) calculation of the ground state polarization from Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:NormalizedGroundState"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ to a numeric calculation of the ground state polarization.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cell-Cell-Response-Python"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The Python code used to produce this figure is shown below.
+ We can observe that whenever 
+\begin_inset Formula $\Delta>0$
+\end_inset
+
+,
+ the QCA cell favors state 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+;
+ but,
+ when 
+\begin_inset Formula $\Delta<1$
+\end_inset
+
+,
+ the QCA cell favors state 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This makes sense because 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is the energy difference between states 1 and 0 for the cell (see Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Detuning"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ The cell prefers the lower-energy configuration.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os # for creating path names
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+sx = np.matrix([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+sz = np.matrix([[-1,
+ 0],
+ [0,
+ 1]]) # quantum mechanics convention
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+g = 0.05 # [eV] tunneling energy
+\end_layout
+
+\begin_layout Plain Layout
+
+nD = 51;
+ # number of Delta values
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Delta = np.linspace(-0.5,
+ 0.5,
+ nD) # [eV] bias (Delta) values)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Helper function
+\end_layout
+
+\begin_layout Plain Layout
+
+def expectation_val(Op,
+ state):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    This is a helper function to easily calculate the expectation
+\end_layout
+
+\begin_layout Plain Layout
+
+    value of an operator given a state.
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (np.asmatrix(state).H @ Op @ state)[0,0].real
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+P = np.zeros((nD,))
+\end_layout
+
+\begin_layout Plain Layout
+
+P_analytic = np.zeros((nD,))
+\end_layout
+
+\begin_layout Plain Layout
+
+for idx,
+ D in enumerate(Delta):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # print(idx)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # print(D)
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+    H = -g*sx + 0.5*D*sz
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # eigh gets the eigenvalues and eigenvectors
+\end_layout
+
+\begin_layout Plain Layout
+
+    En,
+ phi = np.linalg.eigh(H) # take the lowest value [ground state]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    phi_gs = phi[:,0] # this is a (2,) vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    phi_gs = phi_gs.reshape(-1,1) # convert to column vector,
+ i.e.,
+ (2,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    P[idx] = expectation_val(sz,
+ phi_gs)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    a = (D + np.sqrt(D**2 + 4*g**2))/(2*g);
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi_0_analytic = 1/np.sqrt(a**2+1)* np.matrix([[a],
+ [1]]);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    #  Manual calculation
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_analytic[idx] = expectation_val(sz,
+ psi_0_analytic)
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_gs = En[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# The FOR loop is over now because we
+\end_layout
+
+\begin_layout Plain Layout
+
+# dedented everything
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.plot(Delta,
+ P,
+ marker='o',
+ label='Numeric')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.plot(Delta,
+ P,
+ label='Analytic')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.xlabel('$
+\backslash
+Delta$ (eV)')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.ylabel('$P$')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+fig.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# os.path.join is a cross-platform way to
+\end_layout
+
+\begin_layout Plain Layout
+
+# make path names
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join('img',
+ 'DrivenCellPython.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(fname)
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'Saved plot as {fname}.')
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os # for creating path names
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+sx = np.matrix([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+sz = np.matrix([[-1,
+ 0],
+ [0,
+ 1]]) # quantum mechanics convention
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+g = 0.05 # [eV] tunneling energy
+\end_layout
+
+\begin_layout Plain Layout
+
+nD = 51;
+ # number of Delta values
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Delta = np.linspace(-0.5,
+ 0.5,
+ nD) # [eV] bias (Delta) values)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Helper function
+\end_layout
+
+\begin_layout Plain Layout
+
+def expectation_val(Op,
+ state):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    This is a helper function to easily calculate the expectation
+\end_layout
+
+\begin_layout Plain Layout
+
+    value of an operator given a state.
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (np.asmatrix(state).H @ Op @ state)[0,0].real
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+P = np.zeros((nD,))
+\end_layout
+
+\begin_layout Plain Layout
+
+P_analytic = np.zeros((nD,))
+\end_layout
+
+\begin_layout Plain Layout
+
+for idx,
+ D in enumerate(Delta):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # print(idx)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # print(D)
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+    H = -g*sx + 0.5*D*sz
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # eigh gets the eigenvalues and eigenvectors
+\end_layout
+
+\begin_layout Plain Layout
+
+    En,
+ phi = np.linalg.eigh(H) # take the lowest value [ground state]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    phi_gs = phi[:,0] # this is a (2,) vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    phi_gs = phi_gs.reshape(-1,1) # convert to column vector,
+ i.e.,
+ (2,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    P[idx] = expectation_val(sz,
+ phi_gs)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    a = (D + np.sqrt(D**2 + 4*g**2))/(2*g);
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi_0_analytic = 1/np.sqrt(a**2+1)* np.matrix([[a],
+ [1]]);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    #  Manual calculation
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_analytic[idx] = expectation_val(sz,
+ psi_0_analytic)
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_gs = En[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# The FOR loop is over now because we
+\end_layout
+
+\begin_layout Plain Layout
+
+# dedented everything
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.plot(Delta,
+ P,
+ marker='o',
+ label='Numeric')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.plot(Delta,
+ P,
+ label='Analytic')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.xlabel('$
+\backslash
+Delta$ (eV)')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.ylabel('$P$')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+fig.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# os.path.join is a cross-platform way to
+\end_layout
+
+\begin_layout Plain Layout
+
+# make path names
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join('img',
+ 'DrivenCellPython.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(fname)
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'Saved plot as {fname}.')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This calculates the ground state of a QCA molecule in Python.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:QCAGroundState.py"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The above exercise is important in QCA,
+ because we often want to solve for the ground state.
+\end_layout
+
+\begin_layout Itemize
+We assume that the circuit's ground state encodes the solution to a QCA calculation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In order to find the ground state from some excited state,
+ the circuit must lose energy to its environment
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is called relaxation or energy dissipation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+As we begin our quantum journey,
+ we need not (yet) worry about how the system relaxes to the ground state
+\end_layout
+
+\begin_layout Itemize
+Rather,
+ we will focus on calculating the ground state of a device or a circuit
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.13
+\end_layout
+
+\begin_layout Plain Layout
+Repeat Exercise 3.12,
+ but this time,
+ perform the calculation using simulated D-Wave hardware.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+TODO.
+ This solution hasn't been developed yet.
+ We need some help to do it!
+ This is low-priority at the moment,
+ since we are mostly interested right now in developing variational quantum algorithm (VQE) calculations.
+ For now,
+ it is important for the readers to understand the basics of quantum mechanics and quantum information processing.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.14
+\end_layout
+
+\begin_layout Plain Layout
+In Exercises 3.12 and 3.14,
+ we calculated the ground state of an isolated QCA cell,
+ setting 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ to a particular value each calculation.
+ But,
+ what determines the bias 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ between the two dots?
+ Several things could,
+ such as an external electric field,
+ or a nearby driver molecule.
+ Let's focus on a driver molecule and treat it as a classical system that determines 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ for a target cell through Coulomb repulsion.
+\end_layout
+
+\begin_layout Plain Layout
+In this exercise,
+ calculate 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ for the target molecule as a function of driver polarization,
+ 
+\begin_inset Formula $P_{drv}$
+\end_inset
+
+,
+ assuming the driver molecule placed a distance 
+\begin_inset Formula $a$
+\end_inset
+
+ away from the target molecule can have any polarization 
+\begin_inset Formula $-1\leq P_{drv}\leq1$
+\end_inset
+
+.
+ Also assume that each dot has a fixed (immobile) neutralizing charge of 
+\begin_inset Formula $+q_{e}/2$
+\end_inset
+
+ residing on each dot,
+ where 
+\begin_inset Formula $q_{e}$
+\end_inset
+
+ is the fundamental charge,
+ and the charge of an electron is 
+\begin_inset Formula $-q_{e}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment center
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/driven-two-dot-cell.png
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A neighboring driver molecule provides the classical bias,
+ 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ Fixed neutralizing charge of 
+\begin_inset Formula $+q_{e}/2$
+\end_inset
+
+ resides at each dot so that with one mobile electron,
+ each molecular cell is charge neutral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenDQD"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The graphic from our solution is shown in Figure ,
+ computed using the code of Listing .
+ The QCA cell insets were plotted using the 
+\begin_inset listings
+lstparams "language=Matlab,basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+drawDQD()
+\end_layout
+
+\end_inset
+
+ function of Listing .
+ We already know that 
+\begin_inset Formula $P_{drv}=1$
+\end_inset
+
+ means that the mobile electron occupies dot 1 for the driver,
+ and that 
+\begin_inset Formula $P_{drv}=-1$
+\end_inset
+
+ means that the electron occupies dot 0 for the driver.
+ What does a polarization 
+\begin_inset Formula $-1<P_{drv}<1$
+\end_inset
+
+ mean?
+ It means that the driver isn't in state 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ with absolute certainty,
+ and neither is it in state 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ with absolute certainty.
+ To calculate the effects of the driver cell charge on target cell,
+ we make the mean-field approximation.
+ This means that we assume that the overall electric field 
+\begin_inset Formula $\mathbf{E}_{drv}\left(\mathbf{r}\right)$
+\end_inset
+
+ created from the driver is a combination of the fields created from the driver in state 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and the driver in state 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+,
+ 
+\begin_inset Formula $\mathbf{E}_{drv}\left(\mathbf{r}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{E}_{drv,1}\left(\mathbf{r}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathbf{E}_{drv}=p_{drv}\left(0\right)\mathbf{E}_{drv,0}\left(\mathbf{r}\right)+p_{drv}\left(1\right)\mathbf{E}_{drv,1}\left(\mathbf{r}\right).
+\]
+
+\end_inset
+
+The linear combination of fields for each state 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is weighted by the probability 
+\begin_inset Formula $p_{drv}\left(\alpha\right)$
+\end_inset
+
+.
+ The rules of probability dictate that 
+\begin_inset Formula $p_{drv}\left(0\right)+p_{drv}\left(1\right)=1$
+\end_inset
+
+,
+ so we can eliminate,
+ say,
+ 
+\begin_inset Formula $p_{drv}\left(1\right)$
+\end_inset
+
+ and write
+\begin_inset Formula 
+\[
+\mathbf{E}_{drv}=p_{drv}\left(0\right)\mathbf{E}_{drv,0}\left(\mathbf{r}\right)+\left(1-p_{drv}\left(0\right)\right)\mathbf{E}_{drv,1}\left(\mathbf{r}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Recall that the potential energy between two charges 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{equation}
+U=q_{2}\mathbf{E}_{1}\left(\mathbf{r}_{2}\right)=\frac{q_{1}q_{2}}{4\pi\varepsilon_{0}\left|\mathbf{r}_{2}-\mathbf{r}_{1}\right|},\label{eq:ElectrostaticPotential}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{r}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{2}$
+\end_inset
+
+ are the position of 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+,
+ respectively,
+ and the field from charge 1 at some arbitrary point is
+\begin_inset Formula 
+\[
+\mathbf{E}_{1}\left(\mathbf{r}\right)=\frac{q_{1}}{4\pi\varepsilon_{0}\left|\mathbf{r}_{1}-\mathbf{r}\right|}
+\]
+
+\end_inset
+
+Now,
+ let 
+\begin_inset Formula $\mathbf{r}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{1}$
+\end_inset
+
+ be the positions of driver dots 0 and 1,
+ and 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ be an arbitrary position.
+ We can calculate the field at 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ due to the driver in the mean-field approximation:
+\begin_inset Formula 
+\begin{align*}
+\mathbf{E}_{drv}\left(\mathbf{r}\right) & =p_{drv}\left(0\right)\mathbf{E}_{drv,0}\left(\mathbf{r}\right)+p_{drv}\left(1\right)\mathbf{E}_{drv,1}\left(\mathbf{r}\right)\\
+ & =-\frac{p_{drv}\left(0\right)q_{e}}{4\pi\varepsilon_{0}\left|\mathbf{r}_{0}-\mathbf{r}\right|}-\frac{p_{drv}\left(1\right)q_{e}}{4\pi\varepsilon_{0}\left|\mathbf{r}_{1}-\mathbf{r}\right|}
+\end{align*}
+
+\end_inset
+
+Here,
+ we have negative signs because we're assuming we have a mobile driver electron of charge 
+\begin_inset Formula $-q_{e}$
+\end_inset
+
+.
+ In this mean-field approximation,
+ we can treat 
+\begin_inset Formula $-p_{drv}\left(0\right)q_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $-p_{drv}\left(1\right)q_{e}$
+\end_inset
+
+ as effective fractional electrons residing on dots 0 and 1.
+ In fact,
+ we can write these as a function of the driver polarization.
+ It can be shown that
+\begin_inset Formula 
+\[
+p_{drv}\left(0\right)=\frac{1}{2}\left(1-P_{drv}\right)\qquad\text{and}\qquad p_{drv}\left(0\right)=\frac{1}{2}\left(1+P_{drv}\right)
+\]
+
+\end_inset
+
+Now,
+ we can write an effective mobile charge on each dot:
+\begin_inset Formula 
+\[
+q_{0}=-\frac{1}{2}\left(1-P_{drv}\right)q_{e}\qquad\text{and}\qquad q_{1}=-\frac{1}{2}\left(1+P_{drv}\right)q_{e}.
+\]
+
+\end_inset
+
+Next,
+ we calculate the electrostatic potential 
+\begin_inset Formula $U_{0}$
+\end_inset
+
+ of an electron on dot 0 of the target cell.
+ The potential contribution 
+\begin_inset Formula $U_{0,\text{fnc}}$
+\end_inset
+
+ from the two neutralizing charges of the driver cell are
+\begin_inset Formula 
+\[
+U_{0,\text{fnc}}=\frac{q_{e}/2}{4\pi\varepsilon_{0}}\left(\frac{1}{a}\right)+\frac{q_{e}/2}{4\pi\varepsilon_{0}}\left(\frac{1}{a\sqrt{2}}\right)=\frac{q_{e}}{8\pi\varepsilon_{0}a}\left(1+\frac{1}{\sqrt{2}}\right)
+\]
+
+\end_inset
+
+We must also calculate the electrostatic potential energy 
+\begin_inset Formula $U_{0,\text{mc}}$
+\end_inset
+
+ for the electron on dot 0 of the target cell due to the mobile charge on both dots of the driver cell:
+\begin_inset Formula 
+\[
+U_{0,\text{mc}}=\overbrace{\frac{q_{e}q_{o}}{4\pi\varepsilon_{0}}\left(\frac{1}{a}\right)}^{\text{driver cell, dot 0}}+\overbrace{\frac{q_{e}q_{1}}{4\pi\varepsilon_{0}}\left(\frac{1}{a\sqrt{2}}\right)}^{\text{driver cell, dot 1}}
+\]
+
+\end_inset
+
+Thus,
+ we can now write the 
+\begin_inset Formula $\braket{0|\hat{H}|0}$
+\end_inset
+
+ term of the Hamiltonian:
+\begin_inset Formula 
+\[
+\braket{0|\hat{H}|0}=U_{0,\text{fnc}}+U_{0,\text{mc}}
+\]
+
+\end_inset
+
+We can repeat this analysis for 
+\begin_inset Formula $\braket{1|\hat{H}|1}=U_{1,\text{fnc}}+U_{1,\text{mc}}$
+\end_inset
+
+.
+ It can be shown that the potential energy on target cell dot 1 due to the fixed neutralizing charge is the same as the potential energy of the electron on dot zero:
+\begin_inset Formula 
+\begin{equation}
+U_{1,\text{fnc}}=U_{0,\text{fnc}}.\label{eq:DQD_FNC_potential}
+\end{equation}
+
+\end_inset
+
+Next,
+ we calculate the potential energy 
+\begin_inset Formula $U_{1,\text{mc}}$
+\end_inset
+
+ of the target cell electron to be on dot 1 of the target cell due to the mobile charge of the driver:
+ 
+\begin_inset Formula 
+\[
+U_{1,\text{mc}}=\frac{\left(-q_{e}\right)q_{0}}{4\pi\varepsilon_{0}}\left(\frac{1}{a\sqrt{2}}\right)+\frac{\left(-q_{e}\right)q_{1}}{4\pi\varepsilon_{0}}\left(\frac{1}{a}\right)
+\]
+
+\end_inset
+
+Thus,
+ if we want to calculate 
+\begin_inset Formula $\Delta,$
+\end_inset
+
+we have
+\begin_inset Formula 
+\begin{align}
+\Delta & =\braket{1|\hat{H}|1}-\braket{0|\hat{H}|0}=\cancel{U_{1,\text{fnc}}}+U_{1,\text{mc}}-\cancel{U_{0,\text{fnc}}}-U_{0,\text{mc}}\nonumber \\
+ & \stackrel{\left(\ref{eq:DQD_FNC_potential}\right)}{=}U_{1,\text{mc}}-U_{0,\text{mc}}\nonumber \\
+ & =\frac{\left(-q_{e}\right)q_{0}}{4\pi\varepsilon_{0}}\left(\frac{1}{a\sqrt{2}}\right)+\frac{\left(-q_{e}\right)q_{1}}{4\pi\varepsilon_{0}}\left(\frac{1}{a}\right)-\frac{\left(-q_{e}\right)q_{o}}{4\pi\varepsilon_{0}}\left(\frac{1}{a}\right)-\frac{\left(-q_{e}\right)q_{1}}{4\pi\varepsilon_{0}}\left(\frac{1}{a\sqrt{2}}\right)\nonumber \\
+ & =\frac{-q_{e}}{4\pi\varepsilon_{0}a}\left[q_{0}\left(\frac{1}{\sqrt{2}}-1\right)+q_{1}\left(1-\frac{1}{\sqrt{2}}\right)\right]\nonumber \\
+ & =\frac{-q_{e}}{4\pi\varepsilon_{0}a}\left[q_{1}-q_{0}\right]\left(1-\frac{1}{\sqrt{2}}\right)\nonumber \\
+ & =\frac{-q_{e}^{2}}{4\pi\varepsilon_{0}a}\left[\frac{1}{2}\left(\cancel{1}+P_{drv}\right)-\frac{1}{2}\left(\cancel{1}-P_{drv}\right)\right]\left(\frac{1}{\sqrt{2}}-1\right)\nonumber \\
+ & =\frac{-q_{e}^{2}P_{drv}}{4\pi\varepsilon_{0}a}\left(\frac{1}{\sqrt{2}}-1\right)=\kappa P_{drv},\label{eq:Delta_Pdrv}
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\begin{equation}
+\kappa=-\left(\frac{1}{\sqrt{2}}-1\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}=\left(1-\frac{1}{\sqrt{2}}\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}.\label{eq:KinkGeometricConstant}
+\end{equation}
+
+\end_inset
+
+Notice that everything in 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ is a physical or mathematical constant,
+ save 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Thus,
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ determines the value of 
+\begin_inset Formula $\kappa$
+\end_inset
+
+.
+ We can now calculate 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ and target cell polarization,
+ 
+\begin_inset Formula $P$
+\end_inset
+
+,
+ as a function of 
+\begin_inset Formula $P_{\text{drv}}$
+\end_inset
+
+,
+ which we write only in terms of geometric and physical constants:
+\begin_inset Formula 
+\begin{equation}
+\Delta\left(P_{\text{drv}}\right)=\left(1-\frac{1}{\sqrt{2}}\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}P_{\text{drv}}.\label{eq:Delta_Pdrv_explicit}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../Research/QuantComp/QMechQInfo/lyx/img/cell-cell-response-annotated_py.png
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Target cell polarization is plotted as a function of driver cell polarization,
+ 
+\begin_inset Formula $P_{\text{drv}}$
+\end_inset
+
+.
+ The driver is shown with a blue mobile charge,
+ and the target cell is shown with a red mobile charge.
+\begin_inset CommandInset label
+LatexCommand label
+name "subfig:pythonDrivenDQDdiag-annotated"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import os,
+ sys
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.qca.fourdotcell import FourDotCell as fdc
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.qca.qcacircuit import QCACircuit as qckt
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import constants as const
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import linearalgebra as la
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import computing as qc
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import visualization as viz
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+# Pauli matrices
+\end_layout
+
+\begin_layout Plain Layout
+
+# Note:
+ Sz is in the quantum computing convention
+\end_layout
+
+\begin_layout Plain Layout
+
+Sx,
+ Sy,
+ Sz = qc.Sx,
+ qc.Sy,
+ qc.Sz
+\end_layout
+
+\begin_layout Plain Layout
+
+I = Sz@Sz
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qe = const.qe # [C] fundamental charge
+\end_layout
+
+\begin_layout Plain Layout
+
+eps0 = const.eps0 # [F/m] = [C/V*m]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0,
+ ket1 = qc.ket0,
+ qc.ket1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ketMinus = (1/np.sqrt(2)) * (ket0 - ket1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+a = 1E-9 # [m] cell characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# I took out a factor of qe so that we end up 
+\end_layout
+
+\begin_layout Plain Layout
+
+# with units of eV
+\end_layout
+
+\begin_layout Plain Layout
+
+kappa = qe /(4* np.pi* eps0 *a)*(1 -1/np.sqrt(2)) # [eV]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+g = 0.05 # [eV] tunneling energy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+D = kappa*1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nPd = 35
+\end_layout
+
+\begin_layout Plain Layout
+
+Pdrv = np.linspace(-1,
+ 1,
+ nPd)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Ptgt = np.zeros((nPd,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for iPd,
+ Pd in enumerate(Pdrv):
+\end_layout
+
+\begin_layout Plain Layout
+
+    D = Pd * kappa
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Reference calculation - diagonalization
+\end_layout
+
+\begin_layout Plain Layout
+
+    H = -g*Sx - 0.5*D*Sz
+\end_layout
+
+\begin_layout Plain Layout
+
+    E0,
+ psi0_ref = la.ground_state(H)
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ptgt[iPd] = la.expectation_value( -Sz,
+ psi0_ref )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Upper left inset
+\end_layout
+
+\begin_layout Plain Layout
+
+Pd,
+ Pt = -1,
+ 1
+\end_layout
+
+\begin_layout Plain Layout
+
+ins_ul_name = os.path.join('img',
+ f'inset_driven_dqd_{Pd}_{Pt}.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+viz.draw_driven_dqd( [Pd,
+ Pt],
+ ins_ul_name )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Lower right inset
+\end_layout
+
+\begin_layout Plain Layout
+
+Pd,
+ Pt = 1,
+ -1
+\end_layout
+
+\begin_layout Plain Layout
+
+ins_lr_name = os.path.join('img',
+ f'inset_driven_dqd_{Pd}_{Pt}.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+viz.draw_driven_dqd( [Pd,
+ Pt],
+ ins_lr_name )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots() 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.plot(Pdrv.flatten(),
+ Ptgt,
+ marker='o')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.set_xlim(-1,
+ 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Add inset images
+\end_layout
+
+\begin_layout Plain Layout
+
+inset_w,
+ inset_h = 0.25,
+ 0.25
+\end_layout
+
+\begin_layout Plain Layout
+
+inset_ul = viz.add_inset_image( ax,
+ 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                        [0.05,
+ 0.625,
+ inset_w,
+ inset_h],
+\end_layout
+
+\begin_layout Plain Layout
+
+                        ins_ul_name )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inset_lr = viz.add_inset_image( ax,
+ 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                        [0.7,
+ 0.125,
+ inset_w,
+ inset_h],
+\end_layout
+
+\begin_layout Plain Layout
+
+                        ins_lr_name )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.set_xlabel(r'$P_{drv}$',
+ fontsize=20,
+ fontname='Times')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.set_ylabel(r'$P_{tgt}$',
+ fontsize=20,
+ fontname='Times')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join( 'img',
+ 'cell-cell-response-annotated_py.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( fname )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This calculates the ground state of a QCA molecule in Python.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:two-dot-QCA-cell"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.15
+\end_layout
+
+\begin_layout Plain Layout
+Determine the cost of a bit flip,
+ given a fully-polarized driver.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Suppose that 
+\begin_inset Formula $P_{\text{drv}}=1$
+\end_inset
+
+.
+ Then,
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta_Pdrv_explicit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ gives us
+\begin_inset Formula 
+\[
+\Delta\left(1\right)=\left(1-\frac{1}{\sqrt{2}}\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}\left(1\right).
+\]
+
+\end_inset
+
+Because all the physical parameters and geometric constants are positive and 
+\begin_inset Formula $1-1/\sqrt{2}>0$
+\end_inset
+
+,
+ it must be that 
+\begin_inset Formula $\Delta>0$
+\end_inset
+
+.
+ What does this mean?
+ Recall that 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is the potential energy by which 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ is higher than 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+ This indicates to us that state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ is the preferred state for the target cell is if 
+\begin_inset Formula $P_{\text{drv}}=1$
+\end_inset
+
+,
+ and state 1 is 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ higher than state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+ In other words,
+ 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is the amount of energy which must be added to the system to force the target cell to take state 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+On the other hand,
+ if 
+\begin_inset Formula $P_{\text{drv}}=-1$
+\end_inset
+
+,
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta_Pdrv_explicit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ gives us
+\begin_inset Formula 
+\[
+\Delta\left(-1\right)=-\left(1-\frac{1}{\sqrt{2}}\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}.
+\]
+
+\end_inset
+
+This means that 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ is energetically higher than 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ by 
+\begin_inset Formula $\Delta\left(-1\right)$
+\end_inset
+
+ when 
+\begin_inset Formula $P_{\text{drv}}=-1$
+\end_inset
+
+.
+ We must still excite the target cell by 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ in order to make it occupy the state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ under these circumstances.
+ In either case,
+ the energy required to flip the target cell is the same,
+ and we can interpret it as the cost of a bit flip.
+ This is an important energy in the study of QCA,
+ and we call it the kink energy,
+\begin_inset Formula 
+\begin{equation}
+E_{k}=\left(1-\frac{1}{\sqrt{2}}\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}.\label{eq:KinkEnergy}
+\end{equation}
+
+\end_inset
+
+We see here that two-dot QCA cells in the configuration of the driver-target system prefer to anti-align.
+ If we were to make two adjacent cells align,
+ this is called a kink,
+ hence the term kink energy.
+ For a cell with 
+\begin_inset Formula $a=1\;\text{nm}$
+\end_inset
+
+,
+ we calculate 
+\begin_inset Formula $E_{k}=421\;\text{meV}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

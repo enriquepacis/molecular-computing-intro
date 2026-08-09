@@ -1,0 +1,2588 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Itemize
+You've already experience the Schrödinger equation,
+\begin_inset Formula 
+\[
+\hat{H}\ket{\psi_{n}}=E_{n}\ket{\psi_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In QCA,
+ we're often interested in the ground state,
+ which is the lowest allowed energy of the quantum system
+\end_layout
+
+\begin_layout Itemize
+Classically,
+ we find the ground state by diagonalizing the Hamiltonian and finding its lowest eigenenergy,
+ 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+E_{0}=\Braket{\psi_{0}|\hat{H}|\psi_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This corresponds to the global minimum energy
+\end_layout
+
+\begin_layout Itemize
+We call 
+\begin_inset Formula $\ket{\psi_{0}}$
+\end_inset
+
+ the 
+\series bold
+ground state
+\series default
+,
+ since it has the 
+\series bold
+lowest allowed energy
+\series default
+,
+ 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 4.1
+\end_layout
+
+\begin_layout Plain Layout
+Suppose we pick some 
+\begin_inset Formula $\ket{\psi}\neq\ket{\psi_{0}}$
+\end_inset
+
+.
+ How will the energy 
+\begin_inset Formula $E=\Braket{\psi|\hat{H}|\psi}$
+\end_inset
+
+ compare to 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+ must be greater than 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+,
+ since 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+ is the lowest allowed energy of the system.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When quantum systems get large,
+ the problem size gets large.
+ Consider the following:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a single QCA molecule,
+ the state vector is a two-dimensional vector with a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ Hamiltonian:
+\begin_inset Formula 
+\[
+\ket{\psi}=\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right],\qquad\hat{H}=\left[\begin{array}{cc}
+H_{00} & H_{01}\\
+H_{10} & H_{11}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For two QCA molecules,
+ the state vector is 
+\begin_inset Formula $2^{2}=4$
+\end_inset
+
+ dimensional,
+ with a four-dimensional Hamiltonian
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $N$
+\end_inset
+
+ QCA molecules,
+ the state vector is 
+\begin_inset Formula $2^{N}$
+\end_inset
+
+ dimensional,
+ with a 
+\begin_inset Formula $2^{N}\times2^{N}$
+\end_inset
+
+ Hamiltonian
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+When the problem size becomes large,
+ it may be advantageous to avoid diagonalizing 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is where the variational quantum eigensolver (VQE) algorithm comes into play
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The VQE algorithm uses three key steps:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A parametric quantum circuit to transform 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Measurement is used to calculate system energy for a quantum system 
+\begin_inset Formula 
+\[
+E=\Braket{\psi|\hat{H}|\psi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $E>E_{0}$
+\end_inset
+
+,
+ then we haven't found the ground state energy
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since,
+ in a VQE problem,
+ we may not know the ground state,
+ we don't necessarily know whether 
+\begin_inset Formula $E$
+\end_inset
+
+ is the ground state or not
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We can try another wave function 
+\begin_inset Formula $\ket{\psi^{\prime}}$
+\end_inset
+
+,
+ and compare its energy 
+\begin_inset Formula $E^{\prime}$
+\end_inset
+
+ to 
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $E>E^{\prime}$
+\end_inset
+
+ for some new energy 
+\begin_inset Formula $E^{\prime}$
+\end_inset
+
+,
+ the we know that 
+\begin_inset Formula $E$
+\end_inset
+
+ is not the ground state,
+ since we found an 
+\begin_inset Formula $E^{\prime}<E$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We don't know whether 
+\begin_inset Formula $E^{\prime}$
+\end_inset
+
+ is the ground state or not,
+ so we can check another energy 
+\begin_inset Formula $\ket{\psi^{\prime\prime}}$
+\end_inset
+
+ and its energy 
+\begin_inset Formula $E^{\prime\prime}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+A classical optimizer modifies the parametric quantum circuit to generate a new 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The procedure repeats until it finds a minimum 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 4.2
+\end_layout
+
+\begin_layout Plain Layout
+A parametric quantum circuit.
+ Consider the transformation of 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ to state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi}=\mathbf{R}_{z}\left(\theta_{z}\right)\mathbf{R}_{x}\left(\theta_{x}\right)\ket{0}.\label{eq:DrivenQCA-Ansatz}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find a combination of 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{z}$
+\end_inset
+
+ so that 
+\begin_inset Formula $\ket{\psi}=\ket{1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+lyx2org_list_scope:
+ subordinate
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>There are multiple solutions,
+ but 
+\begin_inset Formula $\theta_{x}=\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{z}=0$
+\end_inset
+
+ could be used.
+ Here is some code to illustrate this:
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import os,
+ sys
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Add path to QuantumInfoTools
+\end_layout
+
+\begin_layout Plain Layout
+
+cwd = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+pydir = os.path.join(cwd,
+ 'python')
+\end_layout
+
+\begin_layout Plain Layout
+
+sys.path.append(pydir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit.visualization import plot_bloch_vector
+\end_layout
+
+\begin_layout Plain Layout
+
+import QuantumInfoTools as qit
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from QuantumInfoTools import I,
+ H,
+ X,
+ Y,
+ Z,
+ sigma
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = qit.Rx(np.pi) @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kets = [ ket0,
+ ket1 ] # make a list of kets - for iteration
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+vects = [ qit.BlochVector(ket) for ket in kets ] # make list of Bloch vectors
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+labels = ['ket 0',
+ 'ket 1']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# fig and ax help us decorate the Bloch sphere
+\end_layout
+
+\begin_layout Plain Layout
+
+fig = plt.figure()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax = fig.add_subplot(111,projection = '3d')
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_bloch_vector( vects,
+ ax=ax )
+\end_layout
+
+\begin_layout Plain Layout
+
+for idx,
+ vect in enumerate(vects):
+\end_layout
+
+\begin_layout Plain Layout
+
+    qit.labelPoint( ax,
+ vect,
+ labels[idx] )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( os.path.join('img',
+ 'ExerciseTransform0to1.png') )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This code converts a ket to a density operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ExerciseTransform0to1.png
+	width 42.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transform 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ using 
+\begin_inset Formula $\mathbf{R}_{z}\left(0\right)\mathbf{R}_{x}\left(\pi\right)$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ket0toket1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find a combination of 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{z}$
+\end_inset
+
+ so that 
+\begin_inset Formula $\ket{\psi}=\ket{-}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+lyx2org_list_scope:
+ subordinate
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>There are multiple solutions,
+ but 
+\begin_inset Formula $\theta_{x}=\pi/2$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{z}=3\pi/2$
+\end_inset
+
+ could be used.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import os,
+ sys
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Add path to QuantumInfoTools
+\end_layout
+
+\begin_layout Plain Layout
+
+cwd = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+pydir = os.path.join(cwd,
+ 'python')
+\end_layout
+
+\begin_layout Plain Layout
+
+sys.path.append(pydir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit.visualization import plot_bloch_vector
+\end_layout
+
+\begin_layout Plain Layout
+
+import QuantumInfoTools as qit
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from QuantumInfoTools import I,
+ H,
+ X,
+ Y,
+ Z,
+ sigma
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ketMinus = qit.Rz(3*np.pi/2) @ qit.Rx(np.pi/2) @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kets = [ ket0,
+ ketMinus ] # make a list of kets - for iteration
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+vects = [ qit.BlochVector(ket) for ket in kets ] # make list of Bloch vectors
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+labels = ['ket 0',
+ 'ket -']
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# fig and ax help us decorate the Bloch sphere
+\end_layout
+
+\begin_layout Plain Layout
+
+fig = plt.figure()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax = fig.add_subplot(111,projection = '3d')
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_bloch_vector( vects,
+ ax=ax )
+\end_layout
+
+\begin_layout Plain Layout
+
+for idx,
+ vect in enumerate(vects):
+\end_layout
+
+\begin_layout Plain Layout
+
+    qit.labelPoint( ax,
+ vect,
+ labels[idx] )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( os.path.join('img',
+ 'ExerciseTransform0toMinus.png') )
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This code converts a ket to a density operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-2-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ExerciseTransform0toMinus.png
+	width 42.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transform 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ket{-}$
+\end_inset
+
+ using 
+\begin_inset Formula $\mathbf{R}_{z}\left(3\pi/2\right)\mathbf{R}_{x}\left(\pi/2\right)$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ket0toket1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hopefully,
+ we now recognize that we can transform 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ into any quantum state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ using only 
+\begin_inset Formula $\mathbf{R}_{z}\left(\theta_{z}\right)\mathbf{R}_{x}\left(\theta_{x}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All the information about our arbitrary transformation 
+\begin_inset Formula $\mathbf{R}_{z}\left(\theta_{z}\right)\mathbf{R}_{x}\left(\theta_{x}\right)$
+\end_inset
+
+ is contained in the two parameters,
+ 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{z}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ our circuit is called a 
+\series bold
+parametric quantum circuit
+\series default
+,
+ since what it does depends on the parameters 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{z}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+For a more compact notation,
+ we sometimes define a parameter vector,
+ 
+\begin_inset Formula $\vec{\theta}=\left(\theta_{x},\theta_{z}\right)$
+\end_inset
+
+ andrefer to our parameters collectively as 
+\begin_inset Formula $\vec{\theta}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is one part of the VQE process:
+ a parametric circuit,
+ called an 
+\series bold
+ansatz
+\series default
+,
+ transforms our standard quantum state,
+ 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+,
+ into some other state,
+ 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ called a 
+\series bold
+trial solution
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We often use the symbol 
+\begin_inset Formula $\mathbf{U}\left(\vec{\theta}\right)$
+\end_inset
+
+ to reference our parametric quantum circuit,
+ so that the process by which we transform 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AnsatzOnly"
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/parametric-quantum-circuit.png
+	width 42.5col%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (-2*
+\backslash
+dx,0) (q1) {
+\backslash
+color{blue} $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (0,0) {$
+\backslash
+mathbf{U} 
+\backslash
+left(
+\backslash
+vec{
+\backslash
+theta} 
+\backslash
+right)$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {
+\backslash
+color{blue} $
+\backslash
+ket{
+\backslash
+psi}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An ansatz circuit prepares a trial wave function,
+ 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AnsatzOnly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Building Quantum Circuits in Qiskit
+\end_layout
+
+\begin_layout Itemize
+Now,
+ we will learn to build quantum circuits in Qiskit
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To replicate the following activities,
+ you will need the following Python packages:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+qiskit
+\end_layout
+
+\begin_layout Itemize
+pylatexenc
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Our first circuit will be nothing more than a quantum wire
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Example 4.1
+\end_layout
+
+\begin_layout Plain Layout
+Build a single quantum wire in qiskit.
+\begin_inset CommandInset label
+LatexCommand label
+name "exa:QiskitWireOnly"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit import QuantumCircuit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# create a one-qubit circuit
+\end_layout
+
+\begin_layout Plain Layout
+
+qc = QuantumCircuit(1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   Note 1:
+ if you are using Jupyter Lab,
+ you won't
+\end_layout
+
+\begin_layout Plain Layout
+
+   need the option filename in qc.draw().
+ I use it
+\end_layout
+
+\begin_layout Plain Layout
+
+   here because I want to save the image to put it
+\end_layout
+
+\begin_layout Plain Layout
+
+   in my pdf.
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# visualize the quantum circuit
+\end_layout
+
+\begin_layout Plain Layout
+
+qc.draw(output='mpl',style='clifford',
+\end_layout
+
+\begin_layout Plain Layout
+
+    filename='img/qiskit-quantum-wire.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   Note 2:
+ in a Jupyter Lab notebook,
+ qc.draw() and
+\end_layout
+
+\begin_layout Plain Layout
+
+   many other visuzlization functions show their output
+\end_layout
+
+\begin_layout Plain Layout
+
+   if they are the last line in a code cell.
+ If not the
+\end_layout
+
+\begin_layout Plain Layout
+
+   last line,
+ you can force the visualization on your
+\end_layout
+
+\begin_layout Plain Layout
+
+   Jupyter notebook by enclosing the visualization
+\end_layout
+
+\begin_layout Plain Layout
+
+   command within the display command,
+ i.e.,
+\end_layout
+
+\begin_layout Plain Layout
+
+       display( qc.draw( ...
+ ) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This Python creates a simple circuit (wire only) in qiskit.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-2-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qiskit-quantum-wire.png
+	width 20col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Single-Wire-Circuit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Example 4.2
+\end_layout
+
+\begin_layout Plain Layout
+Build a single quantum wire with a NOT gate in qiskit.
+\begin_inset CommandInset label
+LatexCommand label
+name "exa:QiskitWireNOT"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit import QuantumCircuit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# create a one-qubit circuit
+\end_layout
+
+\begin_layout Plain Layout
+
+qc = QuantumCircuit(1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qc.x(0) # add a NOT gate to qubit 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# visualize the quantum circuit
+\end_layout
+
+\begin_layout Plain Layout
+
+qc.draw(output='mpl',style='clifford',
+\end_layout
+
+\begin_layout Plain Layout
+
+    filename='img/qiskit-quantum-wire-not.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This Python creates a simple circuit (wire only) in qiskit.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-2-2-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qiskit-quantum-wire-not.png
+	width 20col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Single-Wire-Circuit-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Example 4.3
+\end_layout
+
+\begin_layout Plain Layout
+Use qiskit to measure the state of the circuit from Example 4.3.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Graphic :noexport:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Python Code for Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitBA"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ (single-qubit timeline with operators).
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'parametric-quantum-circuit'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (-2*
+\backslash
+dx,0) (q1) {
+\backslash
+color{blue} $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (0,0) {$
+\backslash
+mathbf{U} 
+\backslash
+left(
+\backslash
+vec{
+\backslash
+theta} 
+\backslash
+right)$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {
+\backslash
+color{blue} $
+\backslash
+ket{
+\backslash
+psi}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

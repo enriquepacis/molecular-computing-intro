@@ -1,0 +1,7821 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Open System Dynamics using the Lindblad Equation
+\end_layout
+
+\begin_layout Itemize
+One way to treat dissipation in a quantum system is to use the Lindblad equation
+\begin_inset Formula 
+\begin{equation}
+\frac{d\hat{\rho}}{dt}=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}\right]+\sum_{j}\hat{L}_{j}\hat{\rho}\hat{L}_{j}^{\dagger}-\frac{1}{2}\left\{ \hat{L}_{j}^{\dagger}\hat{L}_{j},\hat{\rho}\right\} ,\label{eq:Lindblad}
+\end{equation}
+
+\end_inset
+
+where the operators 
+\begin_inset Formula $\left\{ \hat{L}_{j}\right\} $
+\end_inset
+
+ are called Lindblad operators or dissipation channels
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As before,
+ 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is the Hamiltonian and 
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+ is the density operator
+\end_layout
+
+\begin_layout Itemize
+This is a matrix differential equation,
+ like the quantum Liouville equation [see Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QuantumLiouville"
+nolink "false"
+
+\end_inset
+
+)].
+\end_layout
+
+\begin_layout Itemize
+The Lindblad equation contains a term called the Liouvillian,
+ which is the right-hand side of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QuantumLiouville"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This part is said to be the unitary part or the Liouvillian part
+\end_layout
+
+\begin_layout Itemize
+It is responsible for the unitary (closed-system) dynamics of a quantum state
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Lindblad"
+nolink "false"
+
+\end_inset
+
+) also has an additional term,
+ called the Lindbladian or the dissipator:
+\begin_inset Formula 
+\begin{equation}
+\mathcal{D}=\sum_{j}\hat{L}_{j}\hat{\rho}\hat{L}_{j}^{\dagger}-\frac{1}{2}\left\{ \hat{L}_{j}^{\dagger}\hat{L}_{j},\hat{\rho}\right\} \label{eq:Dissipator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Lindbladian is responsible for the non-unitary dynamics of a model
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The effects of the environment on the system are contained within the Lindblad operators
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A specific choice of the Lindblad operators is a specific model for the environment
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Lindblad Operators for the Quantum Harmonic Oscillator - Dissipation (Relaxation)
+\end_layout
+
+\begin_layout Itemize
+For the quantum harmonic oscillator,
+ we can use a single Lindblad operator,
+\begin_inset Formula 
+\[
+\left\{ \hat{L}_{1}\right\} =\left\{ \frac{1}{\sqrt{T_{1}}}\hat{a}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This causes an 
+\series bold
+exponential decay in system energy
+\series default
+ with time constant 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ is a measure of system-environment coupling:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A short 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ allows a fast exponential decay,
+ meaning the environment and our quantum system are strongly coupled
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Energy decay means that the system can lose energy
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ the system is said to be an open system
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The loss of energy is also called 
+\series bold
+relaxation
+\series default
+,
+ since the system relaxes from a high-energy state toward the ground state
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The loss of energy is also called energy 
+\series bold
+dissipation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+After applying this operator for a long time,
+ we should expect to find the system in its ground state
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The code below calculates the time evolution of a QHO under relaxation,
+ and results are shown in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-2-1"
+
+\end_inset
+
+ (position basis) and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-3-1"
+
+\end_inset
+
+ (energy basis)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.harmonicoscillator import HarmonicOscillator as QHO
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import linearalgebra as la
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import constants as const
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.timeevolution import quantum_liouville,
+ lindblad
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# select the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+start = 'coherent'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 500
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create a QHO object
+\end_layout
+
+\begin_layout Plain Layout
+
+# Uses default m = 6 amu and f = 300 inv cm
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc = QHO(N=N)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X0 = qosc.Q0 # [nm] characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T = qosc.T # [s] oscillation period
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form Lindblad operators
+\end_layout
+
+\begin_layout Plain Layout
+
+#   The relaxation time is chosen to be 2*T
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc.make_lindblad_operators( 2*T,
+ type='relaxation' )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 8*T,
+ nt).flatten()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage arrays
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE = np.zeros([N,
+ nt]) # prob dist over energy
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX = np.zeros([N,
+ nt]) # prob dist over position
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Prepare the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+if start == 'eigenstate':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'coherent':
+\end_layout
+
+\begin_layout Plain Layout
+
+    d = 1 + 1j # displacement
+\end_layout
+
+\begin_layout Plain Layout
+
+    D = qosc.displacement_operator(d)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Recall that D|0> "selects" the first column of D
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = D @ qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'arbitrary':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = la.normalize( qosc.energy_state(1) + qosc.energy_state(2) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Exponential time evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+for it,
+ tt in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ut = sp.linalg.expm(-1j * qosc.H * tt / const.hbar )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = Ut @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+    psitX = qosc.change_basis(psit,
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE[:,it] = la.state_to_probability(psit).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX[:,it] = la.state_to_probability(psitX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et[it] = la.expectation_value( qosc.H,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt[it] = la.expectation_value( qosc.X,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tt,
+ xx = np.meshgrid(t.flatten()/qosc.T,
+ qosc.Xval,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+_,
+ EE = np.meshgrid(t.flatten()/T,
+ qosc.Eval/qosc.hw,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_class_test_evolution_unitary_PD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Quantum Liouville evolution    
+\end_layout
+
+\begin_layout Plain Layout
+
+from odeintw import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = la.density_matrix(psi0) # form a density operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Integrate the solution
+\end_layout
+
+\begin_layout Plain Layout
+
+# odeintw produces an array sol
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Each element of sol is the density matrix at a
+\end_layout
+
+\begin_layout Plain Layout
+
+#   particular time
+\end_layout
+
+\begin_layout Plain Layout
+
+# Extract expectation values after calling odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(quantum_liouville,
+ rho0,
+ t,
+ args=(qosc.H,) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_liou = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_liou = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_liou = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_liou = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_liou[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_liou[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_liou[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_liou[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+# Postprocessing
+\end_layout
+
+\begin_layout Plain Layout
+
+print(type(sol))
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sol.shape)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Lindblad evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(lindblad,
+ rho0,
+ t,
+\end_layout
+
+\begin_layout Plain Layout
+
+     args=(qosc.H,
+ qosc.LindbladOps))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_lind = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_lind = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_lind = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_lind = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_lind[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_lind[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_lind[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_lind[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ xx/qosc.Q0,
+ PDX_liou,
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Xt_liou/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$X/X_0$ (Closed)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ xx/X0,
+ PDX_lind,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Xt_lind/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$X/X_0$ (Open)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_unitary_vs_lind_XPD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ EE,
+ PDE_liou,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Et_liou/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylim(0.5,
+ 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (Closed)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ EE,
+ PDE_lind,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et_lind/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylim(0.5,
+ 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (Open)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_unitary_vs_lind_EPD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_unitary_vs_lind_XPD.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The QHO modeled using the quantum Liouville equation behaves as a closed-system (top),
+ in which oscillations persist forever.
+ In the case of Lindblad evolution,
+ however,
+ damping is evident as oscillations decrease in amplitude with time (bottom).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-2-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_unitary_vs_lind_EPD.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+In the energy basis,
+ Liouvillian evolution conserves energy,
+ but an exponential decrease in energy is evident in the open system modeled using the Lindblad equation.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-3-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{LiveCode}{Python}{This uses numpy to calculate the time evolution of the QHO using the quantum Liouville equation and the Lindblad equation.}{python/qho-dynamics-closed-vs-open.py}
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Now we import from a custom module I wrote
+\end_layout
+
+\begin_layout Plain Layout
+
+# These are found in the directory "../org/PyQCA/"
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd() # bookmark this working directory
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir('..')
+\end_layout
+
+\begin_layout Plain Layout
+
+parentdir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+toolsdir = os.path.join( parentdir,
+ 'org',
+ 'PyQCA')
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(toolsdir) # Change to the PyQCA directory
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.harmonicoscillator import HarmonicOscillator as QHO
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import linearalgebra as la
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import constants as const
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.timeevolution import quantum_liouville,
+ lindblad
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# select the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+start = 'coherent'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 150
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create a QHO object
+\end_layout
+
+\begin_layout Plain Layout
+
+# Uses default m = 6 amu and f = 300 inv cm
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc = QHO(N=N)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X0 = qosc.Q0 # [nm] characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T = qosc.T # [s] oscillation period
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form Lindblad operators
+\end_layout
+
+\begin_layout Plain Layout
+
+#   The relaxation time is chosen to be 2*T
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc.make_lindblad_operators( 2*T,
+ type='relaxation' )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 8*T,
+ nt).flatten()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage arrays
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE = np.zeros([N,
+ nt]) # prob dist over energy
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX = np.zeros([N,
+ nt]) # prob dist over position
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Prepare the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+if start == 'eigenstate':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'coherent':
+\end_layout
+
+\begin_layout Plain Layout
+
+    d = 1 + 1j # displacement
+\end_layout
+
+\begin_layout Plain Layout
+
+    D = qosc.displacement_operator(d)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Recall that D|0> "selects" the first column of D
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = D @ qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'arbitrary':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = la.normalize( qosc.energy_state(1) + qosc.energy_state(2) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Exponential time evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+for it,
+ tt in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ut = sp.linalg.expm(-1j * qosc.H * tt / const.hbar )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = Ut @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+    psitX = qosc.change_basis(psit,
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE[:,it] = la.state_to_probability(psit).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX[:,it] = la.state_to_probability(psitX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et[it] = la.expectation_value( qosc.H,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt[it] = la.expectation_value( qosc.X,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tt,
+ xx = np.meshgrid(t.flatten()/qosc.T,
+ qosc.Xval,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+_,
+ EE = np.meshgrid(t.flatten()/T,
+ qosc.Eval/qosc.hw,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_class_test_evolution_unitary_PD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Quantum Liouville evolution    
+\end_layout
+
+\begin_layout Plain Layout
+
+from odeintw import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = la.density_matrix(psi0) # form a density operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Integrate the solution
+\end_layout
+
+\begin_layout Plain Layout
+
+# odeintw produces an array sol
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Each element of sol is the density matrix at a
+\end_layout
+
+\begin_layout Plain Layout
+
+#   particular time
+\end_layout
+
+\begin_layout Plain Layout
+
+# Extract expectation values after calling odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(quantum_liouville,
+ rho0,
+ t,
+ args=(qosc.H,) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_liou = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_liou = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_liou = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_liou = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_liou[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_liou[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_liou[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_liou[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+# Postprocessing
+\end_layout
+
+\begin_layout Plain Layout
+
+print(type(sol))
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sol.shape)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Lindblad evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(lindblad,
+ rho0,
+ t,
+\end_layout
+
+\begin_layout Plain Layout
+
+     args=(qosc.H,
+ qosc.LindbladOps))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_lind = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_lind = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_lind = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_lind = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_lind[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_lind[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_lind[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_lind[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ xx/qosc.Q0,
+ PDX_liou,
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Xt_liou/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$X/X_0$ (Closed)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ xx/X0,
+ PDX_lind,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Xt_lind/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$X/X_0$ (Open)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_unitary_vs_lind_XPD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ EE,
+ PDE_liou,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Et_liou/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylim(0.5,
+ 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (Closed)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ EE,
+ PDE_lind,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et_lind/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylim(0.5,
+ 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (Open)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_unitary_vs_lind_EPD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{LiveCode}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dynamics calculated using the Lindblad equation reflect damping and dissipation.
+ (a) The QHO modeled using the quantum Liouville equation behaves as a closed-system,
+ in which oscillations persist forever.
+ In the case of Lindblad evolution,
+ however,
+ damping is evident as oscillations decrease in amplitude with time.
+ (b) In the energy basis,
+ Liouvillian evolution conserves energy,
+ but an exponential decrease in energy is evident in the open system modeled using the Lindblad equation.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-coherent-vs-lindblad"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lindblad Operators for the Quantum Harmonic Oscillator - Thermalization
+\end_layout
+
+\begin_layout Itemize
+Another option for the QHO is to use a pair of Lindblad operators,
+\begin_inset Formula 
+\[
+\left\{ \hat{L}_{1},\hat{L}_{2}\right\} =\left\{ \frac{1}{\sqrt{T_{1}}}\hat{a},\frac{1}{\sqrt{T_{1}}}e^{-\frac{\hbar\omega}{k_{B}T}}\hat{a}^{\dagger}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ the second Lindblad operator is proportional to the raising operator,
+ 
+\begin_inset Formula $\hat{a}^{\dagger}$
+\end_inset
+
+,
+ so we should expect it to excite the system (adding energy)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The second Lindblad operator,
+ 
+\begin_inset Formula $\hat{L}_{2}$
+\end_inset
+
+,
+ has an additional (small) weight of 
+\begin_inset Formula $e^{-\frac{\hbar\omega}{2k_{B}T}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This maintains relaxation via 
+\begin_inset Formula $\hat{L}_{1}$
+\end_inset
+
+ as the dominant effect,
+ but models the fact that the system can be excited by thermal energy in the environment at temperature 
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the limit of 
+\begin_inset Formula $T\rightarrow0$
+\end_inset
+
+,
+ the operator 
+\begin_inset Formula $\hat{L}_{2}\rightarrow0$
+\end_inset
+
+,
+ so that we have relaxation,
+ as in the previous case
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The code below calculates the time evolution of a QHO under thermalization,
+ and results are shown in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-2-1"
+
+\end_inset
+
+ (position basis) and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-3-1"
+
+\end_inset
+
+ (energy basis)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.harmonicoscillator import HarmonicOscillator as QHO
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import linearalgebra as la
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import constants as const
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum.timeevolution import quantum_liouville,
+ lindblad
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# select the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+start = 'coherent'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 500
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create a QHO object
+\end_layout
+
+\begin_layout Plain Layout
+
+# Uses default m = 6 amu and f = 300 inv cm
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc = QHO(N=N)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X0 = qosc.Q0 # [nm] characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T = qosc.T # [s] oscillation period
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form Lindblad operators
+\end_layout
+
+\begin_layout Plain Layout
+
+#   The relaxation time is chosen to be 2*T
+\end_layout
+
+\begin_layout Plain Layout
+
+qosc.make_lindblad_operators( 2*T,
+ type='thermalization' )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 8*T,
+ nt).flatten()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage arrays
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE = np.zeros([N,
+ nt]) # prob dist over energy
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX = np.zeros([N,
+ nt]) # prob dist over position
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Prepare the initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+if start == 'eigenstate':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'coherent':
+\end_layout
+
+\begin_layout Plain Layout
+
+    d = 1 + 1j # displacement
+\end_layout
+
+\begin_layout Plain Layout
+
+    D = qosc.displacement_operator(d)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Recall that D|0> "selects" the first column of D
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = D @ qosc.energy_state(0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == 'arbitrary':
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = la.normalize( qosc.energy_state(1) + qosc.energy_state(2) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Exponential time evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+for it,
+ tt in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ut = sp.linalg.expm(-1j * qosc.H * tt / const.hbar )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = Ut @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+    psitX = qosc.change_basis(psit,
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE[:,it] = la.state_to_probability(psit).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX[:,it] = la.state_to_probability(psitX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et[it] = la.expectation_value( qosc.H,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt[it] = la.expectation_value( qosc.X,
+ psit,
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tt,
+ xx = np.meshgrid(t.flatten()/qosc.T,
+ qosc.Xval,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+_,
+ EE = np.meshgrid(t.flatten()/T,
+ qosc.Eval/qosc.hw,
+ indexing='xy')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_class_test_evolution_unitary_PD.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Quantum Liouville evolution    
+\end_layout
+
+\begin_layout Plain Layout
+
+from odeintw import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = la.density_matrix(psi0) # form a density operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Integrate the solution
+\end_layout
+
+\begin_layout Plain Layout
+
+# odeintw produces an array sol
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Each element of sol is the density matrix at a
+\end_layout
+
+\begin_layout Plain Layout
+
+#   particular time
+\end_layout
+
+\begin_layout Plain Layout
+
+# Extract expectation values after calling odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(quantum_liouville,
+ rho0,
+ t,
+ args=(qosc.H,) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_liou = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_liou = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_liou = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_liou = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_liou[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_liou[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_liou[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_liou[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+# Postprocessing
+\end_layout
+
+\begin_layout Plain Layout
+
+print(type(sol))
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sol.shape)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Lindblad evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(lindblad,
+ rho0,
+ t,
+\end_layout
+
+\begin_layout Plain Layout
+
+     args=(qosc.H,
+ qosc.LindbladOps))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_lind = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_lind = np.zeros([N,
+ nt])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_lind = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Xt_lind = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_lind[:,it] = np.diag(sol[it]).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    rhoX = qosc.change_basis(sol[it],
+ fr='energy',
+ to='position')
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_lind[:,it] = np.diag(rhoX).real
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_lind[it] = la.expectation_value( qosc.H,
+ sol[it],
+ validate=False )
+\end_layout
+
+\begin_layout Plain Layout
+
+    Xt_lind[it] = la.expectation_value( qosc.X,
+ sol[it],
+ validate=False)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ xx/qosc.Q0,
+ PDX_liou,
+ levels = 75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Xt_liou/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$X/X_0$ (Closed)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ xx/X0,
+ PDX_lind,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Xt_lind/X0,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$X/X_0$ (Open)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_unitary_vs_lind_XPD-thermal.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots( 2,
+ 1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].contourf(tt,
+ EE,
+ PDE_liou,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Et_liou/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylim(0.5,
+ 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (Closed)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].contourf(tt,
+ EE,
+ PDE_lind,
+ levels=75)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et_lind/qosc.hw,
+ color='w')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylim(0.5,
+ 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$ (Open)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_unitary_vs_lind_EPD-thermal.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{figname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_unitary_vs_lind_XPD-thermal.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The QHO modeled using the quantum Liouville equation behaves as a closed-system (top),
+ in which oscillations persist forever.
+ In the case of Lindblad evolution,
+ however,
+ damping is evident as oscillations decrease in amplitude with time (bottom).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-2-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_unitary_vs_lind_EPD-thermal.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+In the energy basis,
+ Liouvillian evolution conserves energy,
+ but an exponential decrease in energy is evident in the open system modeled using the Lindblad equation.
+ Here,
+ the thermalization 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-3-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lindblad Evolution:
+ steady-state Behaviors
+\end_layout
+
+\begin_layout Itemize
+It may not be evident how the dynamics of dissipation (relaxation) differ from thermalization
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+After all,
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-2-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-3-1"
+
+\end_inset
+
+ are very similar to Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-2-1-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-dynamics-3-1-1"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It may be more useful to compare steady-state behaviors
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the result of applying the Lindblad operators for a long time,
+ so that 
+\begin_inset Formula $d\rho/dt\rightarrow0$
+\end_inset
+
+,
+ that is,
+ we get an unchanging 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ we would like to solve for the steady-state 
+\begin_inset Formula $\rho_{\text{ss}}$
+\end_inset
+
+ that solves
+\begin_inset Formula 
+\[
+\frac{d\rho}{dt}=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}\right]+\sum_{j}\hat{L}_{j}\hat{\rho}\hat{L}_{j}^{\dagger}-\frac{1}{2}\left\{ \hat{L}_{j}^{\dagger}\hat{L}_{j},\hat{\rho}\right\} =0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Python 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+qutip
+\end_layout
+
+\end_inset
+
+ package can calculate Lindblad dynamics,
+ as well as steady-state density matrices
+\end_layout
+
+\begin_layout Itemize
+Some notes on using 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+qutip
+\end_layout
+
+\end_inset
+
+ to solve the Lindblad equation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+qutip
+\end_layout
+
+\end_inset
+
+ provides a class,
+ 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+qutip.Qobj
+\end_layout
+
+\end_inset
+
+,
+ which is used to describe quantum objects such as kets and operators
+\end_layout
+
+\begin_layout Itemize
+Use the 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mesolve()
+\end_layout
+
+\end_inset
+
+ function to describe and solve a Lindblad evolution in time
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mesolve
+\end_layout
+
+\end_inset
+
+ is short for 
+\begin_inset Quotes eld
+\end_inset
+
+master equation solve,
+\begin_inset Quotes erd
+\end_inset
+
+ because the Lindblad equation is known as a 
+\series bold
+master equation
+\end_layout
+
+\begin_layout Itemize
+The syntax for using 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mesolve
+\end_layout
+
+\end_inset
+
+ is
+\begin_inset listings
+lstparams "language=Python,basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+result = mesolve(
+\end_layout
+
+\begin_layout Plain Layout
+
+    H,
+    # qutip.Qobj,
+ Hamiltonian operator
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho0,
+ # qutip.Qobj,
+ initial density operator
+\end_layout
+
+\begin_layout Plain Layout
+
+    t,
+    # numpy time vector for the evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+    c_ops=c_ops,
+ # list of Lindblad operators (collapse operators,
+ qutip.Qobj)
+\end_layout
+
+\begin_layout Plain Layout
+
+    e_ops=e_ops # list of measurement operators (expectation values desired,
+ qutip.Qobj)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mesolve
+\end_layout
+
+\end_inset
+
+ uses natural units,
+ where 
+\begin_inset Formula $\hbar=1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{d\rho}{dt}=-i\left[\hat{H},\hat{\rho}\right]+\sum_{j}\hat{L}_{j}\hat{\rho}\hat{L}_{j}^{\dagger}-\frac{1}{2}\left\{ \hat{L}_{j}^{\dagger}\hat{L}_{j},\hat{\rho}\right\} =0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ has units of not eV,
+ but rather eV/
+\begin_inset Formula $\hbar$
+\end_inset
+
+.
+ Thus,
+ instead of using 
+\begin_inset Formula $\hat{H}=\hbar\omega\left(\hat{a}^{\dagger}\hat{a}+\hat{1}/2\right)$
+\end_inset
+
+ for the Hamiltonian,
+ we use 
+\begin_inset Formula $\hat{H}=\omega\left(\hat{a}^{\dagger}\hat{a}+\hat{1}/2\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Use the 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+steadystate(H,
+ c_ops=...)
+\end_layout
+
+\end_inset
+
+ function to calculate the steady-state density matrix given a Hamiltonian stored in 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+H
+\end_layout
+
+\end_inset
+
+ a list of Lindblad operators specified using the keyword argument 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c_ops
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qutip import (
+\end_layout
+
+\begin_layout Plain Layout
+
+    basis,
+\end_layout
+
+\begin_layout Plain Layout
+
+    destroy,
+\end_layout
+
+\begin_layout Plain Layout
+
+    displace,
+\end_layout
+
+\begin_layout Plain Layout
+
+    mesolve,
+\end_layout
+
+\begin_layout Plain Layout
+
+    steadystate,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Qobj,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def estimate_temperature_from_populations(p,
+ hw,
+ kB):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    Estimate temperature assuming
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        p_n ~ exp[- hw*n/(kT)]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+        Teff
+\end_layout
+
+\begin_layout Plain Layout
+
+        slope
+\end_layout
+
+\begin_layout Plain Layout
+
+        intercept
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    n = np.arange(len(p))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    mask = p > 1e-12
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    coeff = np.polyfit(
+\end_layout
+
+\begin_layout Plain Layout
+
+        n[mask],
+\end_layout
+
+\begin_layout Plain Layout
+
+        np.log(p[mask]),
+\end_layout
+
+\begin_layout Plain Layout
+
+        1
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    slope = coeff[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+    intercept = coeff[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Teff = -hw / (kB * slope)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return Teff,
+ slope,
+ intercept
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Physical constants
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar_ev_s = 6.582119569e-16      # eV*s
+\end_layout
+
+\begin_layout Plain Layout
+
+kB = 8.617333262145e-5           # eV/K
+\end_layout
+
+\begin_layout Plain Layout
+
+c_cms = 2.99792458e10            # cm/s
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# SI constants
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar_si = 1.054571817e-34        # J*s
+\end_layout
+
+\begin_layout Plain Layout
+
+amu_kg = 1.66053906660e-27       # kg
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+start = "coherent"       # "eigenstate",
+ "coherent",
+ "arbitrary"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 120
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m_amu = 6
+\end_layout
+
+\begin_layout Plain Layout
+
+f_invcm = 300
+\end_layout
+
+\begin_layout Plain Layout
+
+Temp = 300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T1_factor = 2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Harmonic oscillator
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+f = f_invcm * c_cms  # [Hz] oscillation frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+Tosc = 1.0 / f       # [s] oscillation period
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+w = 2.0 * np.pi * f  # [rad/s] oscillation angular frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hw = hbar_ev_s * w   # [eV] energy quantization
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m = m_amu * amu_kg   # [kg] oscillator mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X0 = np.sqrt(hbar_si / (m * w)) # [nm] characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Operators
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+a = destroy(N)
+\end_layout
+
+\begin_layout Plain Layout
+
+adag = a.dag()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+H = hw * (adag * a + 0.5) # [eV]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.sqrt(hbar_si / (2 * m * w)) * (a + adag)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if start == "eigenstate":
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = basis(N,
+ 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == "coherent":
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    alpha = 1 + 1j
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = displace(N,
+ alpha) * basis(N,
+ 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+elif start == "arbitrary":
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi0 = (basis(N,
+ 1) + basis(N,
+ 2)).unit()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+else:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    raise ValueError(f"Unknown start = {start}")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = psi0.proj()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Time grid
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0.0,
+ 8.0 * Tosc,
+ nt)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Position basis
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Xmat = X.full()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+xvals,
+ U = np.linalg.eigh(Xmat)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Projectors onto energy eigenstates
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+energy_projectors = [
+\end_layout
+
+\begin_layout Plain Layout
+
+    basis(N,
+ n).proj()
+\end_layout
+
+\begin_layout Plain Layout
+
+    for n in range(N)
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Projectors onto position eigenstates
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+position_projectors = []
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for i in range(N):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    xket = Qobj(
+\end_layout
+
+\begin_layout Plain Layout
+
+        U[:,
+ i].reshape((N,
+ 1)),
+\end_layout
+
+\begin_layout Plain Layout
+
+        dims=[[N],
+ [1]]
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    position_projectors.append(
+\end_layout
+
+\begin_layout Plain Layout
+
+        xket.proj()
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# e_ops
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+e_ops = (
+\end_layout
+
+\begin_layout Plain Layout
+
+    [H,
+ X]
+\end_layout
+
+\begin_layout Plain Layout
+
+    + energy_projectors
+\end_layout
+
+\begin_layout Plain Layout
+
+    + position_projectors
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Closed-system evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+result_unitary = mesolve(
+\end_layout
+
+\begin_layout Plain Layout
+
+    H/hbar_ev_s,
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    t,
+\end_layout
+
+\begin_layout Plain Layout
+
+    c_ops=[],
+\end_layout
+
+\begin_layout Plain Layout
+
+    e_ops=e_ops
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Open-system evolution
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T1 = T1_factor * Tosc
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+gamma_down = 1.0 / T1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+gamma_up = (
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.exp(-hw / (kB * Temp))
+\end_layout
+
+\begin_layout Plain Layout
+
+    / T1
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+c_ops = [
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.sqrt(gamma_down) * a,
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.sqrt(gamma_up) * adag,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+result_open = mesolve(
+\end_layout
+
+\begin_layout Plain Layout
+
+    H/hbar_ev_s,
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    t,
+\end_layout
+
+\begin_layout Plain Layout
+
+    c_ops=c_ops,
+\end_layout
+
+\begin_layout Plain Layout
+
+    e_ops=e_ops
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Expectation values
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_unit = np.asarray(result_unitary.expect[0])
+\end_layout
+
+\begin_layout Plain Layout
+
+X_unit = np.asarray(result_unitary.expect[1])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_open = np.asarray(result_open.expect[0])
+\end_layout
+
+\begin_layout Plain Layout
+
+X_open = np.asarray(result_open.expect[1])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Probability distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_unit = np.zeros((N,
+ nt))
+\end_layout
+
+\begin_layout Plain Layout
+
+PDE_open = np.zeros((N,
+ nt))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_unit = np.zeros((N,
+ nt))
+\end_layout
+
+\begin_layout Plain Layout
+
+PDX_open = np.zeros((N,
+ nt))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Energy probabilities
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in range(N):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_unit[n,
+ :] = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+        result_unitary.expect[2 + n]
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_open[n,
+ :] = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+        result_open.expect[2 + n]
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Position probabilities
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+offset = 2 + N
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in range(N):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_unit[n,
+ :] = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+        result_unitary.expect[offset + n]
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_open[n,
+ :] = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+        result_open.expect[offset + n]
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Steady state density matrices
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_ss_relx = steadystate(H/hbar_ev_s,
+ c_ops[:1]) # relaxation/dissipation
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_ss_therm = steadystate(H/hbar_ev_s,
+ c_ops) # thermalization
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Thermal density matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+beta = 1.0 / (kB * Temp)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+thermal_weights = np.exp(
+\end_layout
+
+\begin_layout Plain Layout
+
+    -beta * H.eigenenergies()
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+thermal_weights /= np.sum(thermal_weights)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_thermal = Qobj(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(thermal_weights)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Steady-state distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+P_energy_ss_relx = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(rho_ss_relx.full())
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+P_energy_ss_therm = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(rho_ss_therm.full())
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Convert density matrix to position basis
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_x_ss_relx = U.conj().T @ rho_ss_relx.full() @ U
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_x_ss_therm = U.conj().T @ rho_ss_therm.full() @ U
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+P_position_ss_relx = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(rho_x_ss_relx)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+P_position_ss_therm = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(rho_x_ss_therm)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Thermal-state distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+P_energy_thermal = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(rho_thermal.full())
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_x_thermal = (
+\end_layout
+
+\begin_layout Plain Layout
+
+    U.conj().T
+\end_layout
+
+\begin_layout Plain Layout
+
+    @ rho_thermal.full()
+\end_layout
+
+\begin_layout Plain Layout
+
+    @ U
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+P_position_thermal = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.diag(rho_x_thermal)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Compare thermal steady state with thermal density matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_ss_mat = rho_ss_therm.full()
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_th_mat = rho_thermal.full()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Frobenius norm
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+frobenius_error = np.linalg.norm(
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho_ss_mat - rho_th_mat
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Trace distance
+\end_layout
+
+\begin_layout Plain Layout
+
+trace_distance = (
+\end_layout
+
+\begin_layout Plain Layout
+
+    0.5
+\end_layout
+
+\begin_layout Plain Layout
+
+    * np.sum(
+\end_layout
+
+\begin_layout Plain Layout
+
+        np.abs(
+\end_layout
+
+\begin_layout Plain Layout
+
+            np.linalg.eigvals(
+\end_layout
+
+\begin_layout Plain Layout
+
+                rho_ss_mat - rho_th_mat
+\end_layout
+
+\begin_layout Plain Layout
+
+            )
+\end_layout
+
+\begin_layout Plain Layout
+
+        )
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Energy expectation values
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_ss = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    (rho_ss_mat @ H.full()).trace()
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_th = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    (rho_th_mat @ H.full()).trace()
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print()
+\end_layout
+
+\begin_layout Plain Layout
+
+print("Comparison with thermal density matrix")
+\end_layout
+
+\begin_layout Plain Layout
+
+print("--------------------------------------")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"Frobenius error :
+ {frobenius_error:.6e}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"Trace distance  :
+ {trace_distance:.6e}")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"E_ss            :
+ {E_ss/hw:.6f} ħω")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"E_thermal       :
+ {E_th/hw:.6f} ħω")
+\end_layout
+
+\begin_layout Plain Layout
+
+print()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "||rho_ss - rho_th||_F =",
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.linalg.norm(
+\end_layout
+
+\begin_layout Plain Layout
+
+        rho_ss_therm.full() -
+\end_layout
+
+\begin_layout Plain Layout
+
+        rho_thermal.full()
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Temperature fitting for thermal states
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Tfit_thermal,
+ slope_th,
+ b_th = (
+\end_layout
+
+\begin_layout Plain Layout
+
+    estimate_temperature_from_populations(
+\end_layout
+
+\begin_layout Plain Layout
+
+        P_energy_thermal,
+\end_layout
+
+\begin_layout Plain Layout
+
+        hw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        kB
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Tfit_ss,
+ slope_ss,
+ b_ss = (
+\end_layout
+
+\begin_layout Plain Layout
+
+    estimate_temperature_from_populations(
+\end_layout
+
+\begin_layout Plain Layout
+
+        P_energy_ss_therm,
+\end_layout
+
+\begin_layout Plain Layout
+
+        hw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        kB
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print()
+\end_layout
+
+\begin_layout Plain Layout
+
+print("Boltzmann Temperatures")
+\end_layout
+
+\begin_layout Plain Layout
+
+print("----------------------")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"Input temperature       :
+ {Temp:.3f} K")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"Thermal density matrix  :
+ {Tfit_thermal:.3f} K")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f"Lindblad steady state   :
+ {Tfit_ss:.3f} K")
+\end_layout
+
+\begin_layout Plain Layout
+
+print()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Energy axis
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+energy_levels = H.eigenenergies() / hw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Position dynamics
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(
+\end_layout
+
+\begin_layout Plain Layout
+
+    2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    figsize=(9,
+ 8),
+\end_layout
+
+\begin_layout Plain Layout
+
+    sharex=True
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].pcolormesh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    xvals / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_unit,
+\end_layout
+
+\begin_layout Plain Layout
+
+    shading="auto",
+\end_layout
+
+\begin_layout Plain Layout
+
+    cmap="viridis"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    X_unit / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="white",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True,
+ alpha=0.2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r"$X/X_0$ (Closed)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_title("Position Probability Distribution")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].pcolormesh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    xvals / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDX_open,
+\end_layout
+
+\begin_layout Plain Layout
+
+    shading="auto",
+\end_layout
+
+\begin_layout Plain Layout
+
+    cmap="viridis"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    X_open / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="white",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True,
+ alpha=0.2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r"$X/X_0$ (Open)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r"$t/T$")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_qutip-closed-vs-thermalization-position-dynamics.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close(
+\begin_inset Quotes eld
+\end_inset
+
+all
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Energy dynamics
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(
+\end_layout
+
+\begin_layout Plain Layout
+
+    2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    figsize=(9,
+ 8),
+\end_layout
+
+\begin_layout Plain Layout
+
+    sharex=True
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].pcolormesh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    energy_levels,
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_unit,
+\end_layout
+
+\begin_layout Plain Layout
+
+    shading="auto",
+\end_layout
+
+\begin_layout Plain Layout
+
+    cmap="viridis"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_unit / hw,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="white",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True,
+ alpha=0.2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r"$E/
+\backslash
+hbar
+\backslash
+omega$ (Closed)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_title("Energy Probability Distribution")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].pcolormesh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    energy_levels,
+\end_layout
+
+\begin_layout Plain Layout
+
+    PDE_open,
+\end_layout
+
+\begin_layout Plain Layout
+
+    shading="auto",
+\end_layout
+
+\begin_layout Plain Layout
+
+    cmap="viridis"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(
+\end_layout
+
+\begin_layout Plain Layout
+
+    t / Tosc,
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_open / hw,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="white",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True,
+ alpha=0.2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r"$E/
+\backslash
+hbar
+\backslash
+omega$ (Open)")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r"$t/T$")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join("img",
+ "qho_qutip-closed-vs-thermalization-energy-dynamics.png")
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close(
+\begin_inset Quotes eld
+\end_inset
+
+all
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Position distribution comparison
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(
+\end_layout
+
+\begin_layout Plain Layout
+
+    3,
+\end_layout
+
+\begin_layout Plain Layout
+
+    1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    figsize=(8,
+ 10),
+\end_layout
+
+\begin_layout Plain Layout
+
+    sharex=True
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Relaxation steady state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].bar(
+\end_layout
+
+\begin_layout Plain Layout
+
+    xvals / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_position_ss_relx,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True,
+ alpha=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_title(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Lindblad Relaxation Steady State"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel("Probability")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Thermalization steady state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].bar(
+\end_layout
+
+\begin_layout Plain Layout
+
+    xvals / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_position_ss_therm,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True,
+ alpha=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_title(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Lindblad Thermalization Steady State"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel("Probability")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Canonical thermal state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].bar(
+\end_layout
+
+\begin_layout Plain Layout
+
+    xvals / X0,
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_position_thermal,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].grid(True,
+ alpha=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].set_title(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Canonical Thermal Density Matrix"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].set_xlabel(r"$X/X_0$")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].set_ylabel("Probability")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "img",
+\end_layout
+
+\begin_layout Plain Layout
+
+    "qho_qutip_relaxation_vs_thermalization_vs_thermal_position.png"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close("all")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Energetic annotations
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_relx = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.trace(rho_ss_relx.full() @ H.full())
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_ss = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.trace(rho_ss_therm.full() @ H.full())
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_th = np.real(
+\end_layout
+
+\begin_layout Plain Layout
+
+    np.trace(rho_thermal.full() @ H.full())
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Convert to E/(hbar omega)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E_relx_scaled = E_relx / hw
+\end_layout
+
+\begin_layout Plain Layout
+
+E_ss_scaled = E_ss / hw
+\end_layout
+
+\begin_layout Plain Layout
+
+E_th_scaled = E_th / hw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Classical thermal energy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kT_scaled = kB * Temp / hw
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+# Energy distribution comparison
+\end_layout
+
+\begin_layout Plain Layout
+
+# ============================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(
+\end_layout
+
+\begin_layout Plain Layout
+
+    1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    3,
+\end_layout
+
+\begin_layout Plain Layout
+
+    figsize=(15,
+ 6),
+\end_layout
+
+\begin_layout Plain Layout
+
+    sharey=True
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Relaxation steady state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].barh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    energy_levels,
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_energy_ss_relx,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].axhline(
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_relx_scaled,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="red",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    label=r"$
+\backslash
+langle E 
+\backslash
+rangle / 
+\backslash
+hbar
+\backslash
+omega$"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True,
+ alpha=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_title(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Lindblad Relaxation Steady State"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_xlabel("Probability")
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r"$E/
+\backslash
+hbar
+\backslash
+omega$")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Thermalization steady state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].barh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    energy_levels,
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_energy_ss_therm,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].axhline(
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_ss_scaled,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="red",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    label=r"$
+\backslash
+langle E
+\backslash
+rangle/
+\backslash
+hbar
+\backslash
+omega$"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].axhline(
+\end_layout
+
+\begin_layout Plain Layout
+
+    kT_scaled,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="black",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linestyle="--",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    label=r"$k_BT/(
+\backslash
+hbar
+\backslash
+omega)$"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True,
+ alpha=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_title(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Lindblad Thermalization Steady State"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel("Probability")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# Canonical thermal state
+\end_layout
+
+\begin_layout Plain Layout
+
+# ------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].barh(
+\end_layout
+
+\begin_layout Plain Layout
+
+    energy_levels,
+\end_layout
+
+\begin_layout Plain Layout
+
+    P_energy_thermal,
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].axhline(
+\end_layout
+
+\begin_layout Plain Layout
+
+    E_th_scaled,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="red",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    label=r"$
+\backslash
+langle E
+\backslash
+rangle/
+\backslash
+hbar
+\backslash
+omega$"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].axhline(
+\end_layout
+
+\begin_layout Plain Layout
+
+    kT_scaled,
+\end_layout
+
+\begin_layout Plain Layout
+
+    color="black",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linestyle="--",
+\end_layout
+
+\begin_layout Plain Layout
+
+    linewidth=2,
+\end_layout
+
+\begin_layout Plain Layout
+
+    label=r"$k_BT/(
+\backslash
+hbar
+\backslash
+omega)$"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].grid(True,
+ alpha=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].set_title(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "Canonical Thermal Density Matrix"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].set_xlabel("Probability")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[2].legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+figname = os.path.join(
+\end_layout
+
+\begin_layout Plain Layout
+
+    "img",
+\end_layout
+
+\begin_layout Plain Layout
+
+    "qho_qutip_relaxation_vs_thermalization_vs_thermal_energy.png"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(figname)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close("all")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_qutip-closed-vs-thermalization-position-dynamics.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Closed and open dynamics are calculated in qutip as validation:
+ do we get dynamics comparable to our previous model done using my custom code?
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-qutip-position-thermalization"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_qutip-closed-vs-thermalization-energy-dynamics.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Closed and open dynamics are calculated in 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+qutip
+\end_layout
+
+\end_inset
+
+,
+ and the probability distribution is plotted over energy as as validation:
+ do we get dynamics comparable to our previous model done using my custom code?
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-dynamics-qutip-energy-thermalization"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_qutip_relaxation_vs_thermalization_vs_thermal_position.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The probability distribution over position of the steady-state density matrix from thermalization is compared to that of the thermal steady-state density matrix.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-steady-state-qutip-thermalization-position"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qho_qutip_relaxation_vs_thermalization_vs_thermal_energy.png
+	width 47.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The probability distribution over energy of the steady-state density matrix from relaxation is compared to that of thermalization as well as that of the thermal steady-state density matrix.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fig:qho-steady-state-qutip-thermalization-energy"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For the oscillator here,
+ see that:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the steady-state density matrix of the relaxation Lindblad operator alone operator is the ground state
+\end_layout
+
+\begin_layout Itemize
+the steady-state density matrix the thermalization Lindbald operators is the thermal steady state density operator
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A thermal harmonic oscillator should satisfy
+\begin_inset Formula 
+\begin{equation}
+p_{n}\propto e^{-E_{n}/k_{B}T}\label{eq:thermal-probability-oscillator-Pn}
+\end{equation}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+E_{n}=\hbar\omega\left(n+\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If we take the logarithm of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:thermal-probability-oscillator-Pn"
+
+\end_inset
+
+,
+ we get
+\begin_inset Formula 
+\begin{align*}
+\ln p_{n} & =-\frac{E_{n}}{k_{B}T}+\text{const.}=-\frac{\hbar\omega}{k_{B}T}n+\frac{\hbar\omega}{2}+\text{const.}\\
+ & =-\frac{\hbar\omega}{k_{B}T}n+\text{const.}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ a thermal state should appear as a straight line on a semilog plot of population versus quantum number 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

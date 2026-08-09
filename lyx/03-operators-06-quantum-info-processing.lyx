@@ -1,0 +1,4246 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Itemize
+We've considered some operators now,
+ from different contexts
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the Hamiltonian,
+ 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ describes the physics of the system
+\end_layout
+
+\begin_layout Itemize
+other operators,
+ such as 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\mathbf{Y}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ transform a qubit and may be thought of as gates for process quantum information
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We now focus on quantum information and a way to visualize transformations of a qubit
+\end_layout
+
+\begin_layout Itemize
+To do this,
+ we introduce the density operator and the Bloch vector
+\end_layout
+
+\begin_layout Subsubsection
+The Density Operator
+\end_layout
+
+\begin_layout Itemize
+For a given state
+\begin_inset Formula 
+\[
+\ket{\psi}\leftrightarrow\begin{bmatrix}c_{0}\\
+c_{1}
+\end{bmatrix},
+\]
+
+\end_inset
+
+we can form the operator
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}=\ket{\psi}\bra{\psi}=\begin{bmatrix}c_{0}\\
+c_{1}
+\end{bmatrix}\left[\begin{array}{cc}
+c_{0}^{\ast} & c_{1}^{\ast}\end{array}\right]=\begin{bmatrix}c_{0}c_{0}^{\ast} & c_{0}c_{1}^{\ast}\\
+c_{1}c_{0}^{\ast} & c_{1}c_{1}^{\ast}
+\end{bmatrix}\label{eq:DensityOperatorSingleQubit}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+ is called a density operator or a density matrix
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Expectation values may be calculated from density matrices
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For an operator 
+\begin_inset Formula $\mathbf{O}$
+\end_inset
+
+,
+ the expectation value 
+\begin_inset Formula $\Braket{\mathbf{O}}$
+\end_inset
+
+ is given by
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Braket{\mathbf{O}}=\text{Tr}\;\left(\mathbf{O}\hat{\rho}\right)=\text{Tr}\;\left(\hat{\rho}\mathbf{O}\right)\stackrel{\left(\ref{eq:trace}\right)}{=}\sum_{j}\Braket{j|\mathbf{O}\hat{\rho}|j}=\sum_{j}\Braket{j|\hat{\rho}\mathbf{O}|j}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\Braket{\mathbf{O}}=\text{Tr}\;\left(\mathbf{O}\hat{\rho}\right)=\text{Tr}\;\left(\hat{\rho}\mathbf{O}\right)=\sum_{j}\Braket{j|\mathbf{O}\hat{\rho}|j}=\sum_{j}\Braket{j|\hat{\rho}\mathbf{O}|j}\label{eq:ExpectationValueDensityMatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This expression is completely equivalent to the expectation value of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ExpectationValueStateVector"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A property that sometimes comes in useful for the trace is that we can cyclically permute the operators in a trace and still get the same value:
+\begin_inset Formula 
+\begin{equation}
+\text{Tr}\;\left(\mathbf{A}\mathbf{B}\mathbf{C}\right)=\text{Tr}\;\left(\mathbf{C}\mathbf{A}\mathbf{B}\right)=\text{Tr}\;\left(\mathbf{B}\mathbf{C}\mathbf{A}\right)\label{eq:TraceCyclicPermutability}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can do this as long as we move a single operator at a time from one end of the product to the other
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For a product of two operators,
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TraceCyclicPermutability"
+nolink "false"
+
+\end_inset
+
+ reduces to
+\begin_inset Formula 
+\begin{equation}
+\text{Tr}\;\left(\mathbf{A}\mathbf{B}\right)=\text{Tr}\;\left(\mathbf{B}\mathbf{A}\right)\label{eq:TraceCyclicPermutabilityAB}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.17
+\end_layout
+
+\begin_layout Plain Layout
+Write a Python function that converts a ket to a density operator.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The solution code is given below:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+I = np.eye(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]]) # quantum information convention
+\end_layout
+
+\begin_layout Plain Layout
+
+Y = -1j*Z@X
+\end_layout
+
+\begin_layout Plain Layout
+
+H = (1/np.sqrt(2))*(X+Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = X @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def densityOperator( psi:
+ np.ndarray ) -> np.matrix:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform a ket to a density operator (matrix).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket.
+ For
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit,
+ this will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The density operator corresponding to psi.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    # @ is used for matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+    # convert an numpy ndarray to a matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    # for access to the Hermitian adjoint
+\end_layout
+
+\begin_layout Plain Layout
+
+    return psi @ np.asmatrix(psi).H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# use the function with some test cases
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = densityOperator( ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho1 = densityOperator( ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_plus = densityOperator( H @ ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho_minus = densityOperator( H @ ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('
+\backslash
+nDensity operator for ket 0 (type:
+ {0}):
+\backslash
+n{1}'.format(
+\end_layout
+
+\begin_layout Plain Layout
+
+    type(rho0),
+ rho0) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('
+\backslash
+nDensity operator for ket 0 (type:
+ {0}):
+\backslash
+n{1}'.format(
+\end_layout
+
+\begin_layout Plain Layout
+
+    type(rho1),
+ rho1) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('
+\backslash
+nDensity operator for ket + (type:
+ {0}):
+\backslash
+n{1}'.format(
+\end_layout
+
+\begin_layout Plain Layout
+
+    type(rho_plus),
+ rho_plus) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('
+\backslash
+nDensity operator for ket + (type:
+ {0}):
+\backslash
+n{1}'.format(
+\end_layout
+
+\begin_layout Plain Layout
+
+    type(rho_minus),
+ rho_minus) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This code converts a ket to a density operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Density operators have special properties.
+ It can be shown that:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+they have unit trace:
+\begin_inset Formula 
+\[
+\mbox{Tr}\,\hat{\rho}=c_{0}c_{0}^{\ast}+c_{1}c_{1}^{\ast}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+they are Hermitian:
+\begin_inset Formula 
+\[
+\hat{\rho}=\hat{\rho}^{\dagger}
+\]
+
+\end_inset
+
+or,
+ 
+\begin_inset Formula $\rho_{ij}=\rho_{ji}^{\ast}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can expand any single-qubit density operator over the matrices 
+\begin_inset Formula $\{\mathbf{1},\hat{\sigma}_{x},\hat{\sigma}_{y},\hat{\sigma}_{z}\}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}=\frac{1}{2}\left(a_{0}\mathbf{1}+a_{x}\hat{\sigma}_{x}+a_{y}\hat{\sigma}_{y}+a_{z}\hat{\sigma}_{z}\right)\label{eq:DensityOoperatorHermitianExpansion}
+\end{equation}
+
+\end_inset
+
+with real coefficients 
+\begin_inset Formula $\{a_{0},a_{1},a_{2},a_{3}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a simpler notation,
+ we will define
+\begin_inset Formula 
+\begin{equation}
+\hat{\sigma}_{0}=\mathbf{1},\quad\hat{\sigma}_{1}=\hat{\sigma}_{x},\quad\hat{\sigma}_{2}=\hat{\sigma}_{y},\quad\mbox{and}\quad\hat{\sigma}_{3}=\hat{\sigma}_{z},\label{eq:sigma_matrices}
+\end{equation}
+
+\end_inset
+
+and we rewrite our expansion as
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}=\sum_{k=0}^{3}\frac{1}{2}a_{k}\hat{\sigma}_{k}\label{eq:DensityOperatorHermitianExpansionConvenient}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can we can calculate the expansion coefficients 
+\begin_inset Formula $\{a_{k}\}$
+\end_inset
+
+ as follows:
+\begin_inset Formula 
+\begin{equation}
+a_{k}=\mbox{Tr}\;\left(\hat{\rho}\hat{\sigma}_{k}\right)\stackrel{\left(\ref{eq:ExpectationValueDensityMatrix}\right)}{=}\Braket{\hat{\sigma}_{k}}\label{eq:CoherenceVectorComponents}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For any normalized 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $a_{0}=1$
+\end_inset
+
+,
+ so this doesn't tell us much information.
+\end_layout
+
+\begin_layout Itemize
+On the other hand,
+ 
+\begin_inset Formula $(a_{1},a_{2},a_{3})$
+\end_inset
+
+ are more informative
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+They will all have a value in the range 
+\begin_inset Formula $-1\leq a_{k}\leq1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can visualize the quantum state in 3D if we define the 
+\series bold
+Bloch vector
+\series default
+,
+ 
+\begin_inset Formula $\vec{\lambda}$
+\end_inset
+
+,
+ as a vector in real space (
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+To form a Bloch vector,
+ we discard 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ and make a 3D vector using 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $a_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ in this example,
+ our Bloch vector is 
+\begin_inset Formula 
+\begin{equation}
+\vec{\lambda}\equiv\begin{bmatrix}a_{1}\\
+a_{2}\\
+a_{3}
+\end{bmatrix}.\label{eq:BlochVector}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Bloch vector components also may be calculated in state vector formalism as
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{k}=\braket{\hat{\sigma}_{k}}\stackrel{\left(\ref{eq:ExpectationValueStateVector}\right)}{=}\braket{\psi|\hat{\sigma}_{k}|\psi}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+a_{k}=\braket{\hat{\sigma}_{k}}=\braket{\psi|\hat{\sigma}_{k}|\psi}\label{eq:BlochVectComponentsExpectationValueStateVect}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.18
+\end_layout
+
+\begin_layout Plain Layout
+Write a Python functions to do the following:
+\end_layout
+
+\begin_layout Enumerate
+Convert a ket to a density operator
+\end_layout
+
+\begin_layout Enumerate
+Convert a ket to a Bloch vector
+\end_layout
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+See Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DensityOperatorSingleQubit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Do your work in Python.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The solution code is given below:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+I = np.eye(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]]) # quantum information convention
+\end_layout
+
+\begin_layout Plain Layout
+
+Y = -1j*Z@X
+\end_layout
+
+\begin_layout Plain Layout
+
+H = (1/np.sqrt(2))*(X+Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma = (I,
+ X,
+ Y,
+ Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = X @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def densityOperator( psi:
+ np.ndarray ) -> np.matrix:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform a ket to a density operator (matrix).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket.
+ For
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit,
+ this will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The density operator corresponding to psi.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    # @ is used for matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+    # convert an numpy ndarray to a matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    # for access to the Hermitian adjoint
+\end_layout
+
+\begin_layout Plain Layout
+
+    return psi @ np.asmatrix(psi).H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def BlochVector( psi:
+ np.ndarray ) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform ket psi to a Bloch vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket for
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit.
+ This will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Bloch vector as a (3,) numpy array.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho = densityOperator( psi )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    BV = [np.trace(rho @ sig).real for sig in sigma[1:]]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.array(BV)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# use the function with some test cases
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BV0 = BlochVector( ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+BV1 = BlochVector( ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+BVplus = BlochVector( H @ ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+BVminus = BlochVector( H @ ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket 0:
+ ' + str(BV0) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket 1:
+ ' + str(BV1) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket +:
+ ' + str(BVplus) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket -:
+ ' + str(BVminus) ) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This code converts a ket to a density operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.19
+\end_layout
+
+\begin_layout Plain Layout
+Visualize the Bloch vector for the following states:
+ 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\ket{+}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\ket{-}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+See Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DensityOperatorSingleQubit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CoherenceVectorComponents"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+We'll do this in two steps.
+ First,
+ we'll make a file that contains our helper functions (the ones we wrote in the previous exercise).
+ Then,
+ we'll import and use those functions,
+ saving the Bloch vector plots in files.
+ The code is shown below,
+ and the Bloch vectors are plotted in Figure .
+\begin_inset Newline newline
+\end_inset
+
+Note:
+ We're saving our functions in a file,
+ and then in different Python scripts,
+ we're importing these functions from QuantumInformationTools.py.
+ If this were a Jupyter notebook,
+ we could just define our functions within the notebook and use them after that.
+ No need to tangle or import.
+ Test.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+#tangle python/QuantumInfoTools.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+I = np.eye(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]]) # quantum information convention
+\end_layout
+
+\begin_layout Plain Layout
+
+Y = -1j*Z@X
+\end_layout
+
+\begin_layout Plain Layout
+
+H = (1/np.sqrt(2))*(X+Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma = (I,
+ X,
+ Y,
+ Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def densityOperator( psi:
+ np.ndarray ) -> np.matrix:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform a ket to a density operator (matrix).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket.
+ For
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit,
+ this will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The density operator corresponding to psi.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    # @ is used for matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+    # convert an numpy ndarray to a matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    # for access to the Hermitian adjoint
+\end_layout
+
+\begin_layout Plain Layout
+
+    return psi @ np.asmatrix(psi).H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def BlochVector( psi:
+ np.ndarray ) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform ket psi to a Bloch vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket for
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit.
+ This will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Bloch vector as a (3,) numpy array.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho = densityOperator( psi )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    BV = [np.trace(rho @ sig).real for sig in sigma[1:]]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.array(BV)
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This code converts a ket to a density operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Next,
+ we'll complete the task using our functions:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import os,
+ sys
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Add path to QuantumInfoTools 
+\end_layout
+
+\begin_layout Plain Layout
+
+cwd = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+pydir = os.path.join(cwd,
+ 'python')
+\end_layout
+
+\begin_layout Plain Layout
+
+sys.path.append(pydir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit.visualization import plot_bloch_vector
+\end_layout
+
+\begin_layout Plain Layout
+
+import QuantumInfoTools as qit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+I = np.eye(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]])
+\end_layout
+
+\begin_layout Plain Layout
+
+Y = -1j*Z@X
+\end_layout
+
+\begin_layout Plain Layout
+
+H = (1/np.sqrt(2))*(X+Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma = (I,
+ X,
+ Y,
+ Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = X @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BV0 = qit.BlochVector( ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+BV1 = qit.BlochVector( ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+BVplus = qit.BlochVector( H @ ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+BVminus = qit.BlochVector( H @ ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket 0:
+ ' + str(BV0) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket 1:
+ ' + str(BV1) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket +:
+ ' + str(BVplus) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print( f'Bloch vector for ket -:
+ ' + str(BVminus) ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BVs = {'BV0':
+ BV0,
+ 'BV1':
+ BV1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    'BVplus':
+ BVplus,
+ 'BVminus':
+ BVminus}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for BV in BVs:
+\end_layout
+
+\begin_layout Plain Layout
+
+	fig = plt.figure() 
+\end_layout
+
+\begin_layout Plain Layout
+
+	ax = fig.add_subplot(111,projection = '3d')
+\end_layout
+
+\begin_layout Plain Layout
+
+    fname=os.path.join('img',
+ BV)
+\end_layout
+
+\begin_layout Plain Layout
+
+    plot_bloch_vector( BVs[BV]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+    plt.savefig(fname) 
+\end_layout
+
+\begin_layout Plain Layout
+
+    plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('Test is over.')
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This code converts a ket to a density operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/BV0.png
+	width 42.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Bloch vector for 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BlochVectKet0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../Research/QuantComp/QMechQInfo/lyx/img/BV1.png
+	width 42.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Bloch vector for 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BlochVectKet1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../Research/QuantComp/QMechQInfo/lyx/img/BVplus.png
+	width 42.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Bloch vector for 
+\begin_inset Formula $\ket{+}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BlochVectKetPlus"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../Research/QuantComp/QMechQInfo/lyx/img/BVminus.png
+	width 42.5col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Bloch vector for 
+\begin_inset Formula $\ket{-}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BlochVectKetMinus"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+It may not be obvious,
+ but we can think of an application of 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ as a 180-degree rotation about the 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ axis in the Bloch sphere.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can make an arbitrary rotation through angle 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ about 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ by forming the 
+\begin_inset Formula $x$
+\end_inset
+
+-rotation operator from an exponential of 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\mathbf{R}_{x}\left(\theta_{x}\right)=\exp\left(-i\frac{\theta_{x}}{2}\mathbf{X}\right)=\begin{bmatrix}\cos\left(\theta_{x}/2\right) & -i\sin\left(\theta_{x}/2\right)\\
+-i\sin\left(\theta_{x}/2\right) & \cos\left(\theta_{x}/2\right)
+\end{bmatrix}.\label{eq:ArbitraryXRotation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We add a function for an arbitrary rotation 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ about 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ to our file
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similarly,
+ an application of 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ is a 180-degree rotation about the 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+ axis in the Bloch sphere,
+ and
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can form an application of 
+\begin_inset Formula $\mathbf{Y}$
+\end_inset
+
+ is a 180-degree rotation about the 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ axis in the Bloch sphere
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.20
+\end_layout
+
+\begin_layout Plain Layout
+Perform and rotations of 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ about the 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ axis through the angles 
+\begin_inset Formula $\pi/4$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\pi/2$
+\end_inset
+
+,
+ 
+\begin_inset Formula $3\pi/4$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+,
+ 
+\begin_inset Formula $5\pi/4$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $3\pi/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+See Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DensityOperatorSingleQubit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CoherenceVectorComponents"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ArbitraryXRotation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+We'll do this in two steps.
+ First,
+ we'll make a file that contains our helper functions (the ones we wrote in the previous exercise).
+ Then,
+ we'll import and use those functions,
+ saving the Bloch vector plots in files.
+ The code is shown below,
+ and the Bloch vectors are plotted in Figure
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+#tangle python/QuantumInfoTools.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+from scipy.linalg import expm
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+I = np.eye(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]]) # quantum information convention
+\end_layout
+
+\begin_layout Plain Layout
+
+Y = -1j*Z@X
+\end_layout
+
+\begin_layout Plain Layout
+
+H = (1/np.sqrt(2))*(X+Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma = (I,
+ X,
+ Y,
+ Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def densityOperator( psi:
+ np.ndarray ) -> np.matrix:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform a ket to a density operator (matrix).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket.
+ For
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit,
+ this will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The density operator corresponding to psi.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    # @ is used for matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+    # convert an numpy ndarray to a matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    # for access to the Hermitian adjoint
+\end_layout
+
+\begin_layout Plain Layout
+
+    return psi @ np.asmatrix(psi).H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def BlochVector( psi:
+ np.ndarray ) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Transform ket psi to a Bloch vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket for
+\end_layout
+
+\begin_layout Plain Layout
+
+           a single qubit.
+ This will be a 2-by-1
+\end_layout
+
+\begin_layout Plain Layout
+
+           column vector.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Bloch vector as a (3,) numpy array.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho = densityOperator( psi )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# Refer to Equation 54
+\end_layout
+
+\begin_layout Plain Layout
+
+    BV = [np.trace(rho @ sig).real for sig in sigma[1:]]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.array(BV)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def Rx(theta:
+ float) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Creates a rotation operator through
+\end_layout
+
+\begin_layout Plain Layout
+
+    angle theta about the x axis.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+       theta:
+ a rotation angle in radians
+\end_layout
+
+\begin_layout Plain Layout
+
+              about the x axis
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+       A rotation operator matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    return expm(-1j*0.5*theta*X)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def Ry(theta:
+ float) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Creates a rotation operator through
+\end_layout
+
+\begin_layout Plain Layout
+
+    angle theta about the y axis.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+       theta:
+ a rotation angle in radians
+\end_layout
+
+\begin_layout Plain Layout
+
+              about the y axis
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+       A rotation operator matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    return expm(-1j*0.5*theta*Y)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def Rz(theta:
+ float) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Creates a rotation operator through
+\end_layout
+
+\begin_layout Plain Layout
+
+    angle theta about the z axis.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+       theta:
+ a rotation angle in radians
+\end_layout
+
+\begin_layout Plain Layout
+
+              about the z axis
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+       A rotation operator matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    return expm(-1j*0.5*theta*Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def normalize( psi:
+ np.ndarray ) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Normalizes a quantum wave function.
+ This
+\end_layout
+
+\begin_layout Plain Layout
+
+    is designed for use with complex column
+\end_layout
+
+\begin_layout Plain Layout
+
+    vectors.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+       psi:
+ a quantum wave function specified
+\end_layout
+
+\begin_layout Plain Layout
+
+            as a d-dimensional (d,1) np.ndarray.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+       a normalized version of psi
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    psi_norm_sq = np.asmatrix(psi).H @ psi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# Refer to Equation 8
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (1/np.sqrt(psi_norm_sq[0,0])) * psi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def direction( x:
+ np.ndarray ) -> np.ndarray:
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Returns a unit vector pointing in the
+\end_layout
+
+\begin_layout Plain Layout
+
+     direction of a d-dimensional real-space
+\end_layout
+
+\begin_layout Plain Layout
+
+     vector x.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+       x:
+ a d-dimensional [i.e.,
+ (d,)] vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+       a unit vector pointing in the direction
+\end_layout
+
+\begin_layout Plain Layout
+
+       of x.
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (1/np.sqrt(np.dot(x,x)))*x 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def labelPoint( ax,
+ vec,
+ label ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Helps us label a matplotlib axes
+\end_layout
+
+\begin_layout Plain Layout
+
+    on which a qiskit Bloch sphere plot
+\end_layout
+
+\begin_layout Plain Layout
+
+    exists.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+        ax:
+ the axes containing the plot
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        vec:
+ the (3,) coordinates for the
+\end_layout
+
+\begin_layout Plain Layout
+
+            position of the label
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        label:
+ A string to define the label
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+        None
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    # We have to interchange the x and y
+\end_layout
+
+\begin_layout Plain Layout
+
+    # coordinates and negate the
+\end_layout
+
+\begin_layout Plain Layout
+
+    # x coordinate to get this right.
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax.text( vec[1],
+ -vec[0],
+ vec[2],
+\end_layout
+
+\begin_layout Plain Layout
+
+            label )
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+This is an upgrade of our previous file,
+ 
+\begin_inset listings
+lstparams "language=Python,basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+python/QuantumInfoTools.py
+\end_layout
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-1-1-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Now,
+ we use our functions to make various rotations about 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import os,
+ sys
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Add path to QuantumInfoTools
+\end_layout
+
+\begin_layout Plain Layout
+
+cwd = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+pydir = os.path.join(cwd,
+ 'python')
+\end_layout
+
+\begin_layout Plain Layout
+
+sys.path.append(pydir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit.visualization import plot_bloch_vector
+\end_layout
+
+\begin_layout Plain Layout
+
+import QuantumInfoTools as qit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from QuantumInfoTools import I,
+ H,
+ X,
+ Y,
+ Z,
+ sigma
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = X @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ang = np.pi*np.array([0,
+ 0.25,
+ 0.5,
+ 0.75,
+ 1,
+ 1.25,
+ 1.5])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kets = [ qit.Rx(th)@ket0 for th in ang]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+vects = [ qit.BlochVector(ket) for ket in kets ] # make list of Bloch vectors 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# fig and ax help us decorate the Bloch sphere
+\end_layout
+
+\begin_layout Plain Layout
+
+fig = plt.figure()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax = fig.add_subplot(111,projection = '3d')
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_bloch_vector( vects,
+ ax=ax )
+\end_layout
+
+\begin_layout Plain Layout
+
+for idx,
+ vect in enumerate(vects):
+\end_layout
+
+\begin_layout Plain Layout
+
+    qit.labelPoint( ax,
+ vect,
+ '{0:+4.2f} $
+\backslash
+pi$'.format(ang[idx]/np.pi))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( os.path.join('img',
+ 'RotateXvaried.png') )
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-1-1-2-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Now,
+ we repeat this for rotations about 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import os,
+ sys
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Add path to QuantumInfoTools
+\end_layout
+
+\begin_layout Plain Layout
+
+cwd = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+pydir = os.path.join(cwd,
+ 'python')
+\end_layout
+
+\begin_layout Plain Layout
+
+sys.path.append(pydir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit.visualization import plot_bloch_vector
+\end_layout
+
+\begin_layout Plain Layout
+
+import QuantumInfoTools as qit
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from QuantumInfoTools import I,
+ H,
+ X,
+ Y,
+ Z,
+ sigma
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]])
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = X @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ang = np.pi*np.array([0,
+ 0.25,
+ 0.5,
+ 0.75,
+ 1,
+ 1.25,
+ 1.5])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kets = [ qit.Rz(th)@H@ket0 for th in ang]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+vects = [ qit.BlochVector(ket) for ket in kets ] # make list of Bloch vectors 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# fig and ax help us decorate the Bloch sphere,
+ along with
+\end_layout
+
+\begin_layout Plain Layout
+
+fig = plt.figure()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax = fig.add_subplot(111,projection = '3d')
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_bloch_vector( vects,
+ ax=ax )
+\end_layout
+
+\begin_layout Plain Layout
+
+for idx,
+ vect in enumerate(vects):
+\end_layout
+
+\begin_layout Plain Layout
+
+    qit.labelPoint( ax,
+ vect,
+ '{0:+4.2f} $
+\backslash
+pi$'.format(ang[idx]/np.pi))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( os.path.join('img',
+ 'RotateZvaried.png') )
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Python-ket-to-dm-1-1-2-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Rotations about 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ are shown in Figure
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/RotateXvaried.png
+	width 42.5col%
+	special trim=2.75cm 1.75cm 2.75cm 1.75cm, clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Various rotations about 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:XRotations"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/RotateZvaried.png
+	width 42.5col%
+	special trim=2.75cm 1.75cm 2.75cm 1.75cm, clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Various rotations about 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ZRotations"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now we've learned to think about single-qubit transformations as rotations about axes in the Bloch sphere
+\end_layout
+
+\begin_layout Itemize
+Any single-qubit rotation can be expressed as a combination of rotation operations.
+ Some examples:
+\begin_inset Formula 
+\[
+\mathbf{X}=\mathbf{R}_{x}\left(\pm\pi\right),\qquad\mathbf{Y}=\mathbf{R}_{y}\left(\pm\pi\right),\text{\ensuremath{\qquad}and}\qquad\mathbf{Z}=\mathbf{R}_{z}\left(\pm\pi\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We also can make arbitrary rotations about arbitrary axes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define the arbitrary axis
+\begin_inset Formula 
+\[
+\hat{\mathbf{n}}=(n_{x},n_{y},n_{z})=n_{x}\mathbf{i}+n_{y}\mathbf{j}+n_{z}\mathbf{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then,
+ a rotation about 
+\begin_inset Formula $\hat{\mathbf{n}}$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{equation}
+\mathbf{R}(\hat{\mathbf{n}},\theta)=\exp\left(-i\frac{\theta}{2}\hat{\mathbf{n}}\cdot\vec{\sigma}\right),\label{eq:ArbitraryRotationAxis}
+\end{equation}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{equation}
+\vec{\sigma}=\hat{\sigma}_{x}\mathbf{i}+\hat{\sigma}_{y}\mathbf{j}+\hat{\sigma}_{z}\mathbf{k}\label{eq:SigmaVector-1}
+\end{equation}
+
+\end_inset
+
+is a vector of Pauli operators,
+ and
+\begin_inset Formula 
+\begin{equation}
+\hat{\mathbf{n}}\cdot\vec{\sigma}=n_{x}\hat{\sigma}_{x}+n_{y}\hat{\sigma}_{y}+n_{z}\hat{\sigma}_{z}\label{eq:n_dot_sigma}
+\end{equation}
+
+\end_inset
+
+is a single-qubit operator.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.22
+\end_layout
+
+\begin_layout Plain Layout
+Find 
+\begin_inset Formula $\hat{\mathbf{n}}$
+\end_inset
+
+ to perform rotations about the following axes:
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ axis.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+If
+\begin_inset Formula 
+\[
+\hat{\mathbf{n}}=\left(1,0,0\right),
+\]
+
+\end_inset
+
+then Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:n_dot_sigma"
+nolink "false"
+
+\end_inset
+
+) becomes
+\begin_inset Formula 
+\[
+\hat{\mathbf{n}}\cdot\vec{\sigma}=\hat{\sigma}_{x},
+\]
+
+\end_inset
+
+and our rotation becomes
+\begin_inset Formula 
+\[
+\mathbf{R}(\hat{\mathbf{n}},\theta)=\exp\left(-i\frac{\theta}{2}\hat{\sigma}_{x}\right)=\exp\left(-i\frac{\theta}{2}\mathbf{X}\right).
+\]
+
+\end_inset
+
+Notice that this is equivalent to the arbitrary rotation through 
+\begin_inset Formula $\theta_{x}$
+\end_inset
+
+ about 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ from Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ArbitraryXRotation"
+nolink "false"
+
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ axis.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+If
+\begin_inset Formula 
+\[
+\hat{\mathbf{n}}=\left(0,1,0\right),
+\]
+
+\end_inset
+
+then Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:n_dot_sigma"
+nolink "false"
+
+\end_inset
+
+) becomes
+\begin_inset Formula 
+\[
+\hat{\mathbf{n}}\cdot\vec{\sigma}=\hat{\sigma}_{y},
+\]
+
+\end_inset
+
+and our rotation becomes
+\begin_inset Formula 
+\[
+\mathbf{R}(\hat{\mathbf{n}},\theta)=\exp\left(-i\frac{\theta}{2}\hat{\sigma}_{y}\right)=\exp\left(-i\frac{\theta}{2}\mathbf{Y}\right).
+\]
+
+\end_inset
+
+This is equivalent to the arbitrary rotation through 
+\begin_inset Formula $\theta_{y}$
+\end_inset
+
+ about 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+ axis.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+If
+\begin_inset Formula 
+\[
+\hat{\mathbf{n}}=\left(0,0,1\right),
+\]
+
+\end_inset
+
+then Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:n_dot_sigma"
+nolink "false"
+
+\end_inset
+
+) becomes
+\begin_inset Formula 
+\[
+{\normalcolor }\hat{\mathbf{n}}\cdot\vec{\sigma}=\hat{\sigma}_{z},
+\]
+
+\end_inset
+
+and our rotation becomes
+\begin_inset Formula 
+\[
+\mathbf{R}(\hat{\mathbf{n}},\theta)=\exp\left(-i\frac{\theta}{2}\hat{\sigma}_{z}\right)=\exp\left(-i\frac{\theta}{2}\mathbf{Z}\right).
+\]
+
+\end_inset
+
+This is equivalent to the arbitrary rotation through 
+\begin_inset Formula $\theta_{z}$
+\end_inset
+
+ about 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset Note Note
+status open
+
+\begin_layout Subsection
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+Let us test again.
+ And again.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,2432 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+The Quantum Liouville Equation
+\end_layout
+
+\begin_layout Itemize
+Equvialent to the time-dependent Schrödinger is the quantum Liouville equation,
+\begin_inset Formula 
+\begin{equation}
+\frac{d\hat{\rho}}{dt}=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}\right],\label{eq:QuantumLiouville}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\left[\hat{A},\hat{B}\right]$
+\end_inset
+
+ is the commutator:
+\begin_inset Formula 
+\begin{equation}
+\left[\hat{A},\hat{B}\right]=\hat{A}\hat{B}-\hat{B}\hat{A}\label{eq:Commutator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Though Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QuantumLiouville"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) is equivalent to Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TDSE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) as a description of a closed quantum system,
+ our interest in Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QuantumLiouville"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) lies in the fact that it may be extended to model open systems.
+\end_layout
+
+\begin_layout Subsection
+Pythonic Calculations of Quantum Liouvillian Evolution
+\end_layout
+
+\begin_layout Itemize
+To solve the quantum Liouville equation in Python,
+ we need a package that integrates solutions to not just matrix differential equations,
+ but also complex matrix differential equations
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset listings
+lstparams "language=Python,basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+odeintw
+\end_layout
+
+\end_inset
+
+ package provides these capabilities
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 7.4
+\end_layout
+
+\begin_layout Plain Layout
+Use Python to solve the quantum Liouville equation for the dynamics of an isolated QCA cell.
+ Plot the expectation value of energy as a function of time,
+ as well as the cell polarization.
+ Compare your result to dynamics calculated using the Schrödinger equation.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The code given below is one approach to this problem.
+ Results are shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qca-liouvillian-dynamics"
+nolink "false"
+
+\end_inset
+
+,
+ in which we see that the quantum Liouville model produces the same result as the Schrödinger model.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from odeintw import odeintw
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar = 6.58E-16 # [eV*s] the reduced Planck constant
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+Sx = np.array([[0,
+ 1],[1,
+ 0]],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+Sz = np.array([[1,
+ 0],[0,
+ -1]],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def expectation_value( op,
+ psi ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Return the expectation value for an
+\end_layout
+
+\begin_layout Plain Layout
+
+       operator op.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Args
+\end_layout
+
+\begin_layout Plain Layout
+
+         psi:
+ a state vector or a density matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       Returns real expectation value
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if psi.shape[0] == psi.shape[1]:
+ # if psi is a density matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+        result = np.trace( op @ psi ).real
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    else:
+ # if psi is a vector
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+        temp = dag( psi ) @ op @ psi
+\end_layout
+
+\begin_layout Plain Layout
+
+        result = temp[0,0].real
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return result
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( Q ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of Q.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( Q.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def commutator( A,
+ B ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Evaluates the commutator of two operators.
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    return A @ B - B @ A
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def quantum_liouville(rho,
+ t,
+ H_constant):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       Implement the quantum Liouville equation for
+\end_layout
+
+\begin_layout Plain Layout
+
+       a constant Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       For use with the odeintw.odeintw() function
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    drhodt = -(1j/hbar)*commutator(H_constant,
+ rho)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return drhodt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 75 # [] number of time steps
+\end_layout
+
+\begin_layout Plain Layout
+
+gamma = 0.025 # [eV] tunneling energy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculations
+\end_layout
+
+\begin_layout Plain Layout
+
+T = np.pi*hbar/gamma # time scale
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 4*T,
+ nt)
+\end_layout
+
+\begin_layout Plain Layout
+
+H = -gamma*Sx # [eV] Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0 = ket0 # initial state - state vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = psi0 @ dag( psi0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Integrate the solution for the quantum Liouville equation
+\end_layout
+
+\begin_layout Plain Layout
+
+sol = odeintw(quantum_liouville,
+ rho0,
+ t,
+ args=(H,) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Pt_ode = np.zeros([nt,])
+\end_layout
+
+\begin_layout Plain Layout
+
+Pt_exp = np.zeros([nt,])
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_ode = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+Et_exp = np.zeros((nt,))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Extract data from ode solution;
+ also calculate Schrodinger version
+\end_layout
+
+\begin_layout Plain Layout
+
+for it in range(nt):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Density matrix - extract data
+\end_layout
+
+\begin_layout Plain Layout
+
+    Pt_ode[it] = expectation_value(-Sz,
+ sol[it])
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_ode[it] = expectation_value(H,
+ sol[it])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # State vector - calculate evolution,
+ extract data
+\end_layout
+
+\begin_layout Plain Layout
+
+    Ut = sp.linalg.expm(-1j*t[it]*H/hbar)
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = Ut @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+    Pt_exp[it] = expectation_value(-Sz,
+ psit)
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et_exp[it] = expectation_value(H,
+ psit)
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(2,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Pt_exp,
+ label='State vector',
+ marker='v')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Pt_ode,
+ label='Density matrix',
+ marker='o',
+\end_layout
+
+\begin_layout Plain Layout
+
+           linestyle='dashdot')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_xlim(t[0]/T,
+ t[-1]/T)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+# ax.set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$P$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et_exp*1E3,
+ label='State vector',
+ marker='v')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et_ode*1E3,
+ label='Density matrix',
+ marker='o',
+\end_layout
+
+\begin_layout Plain Layout
+
+           linestyle='dashdot')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlim(t[0]/T,
+ t[-1]/T)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E$ (meV)',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join('img',
+ 'qca-quantLiouville-Pt.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(fname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close("all")
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{fname}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qca-quantLiouville-Pt.png
+	width 95col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A state vector model matches a density operator model of the dynamics of an isolated QCA cell.
+ The code that produced this is given in the code listing above.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qca-liouvillian-dynamics"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset Note Note
+status open
+
+\begin_layout Section
+Old - The Time-dependent Schrödinger Equation
+\end_layout
+
+\begin_layout Subsection
+An Isolated QCA Cell
+\end_layout
+
+\begin_layout Itemize
+Here,
+ we consider an example of the time-dependent Schrödinger equation from Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TDSE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 7.2
+\end_layout
+
+\begin_layout Plain Layout
+Find 
+\begin_inset Formula $\ket{\psi\left(t\right)}$
+\end_inset
+
+ for a QCA cell prepared in state 
+\begin_inset Formula $\ket{\psi\left(0\right)}=\ket{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $\gamma=50\;\text{meV}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta=0$
+\end_inset
+
+.
+ Plot polarization as a function of time,
+ and plot the energy as a function of time.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The code below calculates the time dynamics of 
+\begin_inset Formula $\ket{\psi\left(t\right)}$
+\end_inset
+
+ using a FOR loop.
+ At each time step,
+ we extract the polarization,
+ 
+\begin_inset Formula $-\Braket{\mathbf{Z}}$
+\end_inset
+
+,
+ and the total energy,
+ 
+\begin_inset Formula $\Braket{\hat{H}}$
+\end_inset
+
+.
+ The results are shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QCARabiOscillation"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from scipy.linalg import expm
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( Q ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of Q.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( Q.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = np.array([[0],[1]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar = 6.582E-16 # [eV*s] Planck's constant (reduced)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+gamma = 0.05 # [eV] tunneling energy
+\end_layout
+
+\begin_layout Plain Layout
+
+T = np.pi*hbar/gamma # [s] time scale
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0 = ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 75 # number of time points
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 3*T,
+ nt) # time vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculations
+\end_layout
+
+\begin_layout Plain Layout
+
+H = -gamma*X # [eV] Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage vector
+\end_layout
+
+\begin_layout Plain Layout
+
+Pt = np.zeros((nt,)) # polarization in time
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((nt,)) # [eV] energy in time
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for tidx,
+ tval in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Time-dependent state
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = expm( - 1j*tval*H/hbar ) @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# calculate polarization
+\end_layout
+
+\begin_layout Plain Layout
+
+    Pt[tidx] = -np.real( dag(psit) @ Z @ psit )[0,0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # calculate energy expectation value
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et[tidx] = np.real( dag(psit) @ H @ psit )[0,0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(2,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Pt,
+ marker='o');
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$P$',
+ fontsize=18)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_xlim(t[0]/T,
+ t[-1]/T)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et,
+ marker='o');
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E$',
+ fontsize=18)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=18)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlim(t[0]/T,
+ t[-1]/T)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join('img',
+ 'cell-rabi-osc.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(fname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'Saved file as {fname}')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{fname}]]')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/cell-rabi-osc.png
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oscillation of an isolated QCA cell as calculated using the code of above.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QCARabiOscillation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We see the QCA cell oscillate between 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ with period 
+\begin_inset Formula $T=\pi\hbar/\gamma$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This oscillation is known as Rabi oscillation
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ is called the Rabi oscillation period
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the lower limit for electron transfer times in our QCA cell
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This provides a physically relevant time scale
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It is often useful to scale plots to a physically meaningful scale 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This helps us avoid thinking about exact numbers,
+ but rather more physically signficant quantities
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We also see that total energy is conserved
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The QCA cell in isolation is a closed system:
+ it can neither gain nor loose energy
+\end_layout
+
+\begin_layout Itemize
+Why is the energy zero and not something else?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall that the diagonal elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ are potential energies
+\end_layout
+
+\begin_layout Itemize
+We can pick the zero of potential energy to be anything
+\end_layout
+
+\begin_layout Itemize
+In this case,
+ we chose 
+\begin_inset Formula $0$
+\end_inset
+
+ as the average energy of states 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ way back in Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ChooseQCAZero"
+nolink "false"
+
+\end_inset
+
+),
+ and there is no bias (
+\begin_inset Formula $\Delta=0$
+\end_inset
+
+) for the isolated cell
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ both 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ have an energy of 0
+\end_layout
+
+\begin_layout Itemize
+We started with 
+\begin_inset Formula $E\left(0\right)=0$
+\end_inset
+
+,
+ and so our closed system is fixed
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+A Pair of QCA Cells
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 7.3
+\end_layout
+
+\begin_layout Plain Layout
+Repeat Exercise 7.2,
+ but this time do it for an interacting but isolated pair of QCA cells.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+This Python script calculates the time-evolution of an unbiased,
+ isolated pair of QCA cells.
+ The results are shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QCARabiOscillation-Pair"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from scipy.linalg import expm
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( Q ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of Q.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( Q.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],[0]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = np.array([[0],[1]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+I = np.array([[1,
+ 0],
+ [0,
+ 1]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.array([[0,
+ 1],
+ [1,
+ 0]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+Z = np.array([[1,
+ 0],
+ [0,
+ -1]],
+ dtype='complex');
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar = 6.582E-16 # [eV*s] Planck's constant (reduced)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+gamma = 0.05 # [eV] tunneling energy
+\end_layout
+
+\begin_layout Plain Layout
+
+Ek = 0.421 # [eV] kink energy
+\end_layout
+
+\begin_layout Plain Layout
+
+T = np.pi*hbar/gamma # [s] time scale
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Initial state - product of states 1 and 0
+\end_layout
+
+\begin_layout Plain Layout
+
+psi0 = np.kron( ket0,
+ ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nt = 125 # number of time points
+\end_layout
+
+\begin_layout Plain Layout
+
+t = np.linspace(0,
+ 8*T,
+ nt) # time vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculations
+\end_layout
+
+\begin_layout Plain Layout
+
+H0 = -gamma*X # [eV] Hamiltonian for cell 0
+\end_layout
+
+\begin_layout Plain Layout
+
+H1 = -gamma*X # [eV] Hamiltonian for cell 1
+\end_layout
+
+\begin_layout Plain Layout
+
+Hint = - 0.5*Ek * np.kron(Z,
+ Z) # [eV] interaction term
+\end_layout
+
+\begin_layout Plain Layout
+
+# [eV] total Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+H = np.kron(I,
+ H0) + np.kron(H1,
+ I) + Hint
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# polarization operator for cell 0
+\end_layout
+
+\begin_layout Plain Layout
+
+Z0 = np.kron(I,
+ Z)
+\end_layout
+
+\begin_layout Plain Layout
+
+# polarization operator for cell 1
+\end_layout
+
+\begin_layout Plain Layout
+
+Z1 = np.kron(Z,
+ I)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Storage vector
+\end_layout
+
+\begin_layout Plain Layout
+
+Pt = np.zeros((2,nt)) # polarization in time
+\end_layout
+
+\begin_layout Plain Layout
+
+Et = np.zeros((nt,)) # [eV] energy in time
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for tidx,
+ tval in enumerate(t):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Time-dependent state
+\end_layout
+
+\begin_layout Plain Layout
+
+    psit = expm( - 1j*tval*H/hbar ) @ psi0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	# calculate polarizations
+\end_layout
+
+\begin_layout Plain Layout
+
+    Pt[0,tidx] = -np.real( dag(psit) @ Z0 @ psit )[0,0]
+\end_layout
+
+\begin_layout Plain Layout
+
+    Pt[1,tidx] = -np.real( dag(psit) @ Z1 @ psit )[0,0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # calculate energy expectation value
+\end_layout
+
+\begin_layout Plain Layout
+
+    Et[tidx] = np.real( dag(psit) @ H @ psit )[0,0]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(2,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Pt[0,:],
+ marker='o',
+ label='Cell 0');
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].plot(t/T,
+ Pt[1,:],
+ marker='v',
+ label='Cell 1');
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_ylabel(r'$P$',
+ fontsize=18)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[0].set_xlim(t[0]/T,
+ t[-1]/T)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].plot(t/T,
+ Et/Ek,
+ marker='o');
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylabel(r'$E/E_k$',
+ fontsize=18)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlabel(r'$t/T$',
+ fontsize=18)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_xlim(t[0]/T,
+ t[-1]/T)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax[1].set_ylim(-.25,
+ 0.75)
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join('img',
+ 'cell-pair-osc.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig(fname)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'Saved file as {fname}')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{fname}]]')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/cell-pair-osc.png
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oscillation of an isolated QCA cell as calculated using the code above.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QCARabiOscillation-Pair"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Plain Layout
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

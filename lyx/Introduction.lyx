@@ -1,0 +1,252 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+\usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds,fit,decorations.pathreplacing,calc,positioning,patterns}
+% \usepackage{crop}
+\usepackage{subfig,caption}
+% \usepackage{relsize} % supports my math key texts
+
+
+\usepackage{amsmath, amsthm}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{ifthen}
+
+
+\newcommand{\Argum}[1]{\ensuremath{\! \left( #1 \right)}}
+\newcommand{\myhref}[2]{\textcolor{blue}{\href{#1}{\ul{#2}}}}
+
+\title{ELC 4350 - Communication Principles\\Baylor University\\Spring 2017\\Lecture 02: Signals and Systems}
+
+\usepackage{latex-codelive/codelive}
+% \usepackage{color}
+
+\newif\ifhandout % define a handout Boolean variable
+\newif\ifsolution
+
+
+\solutiontrue % toggle the inclusion of solutions (this should be FALSE)
+
+\handoutfalse % toggle student handout format or instructor notes
+
+\ifhandout
+   \newcommand{\keyText}[1]{\underline{{\phantom{ \Large #1}}}}
+   \newcommand{\vizspec}{invisible}
+   \newcommand{\boxspec}{0pt}
+   \newcommand{\viz}{[off]}
+   \newcommand{\frspec}{ frame hidden,}
+\else
+   \newcommand{\keyText}[1]{\underline{{\color{blue} \Large #1}}}
+   \newcommand{\vizspec}{visible}
+   \newcommand{\boxspec}{1pt}
+   \newcommand{\viz}{}
+   \newcommand{\frspec}{ }
+\fi
+
+\ifhandout % good for inline math or parts of equations
+   \newcommand{\keyMath}[1]{\phantom{{}{\mathlarger{\mathlarger{#1}}}{}}}
+\else
+   \newcommand{\keyMath}[1]{{\color{blue} {\mathlarger{\mathlarger{#1}}}}}
+\fi
+
+\ifhandout % use this for entire equations
+   \newcommand{\keyEqn}[1]{\phantom{{}{#1}{}}}
+\else
+   \newcommand{\keyEqn}[1]{{\color{blue}#1}}
+\fi
+
+
+\newcommand{\imu}{j}
+
+\newenvironment{onoffbox}{%
+  % \ifthenelse{\equal{#1}{}}{\def\onoff{visible}}{\def\onoff{invisible}}
+  \tcolorbox[%
+  empty,
+  \vizspec, % parbox=false,
+  noparskip,
+  enhanced,
+  breakable, % default frame hidden
+  boxrule=\boxspec, % default frame hidden
+  colback=white, % yellow,
+  left=1ex, right=1ex,
+  before skip=0ex plus 2pt,
+  after skip=1ex plus 2pt]
+  \textit{\textbf{Solution:}} \\
+}{\endtcolorbox}
+
+\newenvironment{solutionbox}{%
+  \begin{onoffbox}}{\end{onoffbox}}
+
+% Some tikz definitions useful for QCA
+\tikzstyle{chemdotstyle}=[very thick, fill=blue, opacity=0.4]
+\tikzstyle{schemdotstyle}=[circle, draw, minimum size = 0.5cm, very thick]
+\tikzstyle{chargestyle}=[circle, fill, minimum size = 0.3cm]
+\tikzstyle{chargestyle2}=[circle, fill, minimum size = 0.5cm]
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Itemize
+This PDF provides an overview of a linear algebraic language that can be used to mathematically describe quantum-dot cellular automata,
+ quantum computing,
+ and other finite-dimensional quantum systems
+\end_layout
+
+\begin_layout Itemize
+The following tools are helpful to have in your background:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Basic statistics
+\end_layout
+
+\begin_layout Itemize
+Basic complex numbers
+\end_layout
+
+\begin_layout Itemize
+Trigonometry and geometry
+\end_layout
+
+\begin_layout Itemize
+Linear algebra
+\end_layout
+
+\begin_layout Itemize
+Computer programming in Python or MATLAB (these days,
+ we prefer Python)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If you don't have these in your background yet,
+ don't worry,
+ we'll try to help you build the skills you need
+\end_layout
+
+\end_body
+\end_document

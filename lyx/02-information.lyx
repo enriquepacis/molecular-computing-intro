@@ -1,0 +1,2304 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Classical Information and Quantum Information
+\end_layout
+
+\begin_layout Subsection
+Classical Information
+\end_layout
+
+\begin_layout Subsubsection
+Single Bits
+\end_layout
+
+\begin_layout Itemize
+A bit (short for 
+\begin_inset Quotes eld
+\end_inset
+
+binary digit
+\begin_inset Quotes erd
+\end_inset
+
+) is the informational element in computing.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A bit can have a value of either 0 or 1:
+ 
+\begin_inset Formula $b\in\{0,1\}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Usually,
+ we need a physical system to encode the bit
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Examples:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+a switch might be open for 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and closed for 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A ray of light might have a vertical polarization (
+\begin_inset Formula $\updownarrow$
+\end_inset
+
+) or a horizontal polarization (
+\begin_inset Formula $\leftrightarrow$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+An electron might have an upward spin (
+\begin_inset Formula $\uparrow$
+\end_inset
+
+,
+ "spin up") or a downward spin (
+\begin_inset Formula $\downarrow$
+\end_inset
+
+,
+ "spin down")
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We call these basic binary states the 
+\series bold
+classical states
+\series default
+ of a system
+\end_layout
+
+\begin_layout Itemize
+In the context of quantum mechanics,
+ we call them the 
+\series bold
+classical basis
+\series default
+ states or the 
+\series bold
+computational basis
+\series default
+ states.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Multiple Bits
+\end_layout
+
+\begin_layout Itemize
+We can combine several bits,
+ 
+\begin_inset Formula $(b_{0},b_{1},\ldots,b_{n-1})$
+\end_inset
+
+ into an 
+\begin_inset Formula $n$
+\end_inset
+
+-bit word,
+ which we give the symbol 
+\begin_inset Formula $\mathbf{b}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathbf{b}=b_{n-1}b_{n-2}\cdots b_{1}b_{0}=b_{0}2^{0}+b_{1}2^{1}+\cdots=\sum_{k=0}^{n-1}b_{k}2^{k}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ we're thinking of 
+\begin_inset Formula $\mathbf{b}$
+\end_inset
+
+ as a binary vector,
+ and we are associating it with an integer 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Classical States - Revisited
+\end_layout
+
+\begin_layout Itemize
+Previously,
+ we used 0 and 1 to representing two states of a physical system.
+\end_layout
+
+\begin_layout Itemize
+Now,
+ we must expand mathematical notation to support quantum information.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To do this,
+ we first transition to a quantum notation for the two 
+\series bold
+classical
+\series default
+ states,
+ 
+\begin_inset Formula $\left|0\right>$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|1\right>$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\begin_inset Formula $\left|\right>$
+\end_inset
+
+ denotes the state of a quantum system and is called a 
+\series bold
+ket
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The symbol inside the ket denotes the state.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Thus,
+ 
+\begin_inset Formula $\left|0\right>$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|1\right>$
+\end_inset
+
+,
+ indicate states of the quantum system that map to the classical device states.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Now,
+ however,
+ we assign these states not a bit,
+ but rather a two dimensional vector:
+ 
+\begin_inset Formula 
+\begin{equation}
+\left|0\right>\leftrightarrow\begin{bmatrix}1\\
+0
+\end{bmatrix}\qquad\text{and}\qquad\left|1\right>\leftrightarrow\begin{bmatrix}0\\
+1
+\end{bmatrix}\label{eq:ElementaryBasisKets}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ we have two realms here:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+one is the physical world,
+ in which we have states of a quantum system denoted by a ket;
+ and
+\end_layout
+
+\begin_layout Itemize
+the other world is a mathematical one,
+ where each ket is represented by a vector
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vectors and their transformations are within the realm of linear algebra
+\end_layout
+
+\begin_layout Itemize
+For some basic linear algebra notes,
+ please see Appendix 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Linear-Algebra"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since these vectors are associated with a physical state,
+ we call them 
+\series bold
+state vectors
+\series default
+,
+ or just 
+\series bold
+states
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+There is nothing quantum yet about the classical states,
+ 
+\begin_inset Formula $\left|0\right>$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|1\right>$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We will use them to make something quantum next.
+\end_layout
+
+\begin_layout Subsection
+Something New:
+ a quantum state
+\end_layout
+
+\begin_layout Itemize
+Now,
+ we can form an arbitrary quantum state,
+ 
+\begin_inset Formula $\left|\psi\right>$
+\end_inset
+
+,
+ by making a weighted sum of the classical basis states:
+\begin_inset Formula 
+\begin{equation}
+\left|\psi\right>=c_{0}\left|0\right>+c_{1}\left|1\right>\label{eq:defineQubit}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is called a 
+\series bold
+quantum superposition
+\series default
+ of basis states
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In quantum realm,
+ we have a quantum superposition of basis states.
+ In linear algebra,
+ a weighted sum of basis vectors is called a 
+\series bold
+linear combination
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the field of quantum computing,
+ this arbitrary state 
+\begin_inset Formula $\left|\psi\right>$
+\end_inset
+
+ is called a 
+\series bold
+qubit
+\series default
+,
+ short for 
+\series bold
+quantum bit
+\end_layout
+
+\begin_layout Itemize
+This is a quantum state,
+ not possible in the classical world.
+\end_layout
+
+\begin_layout Itemize
+The coefficients,
+ 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+,
+ are complex numbers,
+ and in quantum mechanics,
+ we call them 
+\series bold
+probability amplitudes
+\series default
+,
+ or simply 
+\series bold
+amplitudes
+\series default
+ for short.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If you need help with complex numbers,
+ please see Appendix 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Complex-Numbers"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The probability amplitudes allow us to calculate the probability of measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ on a qubit prepared in state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The probability for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p\left(0\right)=\left|c_{0}\right|^{2}=c_{0}^{\ast}c_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The probability for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p\left(1\right)=\left|c_{1}\right|^{2}=c_{1}^{\ast}c_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A measurement of a qubit can only produce 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+,
+ so the probabilities 
+\begin_inset Formula $p\left(0\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $p\left(1\right)$
+\end_inset
+
+ must sum to unity:
+\begin_inset Formula 
+\begin{equation}
+\left|c_{0}\right|^{2}+\left|c_{1}\right|^{2}=1\label{eq:NormalizationCondition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This condition is called 
+\series bold
+normalization
+\series default
+,
+ and meaningful quantum states require normalization
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We now pair the qubit with its linear algebraic (matrix) representation,
+ 
+\begin_inset Formula $\vec{\psi}$
+\end_inset
+
+ (sometimes,
+ I also use 
+\begin_inset Formula $\tilde{\psi}$
+\end_inset
+
+):
+ 
+\begin_inset Formula 
+\begin{equation}
+\left|\psi\right>=c_{0}\left|0\right>+c_{1}\left|1\right>\qquad\leftrightarrow\qquad\vec{\psi}=c_{0}\begin{bmatrix}1\\
+0
+\end{bmatrix}+c_{1}\begin{bmatrix}0\\
+1
+\end{bmatrix}=\begin{bmatrix}c_{0}\\
+c_{1}
+\end{bmatrix}\label{eq:QubitAndMatrixRep}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Notice that we have expanded 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ over the computational basis
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ the vector 
+\begin_inset Formula $\left[\begin{array}{cc}
+c_{0} & c_{1}\end{array}\right]^{T}$
+\end_inset
+
+ is the 
+\series bold
+matrix representation
+\series default
+ of 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ 
+\series bold
+in the computational basis
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We could choose another basis over which to expand the same 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ say,
+ 
+\begin_inset Formula $\left\{ \ket{x_{0}},\ket{x_{1}}\right\} $
+\end_inset
+
+ but then we would generally have a new matrix representation
+\begin_inset Formula 
+\[
+\left|\psi\right>=d_{0}\left|x_{0}\right>+d_{1}\left|x_{1}\right>\qquad\leftrightarrow\qquad\vec{\psi}=\begin{bmatrix}d_{0}\\
+d_{1}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We call the collection of all valid states 
+\begin_inset Formula $\left\{ \ket{\psi}\right\} $
+\end_inset
+
+ a 
+\series bold
+Hilbert space
+\series default
+,
+ 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The states 
+\begin_inset Formula $\left\{ \ket{0},\ket{1}\right\} $
+\end_inset
+
+ are a basis for 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ because any member state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ of the Hilbert space can be made from a quantum superposition of 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Another way to say this is that 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ span the Hilbert space
+\end_layout
+
+\begin_layout Itemize
+Since at least two basis states are required to span 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ we call 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ a two-dimensional Hilbert space
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can scale a state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ by a non-zero and non-infinite scalar 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and still have another member of the Hilbert space:
+\begin_inset Formula 
+\[
+\ket{\psi^{\prime}}=\alpha\ket{\psi}=\alpha c_{0}\ket{0}+\alpha c_{1}\ket{1}\quad\leftrightarrow\quad\alpha\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]=\left[\begin{array}{c}
+\alpha c_{0}\\
+\alpha c_{1}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Scalar multiplication commutes,
+ so 
+\begin_inset Formula $\alpha\ket{\psi}=\ket{\psi}\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Inner Products
+\end_layout
+
+\begin_layout Itemize
+For every ket 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+,
+ there is a dual object,
+ 
+\begin_inset Formula $\bra{\psi}$
+\end_inset
+
+,
+ which is called a 
+\begin_inset Quotes eld
+\end_inset
+
+bra
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The dual relationship may be note by the dagger operator:
+\begin_inset Formula 
+\[
+\ket{\psi}^{\dagger}=\bra{\psi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The dagger operator is the Hermitian conjugate
+\end_layout
+
+\begin_layout Itemize
+If we apply the dagger operator to 
+\begin_inset Formula $\bra{\psi},$
+\end_inset
+
+we get 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\bra{\psi}^{\dagger}=\ket{\psi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+When we dagger a scalar 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ we get the complex conjugate:
+\begin_inset Formula 
+\[
+\alpha^{\dagger}=\alpha^{\ast}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When we dagger a product,
+ we apply the dagger to each factor and reverse the order
+\begin_inset Formula 
+\[
+\left(\alpha\ket{\psi}\right)^{\dagger}=\bra{\psi}\alpha^{\ast}=\alpha^{\ast}\bra{\psi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When we dagger a quanutm superposition,
+ we dagger each term:
+\begin_inset Formula 
+\[
+\ket{\psi}^{\dagger}=\left(c_{0}\ket{0}+c_{1}\ket{1}\right)^{\dagger}=c_{0}^{\ast}\bra{0}+c_{1}^{\ast}\bra{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A bra and a ket form a product called a bra-ket (from the term 
+\begin_inset Quotes eld
+\end_inset
+
+bracket
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+ be quantum states so that they can form a braket,
+ 
+\begin_inset Formula $\braket{\psi|\chi}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\braket{\psi|\chi}$
+\end_inset
+
+ is called the inner product of 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+ with 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is a scalar indicating how similar 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+ is to 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ 
+\begin_inset Formula $\braket{\psi|\chi}$
+\end_inset
+
+ is also called a 
+\series bold
+scalar product
+\series default
+,
+ and it is equivalent to the 
+\series bold
+dot product
+\series default
+ from geometry in 2D or 3D
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $\braket{\psi|\chi}=0$
+\end_inset
+
+,
+ the states are completely dissimilar and are said to be 
+\series bold
+orthogonal
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+What is a bra,
+ and what is the 
+\begin_inset Formula $\dagger$
+\end_inset
+
+ operator?
+ Let us turn to linear algebra to understand this better
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In linear algebra,
+ to take the Hermitian conjugate of a matrix is to take the conjugate and transpose:
+\begin_inset Formula 
+\[
+\ket{\psi}^{\dagger}\qquad\leftrightarrow\qquad\left[\begin{array}{cc}
+x_{0}^{\ast} & x_{1}^{\ast}\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What is an inner product?
+ Let 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+ be
+\begin_inset Formula 
+\[
+\ket{\chi}=x_{0}\ket{0}+x_{1}\ket{1}\qquad\leftrightarrow\qquad\left[\begin{array}{c}
+x_{0}\\
+x_{1}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Then,
+ we can evaluate the inner product 
+\begin_inset Formula $\braket{\chi|\psi}$
+\end_inset
+
+ using the rules of linear algebra
+\begin_inset Formula 
+\begin{align}
+\braket{\chi|\psi} & =\left(\ket{\chi}\right)^{\dagger}\ket{\psi}=\left[\begin{array}{cc}
+x_{0}^{\ast} & x_{1}^{\ast}\end{array}\right]\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]\nonumber \\
+ & =x_{0}^{\ast}c_{0}+x_{1}^{\ast}c_{1}\label{eq:InnerProductTwoStateGeneral}
+\end{align}
+
+\end_inset
+
+We can see that that 
+\begin_inset Formula $\braket{\chi|\psi}$
+\end_inset
+
+ evaluates to a complex number,
+ and we can show that 
+\begin_inset Formula $\braket{\chi|\psi}\neq\braket{\psi|\chi}$
+\end_inset
+
+ when 
+\begin_inset Formula $\vec{\chi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{\psi}$
+\end_inset
+
+ are complex vectors
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is just like the inner product we're used to in 2D or 3D real-space (i.e.,
+ 
+\begin_inset Formula $x_{0},x_{1},c_{0},c_{1}\in\mathbb{R}$
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+\braket{\chi|\psi} & =\left[\begin{array}{cc}
+x_{0}^{\ast} & x_{1}^{\ast}\end{array}\right]\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]=\left[\begin{array}{cc}
+x_{0} & x_{1}\end{array}\right]\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]=x_{0}c_{0}+x_{1}c_{1}\\
+ & =\braket{\psi|\chi}\qquad\left(\text{when }\ket{\psi},\ket{\chi}\in\mathbb{R}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+When we take an inner product of a state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ with itself,
+ we have
+\begin_inset Formula 
+\[
+\braket{\psi|\psi}=\left[\begin{array}{cc}
+c_{0}^{\ast} & c_{1}^{\ast}\end{array}\right]\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]=c_{0}^{\ast}c_{0}+c_{1}^{\ast}c_{1}=\left|c_{0}\right|^{2}+\left|c_{1}\right|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Notice that we get the sum of probabilities,
+ 
+\begin_inset Formula $\left|c_{0}\right|^{2}+\left|c_{1}\right|^{2}$
+\end_inset
+
+,
+ so another way to write the normalization condition is
+\begin_inset Formula 
+\begin{equation}
+\braket{\psi|\psi}=1\label{eq:NormalizationCondition-v01}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Again,
+ when 
+\begin_inset Formula $\ket{\psi}\in\mathbb{R}^{2}$
+\end_inset
+
+,
+ we have
+\begin_inset Formula 
+\[
+\braket{\psi|\psi}=\left[\begin{array}{cc}
+c_{0} & c_{1}\end{array}\right]\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]=c_{0}^{2}+c_{1}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we take the square root of 
+\begin_inset Formula $\braket{\psi|\psi}$
+\end_inset
+
+,
+ then we have something that looks like the Pythagorean theorem:
+\begin_inset Formula 
+\[
+\sqrt{\braket{\psi|\psi}}=\sqrt{c_{0}^{2}+c_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Indeed for vectors 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sqrt{\braket{\psi|\psi}}$
+\end_inset
+
+ is the length of 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+More generally (i.e.,
+ if 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ has a dimension 
+\begin_inset Formula $d>3$
+\end_inset
+
+ or 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ is a complex vector),
+ we say that 
+\begin_inset Formula $\sqrt{\braket{\psi|\psi}}$
+\end_inset
+
+ is the 
+\series bold
+norm
+\series default
+ of 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection
+Normalization
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Execrise 2.1
+\end_layout
+
+\begin_layout Plain Layout
+Find 
+\begin_inset Formula $\braket{0|0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\braket{1|1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+We can evaluate the inner products as follows:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\braket{0|0}=\left[\begin{array}{cc}
+1 & 0\end{array}\right]\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]=1\cdot1+0\cdot0=1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\braket{1|1}=\left[\begin{array}{cc}
+0 & 1\end{array}\right]\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]=0\cdot0+1\cdot1=1
+\]
+
+\end_inset
+
+Thus,
+ the computational basis states are normalized.
+\begin_inset Newline newline
+\end_inset
+
+We also can do this in Python using code like this:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( A ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+A convenience function for the Hermitian
+\end_layout
+
+\begin_layout Plain Layout
+
+    conjugate.
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return A.conj().T
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#=== Constants ===
+\end_layout
+
+\begin_layout Plain Layout
+
+# represent kets using column vectors
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],
+ [0]]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = np.array([[0],
+ [1]])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# 
+\begin_inset Quotes eld
+\end_inset
+
+@
+\begin_inset Quotes erd
+\end_inset
+
+ provides matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+prod00 = dag(ket0) @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+prod11 = dag(ket1) @ ket1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'<0|0> = {prod00}')
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'<1|1> = {prod11}')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+Some notes about this:
+\end_layout
+
+\begin_layout Itemize
+
+\lang american
+Python doesn't support linear algebra without the support of a package such as 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numpy
+\end_layout
+
+\end_inset
+
+,
+ which we import as 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+np
+\end_layout
+
+\end_inset
+
+ for short.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang american
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+v = np.array([1,
+ 2,
+ 3])
+\end_layout
+
+\end_inset
+
+ defines a 
+\begin_inset Formula $3$
+\end_inset
+
+-element vector and saves it in the variable 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+v
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang american
+To explicilty make a 
+\begin_inset Formula $1\times3$
+\end_inset
+
+ row vector,
+ we use 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+v = np.array([[1,
+ 2,
+ 3]])
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang american
+This gets us a 2D array (matrix),
+ where the outer brackets 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+[]
+\end_layout
+
+\end_inset
+
+ denote the contents of the matrix,
+ and the inner brackets denote the contents of a row
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang american
+To explicilty make a 
+\begin_inset Formula $3\times1$
+\end_inset
+
+ column vector,
+ we use 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+v = np.array([[1],
+ [2],
+ [3]])
+\end_layout
+
+\end_inset
+
+,
+ which gets us a 2D matrix with three rows,
+ each containing only one element.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang american
+By the rules of linear algebra,
+ the result of 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+prod00 = dag(ket0) @ ket0
+\end_layout
+
+\end_inset
+
+ is a 
+\begin_inset Formula $1\times1$
+\end_inset
+
+ matrix,
+ which is why we see 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+[[0]]
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang american
+If we want a scalar,
+ we must extract the scalar value.using 
+\lang english
+
+\begin_inset listings
+lstparams "language=Matlab,basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+pro00[0,0]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Here,
+ we are 
+\begin_inset Quotes eld
+\end_inset
+
+slicing
+\begin_inset Quotes erd
+\end_inset
+
+ the matrix,
+ extracting the 
+\begin_inset Formula $\left(r,c\right)=\left(0,0\right)$
+\end_inset
+
+ element,
+ where 
+\begin_inset Formula $r=0$
+\end_inset
+
+ denotes the first (zeroth) row and the first (zeroth) column
+\end_layout
+
+\begin_layout Itemize
+The zeroth row is the first row in the matrix because Python is zero-indexed.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+We extract the scalar value from our one-by-one matrices in this slightly-improved code below.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( A ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+A convenience function for the Hermitian
+\end_layout
+
+\begin_layout Plain Layout
+
+    conjugate.
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return A.conj().T
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#=== Constants ===
+\end_layout
+
+\begin_layout Plain Layout
+
+# represent kets using column vectors
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],
+ [0]]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = np.array([[0],
+ [1]])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# 
+\begin_inset Quotes eld
+\end_inset
+
+@
+\begin_inset Quotes erd
+\end_inset
+
+ provides matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+prod00 = dag(ket0) @ ket0 # 1x1 matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+prod11 = dag(ket1) @ ket1 # 1x1 matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'<0|0> = {prod00[0,0]}') # extracted scalar
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'<1|1> = {prod11[0,0]}') # extracted scalar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When a state has unit length (norm),
+ it is said to be 
+\series bold
+normalized
+\series default
+,
+ and it satisfies the following:
+\begin_inset Formula 
+\begin{equation}
+\braket{\psi|\psi}=\sqrt{\braket{\psi|\psi}}=1\qquad(\text{normalization})\label{eq:DefineNormalization}
+\end{equation}
+
+\end_inset
+
+Thus,
+ we have seen above that the computational basis states 
+\begin_inset Formula $\left\{ \ket{0},\ket{1}\right\} $
+\end_inset
+
+ are normalized
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+We need quantum states to be normalized (i.e.,
+ they must satisfy Equation 
+\series default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DefineNormalization"
+
+\end_inset
+
+
+\series bold
+) in order to have a probabilistic interpretation of their amplitudes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Any wave function 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ with 
+\begin_inset Formula $0<\braket{\psi|\psi}<\infty$
+\end_inset
+
+ may be normalized to 
+\begin_inset Formula $\braket{\psi^{\prime}|\psi^{\prime}}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\braket{\psi^{\prime}|\psi^{\prime}}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To do this,
+ simply divide 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ by its length,
+ 
+\begin_inset Formula $\sqrt{\braket{\psi^{\prime}|\psi^{\prime}}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi^{\prime}}=\frac{\ket{\psi}}{\sqrt{\braket{\psi^{\prime}|\psi^{\prime}}}}\label{eq:NormalizePsi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Orthogonality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Execrise 2.2
+\end_layout
+
+\begin_layout Plain Layout
+Find 
+\begin_inset Formula $\braket{0|1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\braket{1|0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+We can evaluate the inner products as follows:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\braket{0|1}=\left[\begin{array}{cc}
+1 & 0\end{array}\right]\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]=1\cdot0+0\cdot1=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\braket{1|0}=\left[\begin{array}{cc}
+0 & 1\end{array}\right]\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]=0\cdot1+1\cdot0=0
+\]
+
+\end_inset
+
+In this case,
+ 
+\begin_inset Formula $\braket{0|1}=\braket{1|0}=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+We also can do this in Python using code like this:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( A ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+A convenience function for the Hermitian
+\end_layout
+
+\begin_layout Plain Layout
+
+    conjugate.
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return A.conj().T
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#=== Constants ===
+\end_layout
+
+\begin_layout Plain Layout
+
+# represent kets using column vectors
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],
+ [0]]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = np.array([[0],
+ [1]])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# 
+\begin_inset Quotes eld
+\end_inset
+
+@
+\begin_inset Quotes erd
+\end_inset
+
+ provides matrix multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+prod01 = dag(ket0) @ ket1
+\end_layout
+
+\begin_layout Plain Layout
+
+prod10 = dag(ket1) @ ket0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'<0|1> = {prod01[0,0]}')
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'<1|0> = {prod10[0,0]}')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When a pair of states 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ have zero inner product,
+ they are said to be orthogonal,
+ and they satisfy
+\begin_inset Formula 
+\begin{equation}
+\braket{\psi|\chi}=\braket{\chi|\psi}=0\qquad(\text{orthogonality})\label{eq:Orthogonal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is just like perpendicular (orthogonal) vectors in 2D or 3D when they have zero inner (dot) product
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

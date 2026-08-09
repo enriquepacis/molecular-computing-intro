@@ -1,0 +1,7167 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Itemize
+Recall that all valid quantum states of a system comprise that system's Hilbert space
+\end_layout
+
+\begin_layout Itemize
+For a single qubit,
+ any state in its Hilbert space can be written as a quantum superposition of computational basis states,
+ 
+\begin_inset Formula $\left\{ \ket{0},\ket{1}\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ket{\psi}=c_{0}\ket{0}+c_{1}\ket{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The state is said to belong to the Hilbert space of the quantum system
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall:
+ we can represent 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ as a vector of expansion coefficients (
+\begin_inset Quotes eld
+\end_inset
+
+amplitudes
+\begin_inset Quotes erd
+\end_inset
+
+) over the computational basis states,
+ 
+\begin_inset Formula $\left\{ \ket{0},\ket{1}\right\} $
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\text{coefficient for }\ket{0}\leftrightarrow\\
+\text{coefficient for }\ket{1}\leftrightarrow
+\end{array}\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]=c_{0}\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]+c_{1}\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Composite Hilbert Spaces and Composite States
+\end_layout
+
+\begin_layout Itemize
+When we have two qubits,
+ we have two Hilbert spaces,
+ say,
+ 
+\begin_inset Formula $\mathcal{H}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+,
+ for qubits 0 and 1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We might label a state 
+\begin_inset Formula $\ket{\psi}_{0}$
+\end_inset
+
+ of qubit 0 with a subscript 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+,
+ indicating it is within 
+\begin_inset Formula $\mathcal{H}_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Similarly,
+ we might label a state 
+\begin_inset Formula $\ket{\psi}_{1}$
+\end_inset
+
+ of qubit 1 with a subscript 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+,
+ indicating it is within 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We form a two-qubit state using a 
+\series bold
+tensor product
+\series default
+
+\begin_inset Formula 
+\[
+\ket{\Psi}=\ket{\psi}_{1}\otimes\ket{\psi}_{0}=\ket{\psi}_{0}\otimes\ket{\psi}_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The tensor product commutes,
+ but we will prefer the form 
+\begin_inset Formula $\ket{\psi}_{1}\otimes\ket{\psi}_{0}$
+\end_inset
+
+,
+ since it keeps the bits numbered in order from most significant to least significant,
+ as we go from left to right (just like when we're writing bit strings)
+\end_layout
+
+\begin_layout Itemize
+Tensor products are also known as Kronecker products
+\end_layout
+
+\begin_layout Itemize
+We can use more compact notation,
+ where we leave the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\otimes$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ implicit:
+\begin_inset Formula 
+\[
+\ket{\Psi}=\ket{\psi}_{1}\otimes\ket{\psi}_{0}=\ket{\psi}_{1}\ket{\psi}_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Example 5.1
+\end_layout
+
+\begin_layout Plain Layout
+Tensor products.
+ Let 
+\begin_inset Formula 
+\[
+\ket{\psi}_{1}=d_{0}\ket{0}_{0}+d_{1}\ket{1}_{0}\quad\leftrightarrow\quad\left[\begin{array}{c}
+d_{0}\\
+d_{1}
+\end{array}\right]
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\ket{\psi}_{0}=c_{0}\ket{0}_{0}+c_{1}\ket{1}_{0}\quad\leftrightarrow\quad\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right].
+\]
+
+\end_inset
+
+Find the composite state
+\begin_inset Formula 
+\[
+\ket{\Psi}=\ket{\psi}_{1}\otimes\ket{\psi}_{0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\ket{\Psi} & =\ket{\psi}_{1}\otimes\ket{\psi}_{0}=\left(d_{0}\ket{0}_{1}+d_{1}\ket{1}_{1}\right)\otimes\left(c_{0}\ket{0}_{0}+c_{1}\ket{1}_{0}\right)\\
+ & =d_{0}c_{0}\ket{0}_{1}\ket{0}_{0}+d_{0}c_{1}\ket{0}_{1}\ket{1}_{0}+d_{1}c_{0}\ket{1}_{1}\ket{0}_{0}+d_{1}c_{1}\ket{1}_{1}\ket{1}_{0}
+\end{align*}
+
+\end_inset
+
+We will use a short-hand notation and combine the bits into two-bit strings:
+\begin_inset Formula 
+\[
+\Ket{\Psi}=d_{0}c_{0}\ket{00}+d_{0}c_{1}\ket{01}+d_{1}c_{0}\ket{10}+d_{1}c_{1}\ket{11}.
+\]
+
+\end_inset
+
+Notice that our composite state now has four basis vectors,
+ and we could write 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ as a 4-element column vector:
+\begin_inset Formula 
+\begin{equation}
+\ket{\Psi}\quad\leftrightarrow\quad\left[\begin{array}{c}
+d_{0}c_{0}\\
+d_{0}c_{1}\\
+d_{1}c_{0}\\
+d_{1}c_{1}
+\end{array}\right]\label{eq:TwoQubitColVector}
+\end{equation}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We describe the composite Hilbert space,
+ 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ as the tensor product of 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{0}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathcal{H}=\mathcal{H}_{1}\otimes\mathcal{H}_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+All this is great,
+ but how can we understand what a tensor product is?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can turn to linear algebra to make things more concrete and less abstract
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+The Tensor Product of Matrices
+\end_layout
+
+\begin_layout Itemize
+Note:
+ we will use bold-face type (i.e.,
+ 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+) or a hat (
+\begin_inset Formula $\hat{M}$
+\end_inset
+
+) to emphasize that 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+ represents a matrix or an operator;
+ when writing by hand,
+ we will use a hat 
+\begin_inset Formula $\hat{M}$
+\end_inset
+
+ because it's difficult to write in bold-face.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ be an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix and 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ be an 
+\begin_inset Formula $o\times p$
+\end_inset
+
+ matrix:
+\begin_inset Formula 
+\[
+\hat{A}=\left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}\right],\qquad\hat{B}=\left[\begin{array}{cccc}
+b_{11} & b_{12} & \cdots & b_{1p}\\
+b_{21} & b_{22} & \cdots & b_{2p}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{o1} & b_{o2} & \cdots & b_{op}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The tensor (or Kronecker) product 
+\begin_inset Formula $\hat{A}\otimes\hat{B}$
+\end_inset
+
+ is an 
+\begin_inset Formula $mo\times np$
+\end_inset
+
+ matrix:
+\begin_inset Formula 
+\[
+\hat{A}\otimes\hat{B}=\left[\begin{array}{cccc}
+a_{11}\hat{B} & a_{12}\hat{B} & \cdots & a_{1n}\hat{B}\\
+a_{21}\hat{B} & a_{22}\hat{B} & \cdots & a_{2n}\hat{B}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1}\hat{B} & a_{m2}\hat{B} & \cdots & a_{mn}\hat{B}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ each element of 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ multiplies all of 
+\begin_inset Formula $\hat{B}$
+\end_inset
+
+ and forms a block of 
+\begin_inset Formula $\hat{A}\otimes\hat{B}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This treatment also applies to vectors,
+ since vectors are matrices with a single row or column
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.2
+\end_layout
+
+\begin_layout Plain Layout
+The Kronecker product with vectors.
+\end_layout
+
+\begin_layout Enumerate
+Take the Kronecker product of the two vectors
+\begin_inset Formula 
+\[
+\ket{\psi}_{0}=\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right],\qquad\ket{\psi}_{1}=\left[\begin{array}{c}
+d_{0}\\
+d_{1}
+\end{array}\right]\;.
+\]
+
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{equation}
+\ket{\psi}_{1}\otimes\ket{\psi}_{0}=\left[\begin{array}{c}
+d_{0}\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]\\
+d_{1}\left[\begin{array}{c}
+c_{0}\\
+c_{1}
+\end{array}\right]
+\end{array}\right]=\left[\begin{array}{c}
+d_{0}c_{0}\\
+d_{0}c_{1}\\
+d_{1}c_{0}\\
+d_{1}c_{1}
+\end{array}\right]\begin{array}{c}
+\leftrightarrow\ket{0}\ket{0}\\
+\leftrightarrow\ket{0}\ket{1}\\
+\leftrightarrow\ket{1}\ket{0}\\
+\leftrightarrow\ket{1}\ket{1}
+\end{array}\label{eq:TwoQubitVectorKron}
+\end{equation}
+
+\end_inset
+
+Notice that Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TwoQubitVectorKron"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) agrees with our result from (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TwoQubitColVector"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Take the three-Cbit Kronecker product 
+\begin_inset Formula $\ket{2}_{3}=\ket{0}\otimes\ket{1}\otimes\ket{0}$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{0}\otimes\ket{1}\otimes\ket{0}=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]\otimes\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]\otimes\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]\otimes\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]\begin{array}{c}
+\leftrightarrow\ket{000}\\
+\leftrightarrow\ket{001}\\
+\leftrightarrow\ket{010}\\
+\leftrightarrow\ket{011}\\
+\leftrightarrow\ket{100}\\
+\leftrightarrow\ket{101}\\
+\leftrightarrow\ket{110}\\
+\leftrightarrow\ket{111}
+\end{array}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we number the bits in the eight-element vector 0 through 7,
+ then only element 2 is unity,
+ and all others are zero.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This works for any 
+\begin_inset Formula $N$
+\end_inset
+
+-bit system.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we compose the appropriate Cbits 
+\begin_inset Formula 
+\[
+\ket{b_{N-1}}\ket{b_{N-2}}\cdots\ket{b_{1}}\ket{b_{0}}=\ket{k}_{N},
+\]
+
+\end_inset
+
+then in the corresponding vector,
+ the 
+\begin_inset Formula $k^{\mbox{{\tiny {th}}}}$
+\end_inset
+
+ element alone is unity,
+ and all others are zero.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conversely,
+ we can:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Represent 
+\begin_inset Formula $S$
+\end_inset
+
+ different numbers over 
+\begin_inset Formula $0\leq k<S$
+\end_inset
+
+ using an 
+\begin_inset Formula $S$
+\end_inset
+
+-element vector 
+\begin_inset Formula $\ket{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Formula $k^{\mbox{{\tiny {th}}}}$
+\end_inset
+
+ number is represented by setting element 
+\begin_inset Formula $k=1$
+\end_inset
+
+,
+ and all other elements to zero
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Product States and Entangled States
+\end_layout
+
+\begin_layout Itemize
+Consider a state two-qubit state
+\begin_inset Formula 
+\[
+\Ket{\Psi}=\ket{\psi_{B}}\otimes\ket{\psi_{A}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ the qubits are labeled 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ and we have ordered them to suggest that qubit 
+\begin_inset Formula $A$
+\end_inset
+
+ is the least-significant bit,
+ and qubit 
+\begin_inset Formula $B$
+\end_inset
+
+ is the most-significant bit
+\end_layout
+
+\begin_layout Itemize
+By definition,
+ 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ is a product state,
+ because it can be formed by a tensor product of subsystem quantum states.
+\end_layout
+
+\begin_layout Itemize
+We are ignoring the physical implementation of the qubits,
+ since there are numerous ways to implement a qubit.
+ We simply need a two-state system,
+ and we assign 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ to one state,
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ to the other state:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Polarization of light:
+ 
+\begin_inset Formula $\left\{ \leftrightarrow,\updownarrow\right\} $
+\end_inset
+
+,
+\begin_inset Formula $\left\{ \circlearrowright,\circlearrowleft\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Electronic spin:
+ 
+\begin_inset Formula $\left\{ \uparrow,\downarrow\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Electronic location:
+ 
+\begin_inset Formula $\left\{ \ket{L},\ket{R}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Eigenstates of a QHO,
+ using only the ground state and the first excited state:
+ 
+\begin_inset Formula $\left\{ \ket{0},\ket{1}\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\ket{\psi_{A}}=a_{0}\ket{0_{A}}+a_{1}\ket{1_{A}}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\ket{\psi_{B}}=b_{0}\ket{0_{B}}+b_{1}\ket{1_{B}}$
+\end_inset
+
+.
+ Then,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\ket{\Psi} & =\ket{\psi_{A}}\otimes\ket{\psi_{B}}=\ket{\psi_{B}}\otimes\ket{\psi_{A}}\\
+ & =b_{0}a_{0}\ket{0_{B}}\ket{0_{A}}+b_{0}a_{1}\ket{0_{B}}\ket{1_{A}}+b_{1}a_{0}\ket{1_{B}}\ket{0_{A}}+b_{1}a_{1}\ket{1_{B}}\ket{1_{A}}.\\
+ & =b_{0}a_{0}\ket{0_{B}0_{A}}+b_{0}a_{1}\ket{0_{B}1_{A}}+b_{1}a_{0}\ket{1_{B}0_{A}}+b_{1}a_{1}\ket{1_{B}1_{A}}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In quantum computing literature,
+ it is customary to drop the subscripts inside the kets and simply write
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\ket{\Psi}=b_{0}a_{0}\ket{00}+b_{0}a_{1}\ket{01}+b_{1}a_{0}\ket{10}+b_{1}a_{1}\ket{11}.\label{eq:ProductState}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We have associated the position of each bit with a quantum subsystem
+\end_layout
+
+\begin_layout Itemize
+It is important that we are consistent with these associations when using the more compact notation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+More generally,
+ we could write a two-qubit state
+\begin_inset Formula 
+\begin{align*}
+\ket{\Psi} & =c_{0}\ket{00}+c_{1}\ket{01}+c_{2}\ket{10}+c_{3}\ket{11}\\
+ & =c_{0}\ket{0_{2}}+c_{1}\ket{1_{2}}+c_{2}\ket{2_{2}}+c_{3}\ket{3_{2}}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This introduces another shorthand notation,
+ where we:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+write the base-10 equivalent integer 
+\begin_inset Formula $d_{N}$
+\end_inset
+
+ of the 
+\begin_inset Formula $N$
+\end_inset
+
+-bit string 
+\begin_inset Formula $q_{N-1}q_{N-2}\cdots q_{1}q_{0}$
+\end_inset
+
+,
+ and
+\end_layout
+
+\begin_layout Itemize
+and use a subscript 
+\begin_inset Formula $N$
+\end_inset
+
+ to indicate that 
+\begin_inset Formula $d_{N}$
+\end_inset
+
+ indexes a 
+\begin_inset Formula $N$
+\end_inset
+
+-qubit state
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.3
+\end_layout
+
+\begin_layout Plain Layout
+Let a two-qubit state be
+\begin_inset Formula 
+\[
+\ket{\Psi}=c_{0}\ket{0_{2}}+c_{2}\ket{2_{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Determine whether 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ is a product state.
+ If so,
+ find the states 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+ for qubits 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ respectively.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>It can be helpful to write this as
+\begin_inset Formula 
+\[
+\ket{\Psi}=c_{0}\ket{0_{B}}\ket{0_{A}}+c_{2}\ket{1_{B}}\ket{0_{A}}
+\]
+
+\end_inset
+
+It is clear that we can factor this as
+\begin_inset Formula 
+\[
+\ket{\Psi}=\left(c_{0}\ket{0_{B}}+c_{2}\ket{1_{B}}\right)\ket{0_{A}}
+\]
+
+\end_inset
+
+Now,
+ we can write
+\begin_inset Formula 
+\[
+\ket{\psi_{B}}=c_{0}\ket{0_{B}}+c_{2}\ket{1_{B}}\qquad\text{and}\qquad\ket{\psi_{A}}=\ket{0_{A}}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the probabilities 
+\begin_inset Formula $p_{B}\left(\alpha\right)$
+\end_inset
+
+ of measuring 
+\begin_inset Formula $\alpha\in\left\{ 0,1\right\} $
+\end_inset
+
+ on qubit 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+From our previous result for 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+p_{B}\left(0\right)=\left|c_{0}\right|^{2},\qquad\text{and}\qquad p_{B}\left(1\right)=\left|c_{2}\right|^{2}.
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the probabilities 
+\begin_inset Formula $p_{A}\left(\alpha\right)$
+\end_inset
+
+ of measuring 
+\begin_inset Formula $\alpha\in\left\{ 0,1\right\} $
+\end_inset
+
+ on qubit 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+From our previous result for 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+p_{A}\left(0\right)=1,\qquad\text{and}\qquad p_{A}\left(1\right)=0.
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+If we measure 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ on qubit 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ what is the post-measurement two-qubit wave function,
+ 
+\begin_inset Formula $\ket{\Psi^{\prime}}$
+\end_inset
+
+?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{\Psi^{\prime}}=\ket{0_{B}}\ket{0_{A}}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If we now perform a subsequent measurement of 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ what are the probabilities of a 0 and 1 measurement?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{\Psi^{\prime}}=\ket{0_{B}}\ket{0_{A}}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+If we measure 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ on qubit 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ what is the resulting two-qubit wave function 
+\begin_inset Formula $\ket{\Psi^{\prime}}$
+\end_inset
+
+?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{\Psi^{\prime}}=\ket{1_{B}}\ket{0_{A}}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If we now perform a subsequent measurement of 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ what are the probabilities of a 0 and 1 measurement?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p_{A}\left(0\right)=1,\qquad p_{A}\left(1\right)=0
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observations about product states
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since we could factor 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ into 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+,
+ information (everything that can be known) about 
+\begin_inset Formula $B$
+\end_inset
+
+ is found in 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+ ,
+ and information about system 
+\begin_inset Formula $A$
+\end_inset
+
+ is found in 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Complete information about system 
+\begin_inset Formula $X\in\left\{ A,B\right\} $
+\end_inset
+
+ is found 
+\series bold
+locally
+\series default
+ in that system (i.e.,
+ in 
+\begin_inset Formula $\ket{\psi_{X}}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Measurements on system 
+\begin_inset Formula $B$
+\end_inset
+
+ 
+\series bold
+do not
+\series default
+ 
+\series bold
+affect
+\series default
+ measurements on system 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ is a product state factorizable into 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are said to have 
+\series bold
+pure
+\series default
+ states or 
+\series bold
+coherent
+\series default
+ states.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.4
+\end_layout
+
+\begin_layout Plain Layout
+Let a two-qubit state be
+\begin_inset Formula 
+\[
+\ket{\Psi}=c_{0}\ket{0_{2}}+c_{2}\ket{2_{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Determine whether 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ is a product state.
+ If so,
+ find the states 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+ for qubits 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ respectively.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>It can be helpful to write this as
+\begin_inset Formula 
+\begin{align*}
+\ket{\Psi} & =c_{0}\ket{0_{B}}\ket{0_{A}}+c_{1}\ket{0_{B}}\ket{1_{A}}+c_{2}\ket{1_{B}}\ket{0_{A}}\\
+ & =\ket{0_{B}}\left(c_{0}\ket{0_{A}}+c_{1}\ket{1_{A}}\right)+c_{2}\ket{1_{B}}\ket{0_{A}}
+\end{align*}
+
+\end_inset
+
+This is as far as we can take it,
+ however!
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the probabilities 
+\begin_inset Formula $p_{B}\left(\alpha\right)$
+\end_inset
+
+ of measuring 
+\begin_inset Formula $\alpha\in\left\{ 0,1\right\} $
+\end_inset
+
+ on qubit 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+The only states in 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ which allow for a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ measurement on system 
+\begin_inset Formula $B$
+\end_inset
+
+ are 
+\begin_inset Formula $\ket{0_{2}}=\ket{0_{B}}\ket{0_{A}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1_{2}}=\ket{0_{B}}\ket{1_{A}}$
+\end_inset
+
+.
+ Therefore,
+\begin_inset Formula 
+\[
+p_{B}\left(0\right)=\left|c_{0}\right|^{2}+\left|c_{1}\right|^{2}.
+\]
+
+\end_inset
+
+Similarly:
+\begin_inset Formula 
+\[
+p_{B}\left(1\right)=\left|c_{2}\right|^{2}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the probabilities 
+\begin_inset Formula $p_{A}\left(\alpha\right)$
+\end_inset
+
+ of measuring 
+\begin_inset Formula $\alpha\in\left\{ 0,1\right\} $
+\end_inset
+
+ on qubit 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+The only states in 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ which allows for a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ measurement on system 
+\begin_inset Formula $A$
+\end_inset
+
+ are 
+\begin_inset Formula $\ket{0_{2}}=\ket{0_{B}}\ket{0_{A}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{2_{2}}=\ket{1_{B}}\ket{0_{A}}$
+\end_inset
+
+.
+ Thus:
+\begin_inset Formula 
+\[
+p_{A}\left(0\right)=\left|c_{0}\right|^{2}+\left|c_{2}\right|^{2}.
+\]
+
+\end_inset
+
+Similarly:
+\begin_inset Formula 
+\[
+p_{A}\left(1\right)=\left|c_{1}\right|^{2}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+If we measure 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ on qubit 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ what is the post-measurement two-qubit wave function,
+ 
+\begin_inset Formula $\ket{\Psi^{\prime}}$
+\end_inset
+
+?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{\Psi^{\prime}}=A_{0}\ket{0_{B}}\left(c_{0}\ket{0_{A}}+c_{1}\ket{1_{A}}\right)
+\]
+
+\end_inset
+
+with some normalization constant,
+ 
+\begin_inset Formula $A_{0}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If we now perform a subsequent measurement of 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ what are the probabilities of a 0 and 1 measurement?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p_{A}\left(0\right)=\left|A_{0}\right|^{2}\left|c_{0}\right|^{2},\qquad p_{A}\left(1\right)=\left|A_{0}\right|^{2}\left|c_{1}\right|^{2}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+If we measure 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ on qubit 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ what is the resulting two-qubit wave function 
+\begin_inset Formula $\ket{\Psi^{\prime}}$
+\end_inset
+
+?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{\Psi^{\prime}}=\ket{1_{B}}\ket{0_{A}}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If we now perform a subsequent measurement of 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ what are the probabilities of a 0 and 1 measurement?
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p_{A}\left(0\right)=1,\qquad p_{A}\left(1\right)=0
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since we could not factor 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ into 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+,
+ we say that the states 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are entangled
+\end_layout
+
+\begin_layout Itemize
+Unlike product states,
+ transformations on one subsystem in an entangled pair of systems 
+\series bold
+affect
+\series default
+ the state of the other subsystem
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There is information about 
+\begin_inset Formula $A$
+\end_inset
+
+ (i.e.,
+ the state of 
+\begin_inset Formula $A$
+\end_inset
+
+) that gets manipulated when 
+\begin_inset Formula $B$
+\end_inset
+
+ is transformed or measured,
+ and vice versa
+\end_layout
+
+\begin_layout Itemize
+In the second example,
+ measurements on 
+\begin_inset Formula $B$
+\end_inset
+
+ affect subsequent measurements on 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This can even be true when 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are separated over a very great distance
+\end_layout
+
+\begin_layout Itemize
+This is the basis for the quantum teleportation of information and quantum communication schemes
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Historical note
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Einstein found this non-locality of entanglement in quantum states to be troubling
+\end_layout
+
+\begin_layout Itemize
+Einstein called this 
+\begin_inset Quotes eld
+\end_inset
+
+spooky action at a distance,
+\begin_inset Quotes erd
+\end_inset
+
+ and he said that physics did not work like this
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There must be some information missing from the quantum description that determines this otherwise inexplicable link between entangled systems
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Einstein thought that quantum mechanics was an incomplete description of the world
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+He hypothesized that there was some unknown connection between entangled systems
+\end_layout
+
+\begin_layout Itemize
+This is known as a hidden variable theory
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+When systems 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are entangled:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+information about system 
+\begin_inset Formula $A$
+\end_inset
+
+ is 
+\series bold
+non-local
+\series default
+ to system 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+information about 
+\begin_inset Formula $A$
+\end_inset
+
+ is missing locally from 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ but is present in the composite 
+\begin_inset Formula $AB$
+\end_inset
+
+ quantum system
+\end_layout
+
+\begin_layout Itemize
+information about system 
+\begin_inset Formula $B$
+\end_inset
+
+ is 
+\series bold
+non-local
+\series default
+ to system 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+we no longer can write a wave function 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+ that contains everything that can be known about 
+\begin_inset Formula $A$
+\end_inset
+
+ or 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Neither system 
+\begin_inset Formula $A$
+\end_inset
+
+ nor 
+\begin_inset Formula $B$
+\end_inset
+
+ has its own distinct wave function!
+\end_layout
+
+\begin_layout Itemize
+we say that systems 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ no longer have pure states (they are impure)
+\end_layout
+
+\begin_layout Itemize
+the states of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are said to be 
+\series bold
+correlated
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Composite Operators
+\end_layout
+
+\begin_layout Itemize
+We now know how to make composite states
+\end_layout
+
+\begin_layout Itemize
+How do we make composite operators?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We also use the tensor product
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider two quantum systems:
+ system 0 from Hilbert space 0,
+ 
+\begin_inset Formula $\mathcal{H}_{0}$
+\end_inset
+
+,
+ and system 1 from Hilbert space 1,
+ 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let operator 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ transform states 
+\begin_inset Formula $\left\{ \ket{\psi_{0}}\right\} $
+\end_inset
+
+ from Hilbert space 0,
+ and let operator 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ transform states 
+\begin_inset Formula $\left\{ \ket{\psi_{1}}\right\} $
+\end_inset
+
+ from Hilbert space 1.
+\end_layout
+
+\begin_layout Itemize
+Then,
+ we make a composite operator 
+\begin_inset Formula $\mathbf{B}\otimes\mathbf{A}$
+\end_inset
+
+ that transforms composite states 
+\begin_inset Formula $\ket{\psi_{1}}\otimes\ket{\psi_{0}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left(\mathbf{B}\otimes\mathbf{A}\right)\left(\ket{\psi_{1}}\otimes\ket{\psi_{0}}\right)=\mathbf{B}\ket{\psi_{1}}\otimes\mathbf{A}\ket{\psi_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Notice that we are careful and consistent about ordering entities from the respective Hilbert spaces
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We use the ordering 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{0}$
+\end_inset
+
+ to order the state vector product 
+\begin_inset Formula $\ket{\psi_{1}}\otimes\ket{\psi_{0}}$
+\end_inset
+
+,
+ the operator product 
+\begin_inset Formula $\mathbf{B}\otimes\mathbf{A}$
+\end_inset
+
+,
+ and the result 
+\begin_inset Formula $\mathbf{B}\ket{\psi_{1}}\otimes\mathbf{A}\ket{\psi_{0}}$
+\end_inset
+
+,
+ which also is a product of state vectors
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+In quantum mechanics,
+ objects from different Hilbert spaces 
+\begin_inset Formula $\mathcal{H}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ commute:
+\begin_inset Formula 
+\[
+\mathbf{O}_{1}\otimes\mathbf{O}_{0}=\mathbf{O}_{0}\otimes\mathbf{O}_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In linear algebra,
+ however,
+ we cannot simply commute Kronecker products:
+\begin_inset Formula 
+\[
+\tilde{M}_{1}\otimes\tilde{M}_{0}\neq\tilde{M}_{0}\otimes\tilde{M}_{1},
+\]
+
+\end_inset
+
+so it is advisable for beginners to always be careful about the order of Kronecker products.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In quantum computing literature,
+ if we only want to operate on the 
+\begin_inset Formula $k$
+\end_inset
+
+-th qubit using an operator 
+\begin_inset Formula $\mathbf{O}$
+\end_inset
+
+,
+ we could explicilty write this as
+\begin_inset Formula 
+\[
+\mathbf{1}_{n-1}\otimes\cdots\otimes\mathbf{1}_{k+1}\otimes\mathbf{O}_{k}\otimes\mathbf{1}_{k-1}\otimes\cdots\mathbf{1}_{0}=\mathbf{O}_{n-1}\cdots\mathbf{1}_{k+1}\mathbf{O}_{k}\mathbf{1}_{k-1}\cdots\mathbf{1}_{0}=\mathbf{O}_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ we are are applying the identity operator (it does nothing) to all qubits except the 
+\begin_inset Formula $k$
+\end_inset
+
+-th qubit,
+ and the 
+\begin_inset Formula $k$
+\end_inset
+
+-th qubit gets transformed by operator 
+\begin_inset Formula $\mathbf{O}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The notation for an identity matrix is also often written as 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+,
+ we will be using the 
+\begin_inset Formula $\mathbf{1}$
+\end_inset
+
+ notation
+\end_layout
+
+\begin_layout Itemize
+In the middle,
+ we omit the tensor-product operator 
+\begin_inset Formula $\otimes$
+\end_inset
+
+ for a more compact notation
+\end_layout
+
+\begin_layout Itemize
+The most compact notation is to leave the identity operators implicit,
+ and use only the subscript,
+ as in the right-hand expression.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.5
+\end_layout
+
+\begin_layout Plain Layout
+Consider the state 
+\begin_inset Formula $\ket{0}\otimes\ket{1}$
+\end_inset
+
+.
+ Construct an operator that flips bit 1 but not bit 0.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Start by first finding the state vector:
+\begin_inset Formula 
+\[
+\ket{0}\otimes\ket{1}=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]\otimes\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right]\begin{array}{c}
+\leftrightarrow\ket{0}\ket{0}\\
+\leftrightarrow\ket{0}\ket{1}\\
+\leftrightarrow\ket{1}\ket{0}\\
+\leftrightarrow\ket{1}\ket{1}
+\end{array}
+\]
+
+\end_inset
+
+To flip qubit 1 but not qubit zero,
+ we make the following tensor product:
+\begin_inset Formula 
+\[
+\mathbf{X}\otimes\mathbf{1}=\left[\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right]\otimes\left[\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]=\left[\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+Now,
+ we can see how 
+\begin_inset Formula $\mathbf{X}\otimes\mathbf{1}$
+\end_inset
+
+ transforms 
+\begin_inset Formula $\ket{0}\otimes\ket{1}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left(\mathbf{X}\otimes\mathbf{1}\right)\left(\ket{0}\otimes\ket{1}\right)=\left[\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+0\\
+1
+\end{array}\right]\begin{array}{c}
+\leftrightarrow\ket{0}\ket{0}\\
+\leftrightarrow\ket{0}\ket{1}\\
+\leftrightarrow\ket{1}\ket{0}\\
+\leftrightarrow\ket{1}\ket{1}
+\end{array}
+\]
+
+\end_inset
+
+By considering the mapping of our new state vector to the computational basis,
+ we can see that we have indeed flipped bit 1 but left bit 0 alone.
+ We can also manipulate the expression directly without writing out matrices:
+\begin_inset Formula 
+\[
+\left(\mathbf{X}\otimes\mathbf{1}\right)\left(\ket{0}\otimes\ket{1}\right)=\mathbf{X}\ket{0}\otimes\mathbf{1}\ket{1}=\ket{1}\otimes\ket{1}
+\]
+
+\end_inset
+
+We now have another way to see that our composite operator was well-designed for our desired application.
+ Similarly,
+ we could flip only bit 0 using the composite operator 
+\begin_inset Formula $\mathbf{1}\otimes\mathbf{X}$
+\end_inset
+
+.
+ Finally,
+ we could flip both bits using 
+\begin_inset Formula $\mathbf{X}\otimes\mathbf{X}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conceptual Note:
+ QCA and Qubits
+\end_layout
+
+\begin_layout Itemize
+We've been introducing you to quantum mechanics and quantum information using two applications:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantum-dot cellular automata (QCA)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These are physical systems used for classical information processing
+\end_layout
+
+\begin_layout Itemize
+Quantum mechanics is necessary to describe the physics of QCA
+\end_layout
+
+\begin_layout Itemize
+Here,
+ the two classical bit states,
+ 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ (or 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+) are important
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+While we are most concerned with classical bits,
+ quantum states can arise that are a superposition of 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In quantum mechanics and QCA,
+ we're most interested in solving the Schrödinger equation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Quantum information
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ we use quantum bits,
+\begin_inset Formula 
+\[
+\ket{\psi}=c_{0}\ket{0}+c_{1}\ket{1}
+\]
+
+\end_inset
+
+for information processing with quantum algorithms
+\end_layout
+
+\begin_layout Itemize
+In information processing and the study of algorithms,
+ we generally ignore the quantum physics,
+ so we don't focus on the Hamiltonian or the Schrödinger equation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Graphics :noexport:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Python Code for Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitNotCircuit"
+
+\end_inset
+
+.
+ Single-qubit timeline with a NOT operator.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-binary-wire-N2-ket00'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot10ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot20ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Driven two-cell wire,
+ ket 1.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-binary-wire-N2-ket01'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot11ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot20ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Driven two-cell wire,
+ ket 2.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-binary-wire-N2-ket02'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot10ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot21ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Driven two-cell wire,
+ ket 3.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-binary-wire-N2-ket03'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot11ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot21ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Driven two-cell wire,
+ ket 3.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-binary-wire-N2-biased'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD0ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD1ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot00ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot01ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD0) at (dotD0ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD1) at (dotD1ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ dashed] (dotD0) -- (dotD1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (-0.5*
+\backslash
+ra,
+ -1) {driver};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % 
+\backslash
+node (q0) at (dotD0) [chargestyle,
+ fill=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1*
+\backslash
+ra) {
+\backslash
+large $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1.625*
+\backslash
+ra) {
+\backslash
+large $P = -1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot00) at (dot00ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot01) at (dot01ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot00) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-1*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(0,
+ -1*
+\backslash
+ra) node [midway,
+ left] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Driven three-cell wire.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'driven-binary-wire-N3'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Some tikz definitions useful for QCA
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chemdotstyle}=[very thick,
+ fill=blue,
+ opacity=0.4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{schemdotstyle}=[circle,
+ draw,
+ minimum size = 0.5cm,
+ very thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle}=[circle,
+ fill,
+ minimum size = 0.3cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{chargestyle2}=[circle,
+ fill,
+ minimum size = 0.5cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD0ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD1ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot00ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot01ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (2.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (2.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD0) at (dotD0ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD1) at (dotD1ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ dashed] (dotD0) -- (dotD1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (-0.5*
+\backslash
+ra,
+ -1) {driver};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % 
+\backslash
+node (q0) at (dotD0) [chargestyle,
+ fill=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1*
+\backslash
+ra) {
+\backslash
+large $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1.625*
+\backslash
+ra) {
+\backslash
+large $P = -1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot00) at (dot00ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot01) at (dot01ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot00) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (2.5*
+\backslash
+ra,
+ -1) {cell 2};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-1*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(0,
+ -1*
+\backslash
+ra) node [midway,
+ left] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [very thick,
+ |<->|] (1.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

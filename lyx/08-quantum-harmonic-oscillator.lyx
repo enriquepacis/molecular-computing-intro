@@ -1,0 +1,2158 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Itemize
+The quantum harmonic oscillator is an important system in quantum mechanics
+\end_layout
+
+\begin_layout Itemize
+The time-independent Schrödinger equation may be written as
+\begin_inset Formula 
+\[
+-\frac{\hbar^{2}}{2m}\frac{d^{2}\psi}{dx^{2}}+\frac{1}{2}m\omega^{2}x^{2}\psi=E\psi,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $x$
+\end_inset
+
+ is the oscillator position
+\end_layout
+
+\begin_layout Itemize
+In this system,
+ we identify the Hamiltonian as
+\begin_inset Formula 
+\[
+\hat{H}=-\frac{\hbar^{2}}{2m}\frac{d^{2}}{dx^{2}}+\frac{1}{2}m\omega^{2}x^{2},
+\]
+
+\end_inset
+
+so that we can write
+\begin_inset Formula 
+\begin{equation}
+\hat{H}\psi_{n}\left(x\right)=E_{n}\psi_{n}\left(x\right)\label{eq:qho-tise}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We may also write this using Dirac's bra-ket formalism:
+\begin_inset Formula 
+\begin{equation}
+\hat{H}\ket{\psi_{n}}=E_{n}\ket{\psi_{n}}\label{eq:qho-tise-braket}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It may be shown that the functions 
+\begin_inset Formula $\psi_{n}\left(x\right)$
+\end_inset
+
+–called eigenfunctions of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+,
+ each with its own energy 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+– have energies given by
+\begin_inset Formula 
+\[
+E_{n}=\hbar\omega\left(n+\frac{1}{2}\right),\qquad n\geq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The eigenenergies are evenly spaced in energy
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $E_{0}=\hbar\omega/2$
+\end_inset
+
+ is the ground state energy associated with 
+\begin_inset Formula $\psi_{0}\left(x\right)$
+\end_inset
+
+,
+ which is known as the ground state
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The ground state is the lowest allowed energy for the quantum harmonic oscillator
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The state 
+\begin_inset Formula $\psi_{1}\left(x\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $E_{1}=3\hbar\omega/2$
+\end_inset
+
+ is called the first excited state
+\end_layout
+
+\begin_layout Itemize
+The state 
+\begin_inset Formula $\psi_{2}\left(x\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $E_{2}=5\hbar\omega/2$
+\end_inset
+
+ is called the second excited state
+\end_layout
+
+\begin_layout Itemize
+The energy spacing,
+ 
+\begin_inset Formula $\hbar\omega$
+\end_inset
+
+ between states 
+\begin_inset Formula $\psi_{n}\left(x\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{n\pm1}\left(x\right)$
+\end_inset
+
+ is called the energy quantization
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is a quantum of energy,
+ also called a vibron
+\end_layout
+
+\begin_layout Itemize
+In semiconductors,
+ these quanta are called phonons
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+There is an infinte number of eigenfunctions and eigenenergies:
+ 
+\begin_inset Formula $n\in\left\{ 0,1,2,\ldots\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The general quantum state of a quantum harmonic oscillator may be a superposition of eigenstates:
+\begin_inset Formula 
+\begin{equation}
+\psi\left(x\right)=\sum_{n=0}^{\infty}c_{n}\psi_{n}\left(x\right)\label{eq:arbitrary-QHO-state}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ the eigenfunctions 
+\begin_inset Formula $\left\{ \psi_{n}\left(x\right)\right\} $
+\end_inset
+
+ form an infinite basis for the quantum state 
+\begin_inset Formula $\psi\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In practice,
+ contributions to 
+\begin_inset Formula $\psi\left(x\right)$
+\end_inset
+
+ from lower values of 
+\begin_inset Formula $n$
+\end_inset
+
+ are most significant,
+ and 
+\begin_inset Formula $\left|c_{n}\right|$
+\end_inset
+
+ for large 
+\begin_inset Formula $n$
+\end_inset
+
+ becomes very small
+\end_layout
+
+\begin_layout Itemize
+In this expansion,
+ we are using the energy eigenstates as a basis for an arbitrary 
+\begin_inset Formula $\psi\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We refer to this as the energy basis or the Fock basis
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+In atomic units,
+ we might write
+\begin_inset Formula 
+\[
+H=\hbar\omega\left(\hat{a}^{\dagger}\hat{a}+\frac{1}{2}\hat{1}\right)\rightarrow\frac{H}{\hbar\omega}=\left(\hat{a}^{\dagger}\hat{a}+\frac{1}{2}\hat{1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Then,
+\begin_inset Formula 
+\[
+\hat{x}=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^{\dagger}+\hat{a}\right),
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\sqrt{\frac{2m\omega}{\hbar}}\hat{x}=\hat{a}^{\dagger}+\hat{a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We can define
+\begin_inset Formula 
+\[
+x_{0}=\sqrt{\frac{\hbar}{m\omega}}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\frac{x}{x_{0}}=\frac{1}{\sqrt{2}}\left(\hat{a}^{\dagger}+\hat{a}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can define position and momentum operators,
+\begin_inset Formula 
+\[
+\hat{x}=x,\qquad\text{and}\qquad\hat{p}=i\hbar\frac{d}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ we can write the Hamiltonian as
+\begin_inset Formula 
+\[
+\hat{H}=\frac{\hat{p}^{2}}{2m}+\frac{1}{2}m\omega\hat{x}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We also may define creation and annihilation operators,
+\begin_inset Formula 
+\[
+\hat{a}^{\dagger}=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x}+\frac{i}{m\omega}\hat{p}\right)\qquad\text{and}\qquad\hat{a}=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x}-\frac{i}{m\omega}\hat{p}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We also can write the Hamiltonian in terms of these:
+\begin_inset Formula 
+\[
+\hat{H}=\hat{a}^{\dagger}\hat{a}\left(\hbar\omega+\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can write the position and momentum operators in terms of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}^{\dagger}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\hat{x} & =\sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^{\dagger}+\hat{a}\right),\label{eq:qho-position-operator}\\
+\hat{p} & =\sqrt{\frac{\hbar m\omega}{2}}\left(\hat{a}^{\dagger}-\hat{a}\right)\label{eq:qho-momentum-operator}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The operator 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ transforms an eigenstate 
+\begin_inset Formula $\psi_{n}\left(x\right)$
+\end_inset
+
+ as follows:
+\begin_inset Formula 
+\begin{equation}
+\hat{a}\psi_{n}\left(x\right)=\begin{cases}
+\sqrt{n}\psi_{n-1}\left(x\right), & n>0\\
+0, & n=0
+\end{cases}\label{eq:lowering-action}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ reduces the state's energy by one vibron.
+ In other words,
+ it annihilates one quanta of vibration,
+ so we call this operator the annihilation operator
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The operator 
+\begin_inset Formula $\hat{a}^{\dagger}$
+\end_inset
+
+ transforms an eigenstate 
+\begin_inset Formula $\psi_{n}\left(x\right)$
+\end_inset
+
+ as follows:
+\begin_inset Formula 
+\begin{equation}
+\hat{a}^{\dagger}\psi_{n}\left(x\right)=\sqrt{n+1}\psi_{n+1}\left(x\right)\label{eq:raising-action}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ increases the state's energy by one vibron.
+ In other words,
+ it creates one quanta of vibration,
+ so we call this operator the creation operator
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Consider the action of 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ on a state 
+\begin_inset Formula $\psi_{n}\left(x\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\hat{a}^{\dagger}\hat{a}\psi_{n}\left(x\right)=\sqrt{n}\hat{a}^{\dagger}\psi_{n-1}\left(x\right)=n\psi_{n}\left(x\right)\label{eq:number-operator-action}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The action of 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ is to extract 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ the number of quanta in the state 
+\begin_inset Formula $\psi_{n}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ we define 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ as the number operator,
+ 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\hat{n}=\hat{a}^{\dagger}\hat{a}\label{eq:define-number-operator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The integer 
+\begin_inset Formula $n$
+\end_inset
+
+ is also called the occupation number,
+ because it tells us how many quanta of vibration exist in a quantum state
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Computer Modeling of the QHO
+\end_layout
+
+\begin_layout Subsection
+The Energy Basis Representation for the QHO
+\end_layout
+
+\begin_layout Itemize
+We start by truncating our infinite basis to a basis with 
+\begin_inset Formula $N$
+\end_inset
+
+ elements,
+ 
+\begin_inset Formula $\left\{ \psi_{0}\left(x\right),\psi_{1}\left(x\right),\ldots,\psi_{N-1}\left(x\right)\right\} $
+\end_inset
+
+,
+ so we have an approximation to 
+\begin_inset Formula $\psi\left(x\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\psi\left(x\right)\simeq\sum_{n=0}^{N}c_{n}\psi_{n}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next,
+ we assign elementary vectors to each eigenstate in our truncated basis:
+\begin_inset Formula 
+\[
+\psi_{0}\left(x\right)\leftrightarrow\vec{e}_{1}=\left[\begin{array}{c}
+1\\
+0\\
+0\\
+\vdots
+\end{array}\right];\quad\psi_{1}\left(x\right)\leftrightarrow\vec{e}_{2}=\left[\begin{array}{c}
+0\\
+1\\
+0\\
+\vdots
+\end{array}\right]\quad\cdots\quad\psi_{N-1}\left(x\right)\leftrightarrow\vec{e}_{N}=\left[\begin{array}{c}
+\vdots\\
+0\\
+0\\
+1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ we can write the matrix representation of the 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ operator by finding the individual columns of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ in the basis 
+\begin_inset Formula $\left\{ \psi_{0}\left(x\right),\psi_{1}\left(x\right),\ldots,\psi_{N-1}\left(x\right)\right\} \leftrightarrow\left\{ \vec{e}_{1},\vec{e}_{2},\ldots,\vec{e}_{N}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The first column of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ in the energy basis is the result of multiplying the 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ operator in the energy basis by the first elementary vector:
+ 
+\begin_inset Formula 
+\[
+\hat{a}\ket{0}=0\leftrightarrow\hat{a}\vec{e}_{1}=\left[\begin{array}{c}
+0\\
+0\\
+\vdots\\
+0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The second column of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ in the energy basis is the result of multiplying the 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ operator in the energy basis by the second elementary vector:
+\begin_inset Formula 
+\[
+\hat{a}\ket{1}=\ket{0}\leftrightarrow\hat{a}\vec{e}_{2}=\vec{e}_{1}=\left[\begin{array}{c}
+1\\
+0\\
+0\\
+\vdots
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The third column of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ in the energy basis is the result of multiplying the 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ operator in the energy basis by the third elementary vector:
+\begin_inset Formula 
+\[
+\hat{a}\ket{2}=\sqrt{2}\ket{1}\leftrightarrow\hat{a}\vec{e}_{3}=\sqrt{2}\vec{e}_{2}=\left[\begin{array}{c}
+0\\
+\sqrt{2}\\
+0\\
+\vdots
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then,
+ we can assemble all the columns to obtain the matrix representation of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ in the energy basis:
+\begin_inset Formula 
+\[
+\hat{a}\leftrightarrow\left[\begin{array}{ccccc}
+0 & 1 & 0 & \cdots & 0\\
+0 & 0 & \sqrt{2} & \cdots & 0\\
+0 & 0 & 0 & \ddots & 0\\
+\vdots & \vdots & \vdots & \cdots & \sqrt{N-1}\\
+0 & 0 & 0 & \cdots & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All elements of 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ in the energy basis are zero,
+ except the following:
+\begin_inset Formula 
+\[
+a_{n,n+1}=\sqrt{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We can then easily find the matrix representation of 
+\begin_inset Formula $\hat{a}^{\dagger}$
+\end_inset
+
+ in the energy basis:
+\begin_inset Formula 
+\[
+\hat{a}^{\dagger}\leftrightarrow\left[\begin{array}{ccccc}
+0 & 0 & 0 & \cdots & 0\\
+1 & 0 & 0 & \cdots & 0\\
+0 & \sqrt{2} & 0 & \ddots & 0\\
+\vdots & \vdots & \ddots & \cdots\\
+0 & 0 & 0 & \sqrt{N-1} & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next,
+ we can the matrix representation of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ in the energy basis:
+\begin_inset Formula 
+\[
+\hat{H}=\hbar\omega\left(\hat{a}^{\dagger}\hat{a}+\frac{1}{2}\hat{I}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 8.1
+\end_layout
+
+\begin_layout Plain Layout
+Write Python code to form the raising and lowering operators of a quantum Harmonic oscillator with a basis truncated to 
+\begin_inset Formula $N=6$
+\end_inset
+
+ states.
+ Use 
+\begin_inset Formula $m=6\;\text{amu}$
+\end_inset
+
+ and 
+\begin_inset Formula $f=300\;\text{inv. cm.}$
+\end_inset
+
+ Before we get too far,
+ we must discuss units.
+ Einstein's famous equation,
+\begin_inset Formula 
+\[
+E=mc^{2},
+\]
+
+\end_inset
+
+tells us that the energy contained in the mass of a particle is proportional to its rest mass,
+ 
+\begin_inset Formula $m$
+\end_inset
+
+,
+ by the speed of light squared.
+ One atomic mass unit (amu) is equivalent to 931 MeV.
+ Additionally,
+ a quantum relationship,
+\begin_inset Formula 
+\[
+c=f\lambda,
+\]
+
+\end_inset
+
+helps us understand frequency in inverse centimeters.
+ This formula states that the product of a photon's frequency 
+\begin_inset Formula $f$
+\end_inset
+
+ and its wavelength,
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+,
+ is 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ the speed of light:
+ 
+\begin_inset Formula $2.997\times10^{8}$
+\end_inset
+
+ m/s,
+ or 
+\begin_inset Formula $2.997\times10^{10}$
+\end_inset
+
+ cm/s.
+ We can rearrange this to be
+\begin_inset Formula 
+\[
+f=\frac{c}{\lambda}=\frac{2.997\times10^{10}\;\text{cm/s}}{\lambda\;\text{cm}}.
+\]
+
+\end_inset
+
+In quantum or relativistic sciences,
+ it is sometimes customary to use atomic units,
+ where we let physical constants such as 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\hbar$
+\end_inset
+
+,
+ etc.,
+ all be unity.
+ Under this convention,
+ frequency takes units of inverse centimeters.
+ We can simply take a frequency given in inverse centimeters and multiply by 
+\begin_inset Formula $c$
+\end_inset
+
+ to obtain 
+\begin_inset Formula $f$
+\end_inset
+
+ in Hertz:
+\begin_inset Formula 
+\[
+f_{\text{Hz}}=cf_{\text{inv. cm.}}.
+\]
+
+\end_inset
+
+Given 
+\begin_inset Formula $f$
+\end_inset
+
+ in Hz,
+ we can then find angular frequency,
+ 
+\begin_inset Formula $\omega=2\pi f_{\text{Hz}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The code given below is one approach to this problem.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( Q ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of Q.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( Q.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar = 6.58E-16 # [eV*s] the reduced Planck constant
+\end_layout
+
+\begin_layout Plain Layout
+
+c_nms = 2.997E17 # [nm/s] speed of light
+\end_layout
+
+\begin_layout Plain Layout
+
+c_cms = 2.997E10 # [nm/s] speed of light
+\end_layout
+
+\begin_layout Plain Layout
+
+amu2eV = 931.5E6 # [eV/amu] mass-to-energy conversion
+\end_layout
+
+\begin_layout Plain Layout
+
+kB = 8.617E-5 # [eV/K]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 6
+\end_layout
+
+\begin_layout Plain Layout
+
+f_invcm = 300 # [inv cm] frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+m_amu = 6 # [amu] mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculations
+\end_layout
+
+\begin_layout Plain Layout
+
+f = f_invcm * c_cms # [Hz] oscillator frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+T = 1/f # [s] oscillator period
+\end_layout
+
+\begin_layout Plain Layout
+
+w = 2*np.pi*f # [rad/s] oscillator ang freq
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hw = hbar * w # [eV] energy quantization
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m = m_amu * amu2eV / c_nms**2 # [eV*s^2/nm^2] mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Id = np.eye(N) # [] Identity operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# lowering oeprator
+\end_layout
+
+\begin_layout Plain Layout
+
+a = np.diag(np.sqrt(range(1,N)),
+ 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# raising operator
+\end_layout
+
+\begin_layout Plain Layout
+
+ad = dag( a )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+H = hw*(ad @ a + 0.5*Id)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('Lowering operator in the energy basis:')
+\end_layout
+
+\begin_layout Plain Layout
+
+print(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+print('
+\backslash
+nRaising operator in the energy basis:')
+\end_layout
+
+\begin_layout Plain Layout
+
+print(ad)
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+nOscillator quantization (hbar omega):
+ {hw} eV
+\backslash
+n')
+\end_layout
+
+\begin_layout Plain Layout
+
+print('
+\backslash
+nHamiltonian in the energy basis:')
+\end_layout
+
+\begin_layout Plain Layout
+
+print(H)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can see that 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is diagonal in the energy basis
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+You might recall from linear algebra that the eigenvalues of a diagonal matrix are its diagonal elements,
+ and the elementary vectors are the associated eigenvalues.
+\end_layout
+
+\begin_layout Itemize
+We can immediately read the eigenenergies from the diagonal elements of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ in the energy basis
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The elementary basis vectors may not be incredibly revealing to us,
+ because they represents the eigenstates in the energy basis
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ it is desirable to transform these states to the position basis
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To do this,
+ we can:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+form the position operator in the energy basis using Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:qho-position-operator"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+calculate the eigenvectors of the position operator in the energy basis
+\end_layout
+
+\begin_layout Itemize
+form the eigenvectors into a matrix
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This matrix transforms position-basis states into energy basis states
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+the Hermitian adjoint of this matrix can be used to transform energy-basis states or operators to the position basis
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+The Position-Basis Representation for the QHO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 8.2
+\end_layout
+
+\begin_layout Plain Layout
+Plot probability distributions for the ground state and the first two excited states in both the energy basis and the position basis.
+ Use 
+\begin_inset Formula $N=15$
+\end_inset
+
+ as the basis size,
+ 
+\begin_inset Formula $m=6$
+\end_inset
+
+ amu,
+ and an oscillator frequency of 
+\begin_inset Formula $f=300\;\text{inv. cm}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The code given below is one approach to this problem.
+ Our result is given in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qho-eigenstates-energy-and-position-distribution"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code ...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( Q ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of Q.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( Q.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Constants
+\end_layout
+
+\begin_layout Plain Layout
+
+hbar = 6.58E-16 # [eV*s] the reduced Planck constant
+\end_layout
+
+\begin_layout Plain Layout
+
+c_nms = 2.997E17 # [nm/s] speed of light
+\end_layout
+
+\begin_layout Plain Layout
+
+c_cms = 2.997E10 # [nm/s] speed of light
+\end_layout
+
+\begin_layout Plain Layout
+
+amu2eV = 931.5E6 # [eV/amu] mass-to-energy conversion
+\end_layout
+
+\begin_layout Plain Layout
+
+kB = 8.617E-5 # [eV/K]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+N = 15
+\end_layout
+
+\begin_layout Plain Layout
+
+f_invcm = 300 # [inv cm] frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+m_amu = 6 # [amu] mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculations
+\end_layout
+
+\begin_layout Plain Layout
+
+f = f_invcm * c_cms # [Hz] oscillator frequency
+\end_layout
+
+\begin_layout Plain Layout
+
+T = 1/f # [s] oscillator period
+\end_layout
+
+\begin_layout Plain Layout
+
+w = 2*np.pi*f # [rad/s] oscillator ang freq
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+hw = hbar * w # [eV] energy quantization
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m = m_amu * amu2eV / c_nms**2 # [eV*s^2/nm^2] mass
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Id = np.eye(N) # [] Identity operator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# lowering oeprator
+\end_layout
+
+\begin_layout Plain Layout
+
+a = np.diag(np.sqrt(range(1,N)),
+ 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# raising operator
+\end_layout
+
+\begin_layout Plain Layout
+
+ad = dag( a )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+
+H = hw*(ad @ a + 0.5*Id)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Position operator (not the NOT operator)
+\end_layout
+
+\begin_layout Plain Layout
+
+X = np.sqrt(hbar/(2*m*w)) * (a + ad)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Xo = np.sqrt(hbar/ (m*w)) # Characteristic length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Eigenvalues of this operator are the possible
+\end_layout
+
+\begin_layout Plain Layout
+
+# outcomes of a position measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+# Eigenvectors are returned as a matrix UEX
+\end_layout
+
+\begin_layout Plain Layout
+
+Xval,
+ UEX = np.linalg.eigh( X ) # [nm,
+ ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+UXE = dag( UEX ) # change basis:
+ energy to position
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots(3,
+ 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for n in range(3):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Form the n-th energy eigenstate
+\end_layout
+
+\begin_layout Plain Layout
+
+    ketnE = np.zeros((N,1),
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+    ketnE[n,0] = 1 # assign 1 to the n-th element
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # transform ket_n_E to the position basis
+\end_layout
+
+\begin_layout Plain Layout
+
+    ketnX = UXE @ ketnE
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # get a probability distribution
+\end_layout
+
+\begin_layout Plain Layout
+
+    # convert matrices to arrays becayse * triggers a matrix mult,
+\end_layout
+
+\begin_layout Plain Layout
+
+    # but for arrays,
+ it triggers an element-wise multiplication
+\end_layout
+
+\begin_layout Plain Layout
+
+    probdistX = np.conj(np.array(ketnX)) * np.array(ketnX)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    probdistE = np.conj(np.array(ketnE)) * np.array(ketnE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,0].barh(np.array(list(range(N))) + 0.5,
+\end_layout
+
+\begin_layout Plain Layout
+
+                 probdistE.flatten().real)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,0].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,0].set_ylabel(r'$E/
+\backslash
+hbar 
+\backslash
+omega$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,0].set_xlabel('Probability',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,1].bar(Xval/Xo,
+\end_layout
+
+\begin_layout Plain Layout
+
+                probdistX.flatten().real)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,1].grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,1].set_ylabel('Probability',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ax[n,1].set_xlabel(r'$X/X_o$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if n == 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+        ax[n,0].set_title('Energy Distribution')
+\end_layout
+
+\begin_layout Plain Layout
+
+        ax[n,1].set_title('Position Distribution')
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+    plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = os.path.join('img',
+ 'QHO-ExerciseTransformBasis.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( fname )
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'[[./{fname}]]')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/QHO-ExerciseTransformBasis.png
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probability distributions are plotted for the ground state,
+ first excited state,
+ and second excited state.
+ Each row of subplots shows an eigenstate of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+.
+ The top row shows the ground state.
+ In the energy basis,
+ only the ground state is occupied.
+ A spatial distribution indicates a probability distribution peaked at the center,
+ 
+\begin_inset Formula $X=0/X_{o}$
+\end_inset
+
+.
+ The middle row shows the first excited state,
+ and the bottom row shows the second excited state.
+ Notice that the eigenstates are well-defined in energy space,
+ but distributed over several position values in position space.
+ The code that produced this is given in below.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qho-eigenstates-energy-and-position-distribution"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

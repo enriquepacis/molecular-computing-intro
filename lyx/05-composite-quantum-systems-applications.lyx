@@ -1,0 +1,6619 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Application of Composite Quantum Systems:
+ QCA Circuits and Ground State
+\end_layout
+
+\begin_layout Itemize
+Here,
+ we will model systems of interacting QCA molecules that function as circuits,
+ and discern their ground states
+\end_layout
+
+\begin_layout Itemize
+We will work with the simplest of circuits,
+ a row of QCA molecules,
+ as illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWire"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The molecules are spaced with an even pitch 
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Hamiltonian Operators for Individual Cells
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/qca-wire.png
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot00) at (dot00ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot01) at (dot01ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ dashed] (dot00) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (-0.5*
+\backslash
+ra,
+ -1) {driver};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotN0) at (dotN0ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotN1) at (dotN1ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dotN0) -- (dotN1);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (3.5*
+\backslash
+ra,
+ -1) {$N-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node at (2.5*
+\backslash
+ra,
+ 0) {$
+\backslash
+cdots$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-1*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(0,
+ -1*
+\backslash
+ra) node [midway,
+ left] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ <->|] (0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A system of 
+\begin_inset Formula $N$
+\end_inset
+
+ QCA molecules acts as a binary wire.
+ A driver cell is labeled as cell 0,
+ and the 
+\begin_inset Formula $N$
+\end_inset
+
+ circuit cells are labeled 
+\begin_inset Formula $k\in\left\{ 1,2,\ldots,N\right\} $
+\end_inset
+
+.
+ Each cell is a distance 
+\begin_inset Formula $a$
+\end_inset
+
+ from its nearest neighbors.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenBinaryWire"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+To simplify the problem,
+ we will assume that only nearest neighbors interact
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus,
+ in this limit,
+ only cell 0 is directly influenced by the driver,
+ drives a bias given in Equations (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta_Pdrv"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:KinkGeometricConstant"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) as the following function of driver polarization,
+ 
+\begin_inset Formula $P_{0}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\Delta\left(P_{0}\right)=\left(1-\frac{1}{\sqrt{2}}\right)\frac{q_{e}^{2}}{4\pi\varepsilon_{0}a}P_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If cell 0 has tunneling energy 
+\begin_inset Formula $-\gamma$
+\end_inset
+
+,
+ then we write its Hamiltonian as
+\begin_inset Formula 
+\begin{equation}
+\hat{H}_{0}=-\gamma\hat{\sigma}_{x}^{\left(0\right)}+\frac{\Delta}{2}\hat{\sigma}_{z}^{\left(0\right)},\label{eq:HamiltonianDrivenCell}
+\end{equation}
+
+\end_inset
+
+where we have added the superscript 
+\begin_inset Formula $\left(0\right)$
+\end_inset
+
+ to indicate that these Pauli operators are for the Hilbert space of cell 0,
+ 
+\begin_inset Formula $\mathcal{H}_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is the term that describes the effect of the driver on cell 1
+\end_layout
+
+\begin_layout Itemize
+The bold notation and hat notation both signify matrices.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For cells 
+\begin_inset Formula $1,2,\ldots,N$
+\end_inset
+
+,
+ there is no driver bias,
+ so we write the Hamiltonian 
+\begin_inset Formula $\hat{H}_{k}$
+\end_inset
+
+ for the 
+\begin_inset Formula $k$
+\end_inset
+
+-th cell in a way that describes charge tunneling in the 
+\begin_inset Formula $k$
+\end_inset
+
+-th cell,
+ but no bias:
+\begin_inset Formula 
+\begin{equation}
+\hat{H}_{k}=-\gamma\hat{\sigma}_{x}^{\left(k\right)}\label{eq:HamiltonianRespondentCell}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By definition,
+ this operator acts only on the Hilbert space of the 
+\begin_inset Formula $k$
+\end_inset
+
+-th molecule,
+ 
+\begin_inset Formula $\mathcal{H}_{k}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Before we can sum the various 
+\begin_inset Formula $\hat{H}_{k}$
+\end_inset
+
+,
+ we need to expand each one into the Hilbert space of the full system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The composite Hilbert space is a tensor product of individual Hilbert spaces :
+\begin_inset Formula 
+\[
+\mathcal{H}=\mathcal{H}_{N-1}\otimes\mathcal{H}_{N-2}\otimes\cdots\otimes\mathcal{H}_{1}\otimes\mathcal{H}_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Hamiltonian for cell 0 is expanded to the full Hilbert space as
+\begin_inset Formula 
+\[
+\hat{1}_{N-1}\otimes\hat{1}_{N-2}\otimes\cdots\otimes\hat{1}_{2}\otimes\hat{1}_{1}\otimes\hat{H}_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The identity operators 
+\begin_inset Formula $\hat{1}_{k}$
+\end_inset
+
+ from Hilbert spaces 
+\begin_inset Formula $k\neq0$
+\end_inset
+
+ indicate that no description of other QCA molecules is included here
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Hamiltonian for cell 1 is expanded to the full Hilbert space as
+\begin_inset Formula 
+\[
+\hat{1}_{N-1}\otimes\hat{1}_{N-2}\otimes\cdots\otimes\hat{1}_{2}\otimes\hat{H}_{1}\otimes\hat{1}_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Hamiltonian for cell 
+\begin_inset Formula $k$
+\end_inset
+
+ is expanded to the full Hilbert space 
+\begin_inset Formula $as$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{1}_{N}\otimes\hat{1}_{N-1}\otimes\cdots\otimes\hat{1}_{k+1}\otimes\hat{H}_{k}\otimes\hat{1}_{k-1}\otimes\cdots\otimes\hat{1}_{2}\otimes\hat{1}_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Formally,
+ we would combine the expanded Hamiltonians into 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+,
+ the non-interacting or 
+\begin_inset Quotes eld
+\end_inset
+
+free
+\begin_inset Quotes erd
+\end_inset
+
+ Hamiltonian:
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{0} & =\hat{1}_{N-1}\otimes\hat{1}_{N-2}\otimes\cdots\otimes\hat{1}_{2}\otimes\hat{1}_{1}\otimes\hat{H}_{0}\\
+ & \quad+\hat{1}_{N}\otimes\hat{1}_{N-1}\otimes\cdots\otimes\hat{1}_{3}\otimes\hat{H}_{2}\otimes\hat{1}_{1}\\
+ & \quad+\cdots\\
+ & \quad+\hat{H}_{N}\otimes\hat{1}_{N-1}\otimes\cdots\otimes\hat{1}_{2}\otimes\hat{1}_{1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since each operator is from a two-dimensional Hilbert space,
+ 
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+ is described by a 
+\begin_inset Formula $2^{N}\times2^{N}$
+\end_inset
+
+ matrix
+\end_layout
+
+\begin_layout Itemize
+It is common practice to simplify our notation and ignore the identity operators,
+ leaving them implicit rather than explicit,
+ so that we write
+\begin_inset Formula 
+\[
+\hat{H}_{\text{free}}=\hat{H}_{0}+\hat{H}_{1}+\cdots+\hat{H}_{N-1}=\sum_{k=0}^{N-1}\hat{H}_{N-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+ is said to be non-interacting because no description is included here of interactions between molecules
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+ describes each molecule as if it were in isolation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+The Interaction Hamiltonian,
+ 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+To include interactions in the complete Hamiltonian 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ for the full circuit,
+ we add an interaction term,
+ 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{\text{free}}+\hat{H}_{\text{int }}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The interaction term 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+ is a diagonal operator in the computational basis:
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{\text{int}} & =\left[\begin{array}{cccc}
+U_{0}\\
+ & U_{1}\\
+ &  & \ddots\\
+ &  &  & U_{2^{N}-1}
+\end{array}\right]\\
+ & =\left[\begin{array}{cccc}
+\Braket{0|\hat{H}_{\text{int}}|0}\\
+ & \Braket{1|\hat{H}_{\text{int}}|1}\\
+ &  & \ddots\\
+ &  &  & \Braket{2^{N}-1|\hat{H}_{\text{int}}|2^{N}-1}
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\ket{x}$
+\end_inset
+
+ is an integer encoding a product of individual bit states:
+\begin_inset Formula 
+\[
+\ket{x}=\ket{x_{N}}\otimes\ket{x_{N-1}}\otimes\cdots\otimes\ket{x_{2}}\otimes\ket{x_{1}}=\ket{x_{N}x_{N-1}\cdots x_{2}x_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Explicitly,
+\begin_inset Formula 
+\begin{align*}
+\ket{0} & =\ket{00\cdots000}\\
+\ket{1} & =\ket{00\cdots001}\\
+\ket{2} & =\ket{00\cdots010}\\
+\ket{3} & =\ket{00\cdots011}\\
+ & \vdots\\
+\ket{2^{N}-1} & =\ket{11\cdots111}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Because 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+ is diagonal,
+ we interpret its elements as contributions to the system potential energy
+\end_layout
+
+\begin_layout Itemize
+Thus:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\braket{0|\hat{H}_{\text{int}}|0}$
+\end_inset
+
+ is the energy of interaction between the cells when all cells are in the 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ state
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\braket{1|\hat{H}_{\text{int}}|1}$
+\end_inset
+
+ is the energy of interaction between the cells when all cells are in the 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ state,
+ except for cell 0,
+ which is in the 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ state
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\braket{2|\hat{H}_{\text{int}}|2}$
+\end_inset
+
+ is the energy of interaction between the cells when all cells are in the 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ state,
+ except for cell 1,
+ which is in the 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ state,
+\end_layout
+
+\begin_layout Itemize
+and so on,
+ until we reach 
+\begin_inset Formula $\braket{2^{N}-1|\hat{H}_{\text{int}}|2^{N}-1}$
+\end_inset
+
+,
+ which is the energy of interaction between the cells when all cells are in the 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ state
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The energies 
+\begin_inset Formula $\braket{k|\hat{H}_{\text{int}}|k}$
+\end_inset
+
+ can be calculated from electrostat
+\end_layout
+
+\begin_layout Itemize
+ics by summing the energy of assembly of the charges given a particular circuit configuration
+\end_layout
+
+\begin_layout Itemize
+Another way to determine the energies is through symmetry
+\end_layout
+
+\begin_layout Itemize
+We will now illustrate this with an example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.6
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/driven-binary-wire-N2.png
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot00) at (dot00ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot01) at (dot01ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ dashed] (dot00) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (-0.5*
+\backslash
+ra,
+ -1) {driver};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-1*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(0,
+ -1*
+\backslash
+ra) node [midway,
+ left] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ <->|] (0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A driven two-cell QCA a binary wire.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenBinaryWireN2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find the free Hamiltonian,
+ 
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+,
+ for the circuit.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+As discussed above,
+ only cell 0 is influcenced by the driver because we choose to simplify the problem by considering only nearest-neighbor interactions:
+ cell 
+\begin_inset Formula $k$
+\end_inset
+
+ interacts only with cells 
+\begin_inset Formula $k\pm1$
+\end_inset
+
+.
+ Thus,
+ the Hamiltonian for cell 1 is given by Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianDrivenCell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and written in matrix form as
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\left[\begin{array}{cc}
+\frac{\Delta}{2} & -\gamma\\
+-\gamma & -\frac{\Delta}{2}
+\end{array}\right],
+\]
+
+\end_inset
+
+whereas the Hamiltonian for cell 1 is given by Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianRespondentCell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and is written as a matrix devoid of any direct influence by the driver:
+\begin_inset Formula 
+\[
+\hat{H}_{1}=\left[\begin{array}{cc}
+0 & -\gamma\\
+-\gamma & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+Now,
+ we expand 
+\begin_inset Formula $\hat{H}_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{H}_{1}$
+\end_inset
+
+into the full Hilbert space:
+\begin_inset Formula 
+\[
+\mathbf{1}_{1}\otimes\hat{H}_{0}=\left[\begin{array}{cccc}
+\frac{\Delta}{2} & -\gamma & 0 & 0\\
+-\gamma & -\frac{\Delta}{2} & 0 & 0\\
+0 & 0 & \frac{\Delta}{2} & -\gamma\\
+0 & 0 & -\gamma & -\frac{\Delta}{2}
+\end{array}\right],\qquad\text{and}\qquad\hat{H}_{1}\otimes\mathbf{1}_{0}=\left[\begin{array}{cccc}
+0 & 0 & -\gamma & 0\\
+0 & 0 & 0 & -\gamma\\
+-\gamma & 0 & 0 & 0\\
+0 & -\gamma & 0 & 0
+\end{array}\right].
+\]
+
+\end_inset
+
+Finally,
+ we add these together to get the free Hamiltonian:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{free}}=\left[\begin{array}{cccc}
+\frac{\Delta}{2} & -\gamma & -\gamma & 0\\
+-\gamma & -\frac{\Delta}{2} & 0 & -\gamma\\
+-\gamma & 0 & \frac{\Delta}{2} & -\gamma\\
+0 & -\gamma & -\gamma & -\frac{\Delta}{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Use symmetry to find the the interaction term,
+ 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+To find the interaction Hamiltonian,
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{\text{int}} & =\left[\begin{array}{cccc}
+U_{0} & 0 & 0 & 0\\
+0 & U_{1} & 0 & 0\\
+0 & 0 & U_{2} & 0\\
+0 & 0 & 0 & U_{3}
+\end{array}\right]\\
+ & =\left[\begin{array}{cccc}
+\braket{0|\hat{H}_{\text{int}}|0} & 0 & 0 & 0\\
+0 & \braket{1|\hat{H}_{\text{int}}|1} & 0 & 0\\
+0 & 0 & \braket{2|\hat{H}_{\text{int}}|2} & 0\\
+0 & 0 & 0 & \braket{3|\hat{H}_{\text{int}}|3}
+\end{array}\right],
+\end{align*}
+
+\end_inset
+
+we need to calculate the energies of interaction in the four comptational basis states,
+ 
+\begin_inset Formula $\left\{ \ket{0},\ket{1},\ket{2},\ket{3}\right\} $
+\end_inset
+
+.
+ These states are illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2-ket0"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2-ket3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The energies we seek are internal to the two-cell quantum system.
+ We exclude driver interactions,
+ since the driver is external to the quantum system,
+ and its influence appears in the bais for 
+\begin_inset Formula $\hat{H}_{1}$
+\end_inset
+
+.
+ Since the energy of interaction is based on Coulomb repulsion (the Coulomb electrostatic potential),
+ we can expect the 
+\begin_inset Formula $\ket{0}=\ket{0}\otimes\ket{0}$
+\end_inset
+
+ state to have the same energy as the 
+\begin_inset Formula $\ket{3}=\ket{1}\otimes\ket{1}$
+\end_inset
+
+ state:
+\begin_inset Formula 
+\[
+\braket{0|\hat{H}_{\text{int}}|0}=\braket{3|\hat{H}_{\text{int}}|3}.
+\]
+
+\end_inset
+
+This can be seen because the two states are identical,
+ mirror images about the 
+\begin_inset Formula $x=0$
+\end_inset
+
+ axis.
+ There is no reason to think that they have different energies of interaction.
+ Likewise,
+ we can recognize that
+\begin_inset Formula 
+\[
+\braket{1|\hat{H}_{\text{int}}|1}=\braket{2|\hat{H}_{\text{int}}|2}.
+\]
+
+\end_inset
+
+Furthermore,
+ we recognize that the states 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{3}$
+\end_inset
+
+ are aligned (kinked),
+ and the states 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{2}$
+\end_inset
+
+ are anti-aligned (relaxed).
+ Thus,
+ we expect 
+\begin_inset Formula $\braket{0|\hat{H}_{\text{int}}|0}=\braket{3|\hat{H}_{\text{int}}|3}$
+\end_inset
+
+ to be 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ higher than 
+\begin_inset Formula $\braket{1|\hat{H}_{\text{int}}|1}=\braket{2|\hat{H}_{\text{int}}|2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\braket{0|\hat{H}_{\text{int}}|0}=\braket{3|\hat{H}_{\text{int}}|3}=\braket{1|\hat{H}_{\text{int}}|1}+E_{k}=\braket{2|\hat{H}_{\text{int}}|2}+E_{k}.
+\]
+
+\end_inset
+
+Since we can choose the zero of the potenial energy of interaction,
+ we can set the zero to be infinite separation of charge,
+ which also is half-way between the kinked and relaxed states,
+ as illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2-ket0"
+
+\end_inset
+
+--
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2-ket3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Thus,
+ we can write the matrix 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+ and write in as an outer product of operators:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=\frac{E_{k}}{2}\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right]=-\frac{E_{k}}{2}\left[\begin{array}{cccc}
+-1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & -1
+\end{array}\right]=-\frac{E_{k}}{2}\hat{\sigma}_{z}^{\left(1\right)}\otimes\hat{\sigma}_{z}^{\left(0\right)}
+\]
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/driven-binary-wire-N2-ket00.png
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot10ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot20ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ket{0}=\ket{0}\otimes\ket{0}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenBinaryWireN2-ket0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/driven-binary-wire-N2-ket01.png
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot11ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot20ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ket{1}=\ket{0}\otimes\ket{1}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenBinaryWireN2-ket1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/driven-binary-wire-N2-ket02.png
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot10ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot21ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ket{2}=\ket{1}\otimes\ket{0}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenBinaryWireN2-ket2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/driven-binary-wire-N2-ket03.png
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot00ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dot01ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell1State) at (0.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (cell2State) at (1.5*
+\backslash
+ra,
+ 1.25*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN0ctr) at (3.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+coordinate (dotN1ctr) at (3.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q1) at (dot11ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell1State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (q2) at (dot21ctr) [chargestyle,
+ color=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (cell2State) {$
+\backslash
+ket{1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ket{3}=\ket{1}\otimes\ket{1}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenBinaryWireN2-ket3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Construct the full Hamiltonian for the QCA circuit.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{\text{free}}+\hat{H}_{\text{int}}=\left[\begin{array}{cccc}
+\frac{\Delta}{2}+\frac{E_{k}}{2} & -\gamma & -\gamma & 0\\
+-\gamma & -\frac{\Delta}{2}-\frac{E_{k}}{2} & 0 & -\gamma\\
+-\gamma & 0 & \frac{\Delta}{2}-\frac{E_{k}}{2} & -\gamma\\
+0 & -\gamma & -\gamma & -\frac{\Delta}{2}+\frac{E_{k}}{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+In the limit of 
+\begin_inset Formula $\gamma\rightarrow0$
+\end_inset
+
+,
+ find the ground state of the system.
+ Assume that 
+\begin_inset Formula $\Delta>0$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{k}>0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Here,
+ 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ becomes diagonal:
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{\text{free}}+\hat{H}_{\text{int}}=\left[\begin{array}{cccc}
+\frac{\Delta}{2}+\frac{E_{k}}{2} & 0 & 0 & 0\\
+0 & -\frac{\Delta}{2}-\frac{E_{k}}{2} & 0 & 0\\
+0 & 0 & \frac{\Delta}{2}-\frac{E_{k}}{2} & 0\\
+0 & 0 & 0 & -\frac{\Delta}{2}+\frac{E_{k}}{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+Thus,
+ the eigenenergies are the diagonal elements.
+ The lowest-energy eigenvalue is easy to spot:
+ it's the second element,
+\begin_inset Formula 
+\[
+\Braket{01|\hat{H}|01}=-\frac{\Delta}{2}-\frac{E_{k}}{2},
+\]
+
+\end_inset
+
+corresponding to the state 
+\begin_inset Formula $\ket{10}$
+\end_inset
+
+,
+ wherein cell 0 is in state 1 due to the driving bias 
+\begin_inset Formula $\Delta>0$
+\end_inset
+
+,
+ and the two cells are antialigned.
+ If the driving bias is small,
+ i.e.,
+ 
+\begin_inset Formula $\Delta\ll E_{k}$
+\end_inset
+
+,
+ the states 
+\begin_inset Formula $\ket{01}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{10}$
+\end_inset
+
+ are very close in energy,
+ but state 
+\begin_inset Formula $\ket{01}$
+\end_inset
+
+ is lower,
+ nonetheless.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the ground state of the system in the limit of 
+\begin_inset Formula $\gamma\rightarrow0$
+\end_inset
+
+ and with no external bias,
+ i.e.,
+ 
+\begin_inset Formula $\Delta\rightarrow0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>When the driving bias is removed (
+\begin_inset Formula $\Delta\rightarrow0$
+\end_inset
+
+),
+ the Hamiltonian reduces to
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{\text{free}}+\hat{H}_{\text{int}}=\left[\begin{array}{cccc}
+\frac{E_{k}}{2} & 0 & 0 & 0\\
+0 & -\frac{E_{k}}{2} & 0 & 0\\
+0 & 0 & -\frac{E_{k}}{2} & 0\\
+0 & 0 & 0 & \frac{E_{k}}{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+the states 
+\begin_inset Formula $\ket{10}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{01}$
+\end_inset
+
+ have the same energy,
+ 
+\begin_inset Formula $-E_{k}/2$
+\end_inset
+
+.
+ The system will have two degenerate ground state energies (lowest eigenenergies),
+ so that any normalized quantum superposition of these two states has the lowest energy.
+ Two straight-forward examples are
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{2}}\left(\ket{01}\pm\ket{10}\right).
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.7
+\end_layout
+
+\begin_layout Plain Layout
+Find the Hamiltonian for the driven pair of QCA cells in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2"
+
+\end_inset
+
+.
+ For simplicity,
+ we consider only nearest-neighbor interactions.
+ That is,
+ the driver only affects cell 0,
+ so that the Hamiltonian for cell 0 is as before:
+\begin_inset Formula 
+\[
+\hat{H}_{0}=-\gamma\hat{\sigma}_{x}+\frac{\Delta}{2}\hat{\sigma}_{z}=\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right].
+\]
+
+\end_inset
+
+The Hamiltonian for cell 1 will not include the driver term proportional to 
+\begin_inset Formula $\Delta$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{H}_{1}=-\gamma\hat{\sigma}_{x}=\left[\begin{array}{cc}
+0 & -\gamma\\
+-\gamma & 0
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Newline newline
+\end_inset
+
+Before we can combine these into the free Hamiltonian,
+ 
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+,
+ we must expand each into the full Hilbert space,
+ 
+\begin_inset Formula $\mathcal{H}=\mathcal{H}_{0}\otimes\mathcal{H}_{1}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{free}}=\hat{H}_{0}\otimes\hat{1}_{1}+\hat{1}_{0}\otimes\hat{H}_{1}=\left[\begin{array}{cccc}
+-\frac{\Delta}{2} & -\gamma & -\gamma & 0\\
+-\gamma & -\frac{\Delta}{2} & 0 & -\gamma\\
+-\gamma & 0 & \frac{\Delta}{2} & -\gamma\\
+0 & -\gamma & -\gamma & \frac{\Delta}{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+The interaction term may be written in matrix form as
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{\text{int}} & =\left[\begin{array}{cccc}
+\Braket{00|\hat{H}_{\text{int}}|00}\\
+ & \Braket{01|\hat{H}_{\text{int}}|01}\\
+ &  & \Braket{10|\hat{H}_{\text{int}}|10}\\
+ &  &  & \Braket{11|\hat{H}_{\text{int}}|11}
+\end{array}\right]\\
+ & =\left[\begin{array}{cccc}
+U_{00}\\
+ & U_{01}\\
+ &  & U_{10}\\
+ &  &  & U_{10}
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+Recall that 
+\begin_inset Formula $U_{\beta\alpha}=\Braket{\beta\alpha|\hat{H}|\beta\alpha}$
+\end_inset
+
+ is the potential energy of interaction between cell 0 in state 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and cell 1 in state 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ Thus,
+ 
+\begin_inset Formula $U_{00}$
+\end_inset
+
+ is the energy of interaction between both cells in state 0,
+ and 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+ has cell 0 in state 1 but cell 1 in state 0.
+ Additionally,
+ 
+\begin_inset Formula $U_{11}$
+\end_inset
+
+ has both cells in the 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ state,
+ but 
+\begin_inset Formula $U_{10}$
+\end_inset
+
+ has only cell 1 in the 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ state.
+ Thus,
+ we can recognize that the difference between 
+\begin_inset Formula $U_{00}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{U}_{10}$
+\end_inset
+
+ is nothing more than the energy of a kink:
+\begin_inset Formula 
+\[
+U_{00}-U_{01}=U_{11}-U_{10}=E_{k}
+\]
+
+\end_inset
+
+Furthermore,
+ we should expect that 
+\begin_inset Formula $U_{01}=U_{10}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{00}=U_{11}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=\left[\begin{array}{cccc}
+U_{00}\\
+ & U_{10}\\
+ &  & U_{10}\\
+ &  &  & U_{00}
+\end{array}\right].
+\]
+
+\end_inset
+
+Furthermore,
+ we can define the zero of potential energy to be halfway between 
+\begin_inset Formula $U_{00}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{10}$
+\end_inset
+
+:
+ 
+\begin_inset Formula $U_{01}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{10}$
+\end_inset
+
+ so that
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=\left[\begin{array}{cccc}
+\frac{E_{k}}{2}\\
+ & -\frac{E_{k}}{2}\\
+ &  & -\frac{E_{k}}{2}\\
+ &  &  & \frac{E_{k}}{2}
+\end{array}\right].
+\]
+
+\end_inset
+
+We can see here that the states 
+\begin_inset Formula $\ket{00}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{11}$
+\end_inset
+
+ are a full kink energy above the states 
+\begin_inset Formula $\ket{01}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{10}$
+\end_inset
+
+.
+ Thus,
+ we can write 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=-\frac{E_{k}}{2}\hat{\sigma}_{z}\otimes\hat{\sigma}_{z}.
+\]
+
+\end_inset
+
+Now,
+ we can find the total Hamiltonian,
+\begin_inset Formula 
+\begin{align*}
+\hat{H} & =\hat{H}_{\text{free}}+\hat{H}_{\text{int}}\\
+ & =\left[\begin{array}{cccc}
+-\frac{\Delta}{2}+\frac{E_{k}}{2} & -\gamma & -\gamma & 0\\
+-\gamma & -\frac{\Delta}{2}-\frac{E_{k}}{2} & 0 & -\gamma\\
+-\gamma & 0 & \frac{\Delta}{2}-\frac{E_{k}}{2} & -\gamma\\
+0 & -\gamma & -\gamma & \frac{\Delta}{2}+\frac{E_{k}}{2}
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.8
+\end_layout
+
+\begin_layout Plain Layout
+Find the ground state of the system from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2"
+
+\end_inset
+
+ under the simplifications 
+\begin_inset Formula $\Delta\rightarrow0$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma\rightarrow0$
+\end_inset
+
+.
+ You may assume 
+\begin_inset Formula $E_{k}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Here,
+ the Hamiltonian assumes a diagonal form:
+\begin_inset Formula 
+\[
+\hat{H}\rightarrow\left[\begin{array}{cccc}
+\frac{E_{k}}{2} & 0 & 0 & 0\\
+0 & -\frac{E_{k}}{2} & 0 & 0\\
+0 & 0 & -\frac{E_{k}}{2} & 0\\
+0 & 0 & 0 & \frac{E_{k}}{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+Because of this,
+ we can know that the eigenvalues and eigenvectors are:
+\begin_inset Formula 
+\[
+-\frac{E_{k}}{2}\quad\text{for}\quad\ket{01},\ket{10}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\frac{E_{k}}{2}\quad\text{for}\quad\ket{11},\ket{00}.
+\]
+
+\end_inset
+
+Because the lowest-energy eigenvalue 
+\begin_inset Formula $-E_{k}/2$
+\end_inset
+
+ (the ground state energy) appears twice,
+ the system is said to be doubly degenerate,
+ any linear combination of states
+\begin_inset Formula 
+\[
+c_{01}\ket{01}+c_{10}\ket{10}
+\]
+
+\end_inset
+
+has the same (minimum) energy as the ground state.
+ It is customary to pick a combination of states as the ground state:
+\begin_inset Formula 
+\[
+\ket{\psi_{0}}=\frac{1}{\sqrt{2}}\left(\ket{10}+\ket{01}\right).
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.9
+\end_layout
+
+\begin_layout Plain Layout
+Find the ground state of the system from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2"
+
+\end_inset
+
+ under the simplifications 
+\begin_inset Formula $\Delta\rightarrow0$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma\rightarrow0$
+\end_inset
+
+,
+ but now with each cell experiencing internal bias 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+ and external bias,
+ 
+\begin_inset Formula $\Delta_{e}$
+\end_inset
+
+.
+ For now,
+ let us combine the internal and external bias as
+\begin_inset Formula 
+\[
+\Delta_{t}=\Delta_{o}+\Delta_{e}.
+\]
+
+\end_inset
+
+This will make our calculations simpler.
+ When we want to explore the competition between 
+\begin_inset Formula $\Delta_{o}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta_{e}$
+\end_inset
+
+,
+ we can add that level of granularity and complexity.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Now,
+ both cells have the same Hamiltonian form:
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\hat{H}_{1}=-\gamma\hat{\sigma}_{x}+\frac{\Delta_{t}}{2}\hat{\sigma}_{z}
+\]
+
+\end_inset
+
+The free Hamiltonian is
+\begin_inset Formula 
+\[
+\hat{H}_{\text{free}}=\hat{H}_{1}\otimes\hat{1}_{0}+\hat{1}_{1}\otimes\hat{H}_{0}=\left[\begin{array}{cccc}
+-\Delta_{t} & -\gamma & -\gamma & 0\\
+-\gamma & 0 & 0 & -\gamma\\
+-\gamma & 0 & 0 & -\gamma\\
+0 & -\gamma & -\gamma & \Delta_{t}
+\end{array}\right]
+\]
+
+\end_inset
+
+Here,
+ the bias 
+\begin_inset Formula $\Delta_{t}$
+\end_inset
+
+ cancels in the states 
+\begin_inset Formula $\ket{01}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{10}$
+\end_inset
+
+.
+ We use the same interaction term 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+ as before.
+ Thus,
+ the total Hamiltonian is
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{\text{free}}+\hat{H}_{\text{int}}=\left[\begin{array}{cccc}
+\frac{E_{k}}{2}-\Delta_{t} & -\gamma & -\gamma & 0\\
+-\gamma & -\frac{E_{k}}{2} & 0 & -\gamma\\
+-\gamma & 0 & -\frac{E_{k}}{2} & -\gamma\\
+0 & -\gamma & -\gamma & \frac{E_{k}}{2}+\Delta_{t}
+\end{array}\right]
+\]
+
+\end_inset
+
+If we assume that 
+\begin_inset Formula $E_{k}>\Delta_{t}$
+\end_inset
+
+ (the kink energy is greater than the bias 
+\begin_inset Formula $\Delta_{t}$
+\end_inset
+
+),
+ then the ground state energy is 
+\begin_inset Formula $-E_{k}/2$
+\end_inset
+
+ with eigenstates 
+\begin_inset Formula $\ket{01}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{10}$
+\end_inset
+
+.
+ Under these circumstances,
+ the ground state will be depolarized:
+\begin_inset Formula 
+\[
+\ket{\psi_{0}}=\frac{1}{\sqrt{2}}\left(\ket{01}+\ket{10}\right).
+\]
+
+\end_inset
+
+If we increase the bias,
+ 
+\begin_inset Formula $\Delta_{t}$
+\end_inset
+
+,
+ we make 
+\begin_inset Formula $\ket{00}$
+\end_inset
+
+ become the ground state when 
+\begin_inset Formula $E_{k}/2-\Delta_{t}<E_{k}/2$
+\end_inset
+
+,
+ which means that we need 
+\begin_inset Formula $\Delta_{t}>E_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.10
+\end_layout
+
+\begin_layout Plain Layout
+Calculate the response of two double-dot QCA cells to the polarization of a single driver,
+ as in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenBinaryWireN2"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from scipy.optimize import minimize
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit import QuantumCircuit
+\end_layout
+
+\begin_layout Plain Layout
+
+from qiskit.visualization import plot_histogram
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+
+import pandas as pd
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import constants as const
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import linearalgebra as la
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import computing as qc
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import visualization as viz
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage.quantum import circuittools as qct
+\end_layout
+
+\begin_layout Plain Layout
+
+from qcapackage import mathtools as mt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# computational basis states
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0,
+ ket1 = qc.ket0,
+ qc.ket1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Pauli matrices
+\end_layout
+
+\begin_layout Plain Layout
+
+I  = la.density_matrix(ket0) + la.density_matrix(ket1)
+\end_layout
+
+\begin_layout Plain Layout
+
+Sx,
+ Sy,
+ Sz = qc.Sx,
+ qc.Sy,
+ qc.Sz
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+qe = const.qe # [C] fundamental charge
+\end_layout
+
+\begin_layout Plain Layout
+
+eps0 = const.eps0 # [F/m] = [C/V*m]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ketMinus = (1/np.sqrt(2)) * (ket0 - ket1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# PARMAETERS
+\end_layout
+
+\begin_layout Plain Layout
+
+a = 1E-9 # [nm] cell length
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# I took out a factor of qe so that we end up 
+\end_layout
+
+\begin_layout Plain Layout
+
+# with units of eV
+\end_layout
+
+\begin_layout Plain Layout
+
+kappa = qe /(4* np.pi* eps0 *a)*(1 -1/np.sqrt(2)) # [eV]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Projection matrices |0><0| and |1><1|
+\end_layout
+
+\begin_layout Plain Layout
+
+# P0  = la.density_matrix( ket0 ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# P1  = la.density_matrix( ket1 ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# CNOTij,
+ where i is control qubit and j is target qubit
+\end_layout
+
+\begin_layout Plain Layout
+
+# CNOT10 = np.kron(P0,I) + np.kron(P1,Sx) # control -> q1,
+ target -> q0
+\end_layout
+
+\begin_layout Plain Layout
+
+# CNOT01 = np.kron(I,P0) + np.kron(Sx,P1) # control -> q0,
+ target -> q1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# ketMinus = (1/np.sqrt(2)) * (ket0 - ket1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+g = 0.05
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Ek = kappa # [eV] kink energy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print('The kink energy is:
+ {0} meV'.format(1E3*Ek))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nPdrv = 35
+\end_layout
+
+\begin_layout Plain Layout
+
+Pdrv = np.linspace(-1,
+ 1,
+ nPdrv)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+P = np.zeros([2,
+ nPdrv])
+\end_layout
+
+\begin_layout Plain Layout
+
+# Polarization operators for cells,
+ expanded to full
+\end_layout
+
+\begin_layout Plain Layout
+
+#   Hilbert space
+\end_layout
+
+\begin_layout Plain Layout
+
+Z0,
+ Z1 = np.kron(I,
+ Sz),
+ np.kron(Sz,
+ I)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Hamiltonian for cell 1 is independent of driver
+\end_layout
+
+\begin_layout Plain Layout
+
+H1 = -g*Sx;
+\end_layout
+
+\begin_layout Plain Layout
+
+H10 = 0.5*Ek*np.kron(Sz,
+ Sz) # interaction,
+ cells 0 and 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for iPd,
+ Pd in enumerate(Pdrv.flatten()):
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Hamiltonian for cell 0 depends on driver
+\end_layout
+
+\begin_layout Plain Layout
+
+    H0 = -g*Sx - 0.5* Pd * kappa * Sz
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    Hpair = np.kron(H1,
+ I) + np.kron(I,
+ H0) + H10
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    Egnd_diag,
+ psi_gnd_diag = la.ground_state( Hpair )
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    P[:,iPd] = [la.expectation_value( -Z0,
+ psi_gnd_diag ),
+\end_layout
+
+\begin_layout Plain Layout
+
+               la.expectation_value( -Z1,
+ psi_gnd_diag )]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.close('all') # optional - clear any graphics from memory
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Start the visualization
+\end_layout
+
+\begin_layout Plain Layout
+
+fig,
+ ax = plt.subplots()
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.plot(Pdrv,
+ P[0,:],
+ label='Cell 0',
+ marker='*')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.plot(Pdrv,
+ P[1,:],
+ label='Cell 1',
+ marker='v')
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.set_xlim(-1,
+ 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.set_xlabel(r'$P_{drv}$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.set_ylabel(r'$P$',
+ fontsize=16)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.grid(True)
+\end_layout
+
+\begin_layout Plain Layout
+
+ax.legend()
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.tight_layout()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tgtfile = os.path.join('img',
+ 'two-cell-cell-ground-state.png')
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.savefig( tgtfile )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'
+\backslash
+n[[./{tgtfile}]]')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/two-cell-cell-ground-state.png
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The polarizations of cells 0 and 1 in the driven ground state of a two-cell wire.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pythonDrivenDQDpair-pol-ground"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.11
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement tbh
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/driven-binary-wire-N3.png
+	width 45col%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+ra}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.825]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD0ctr) at (-0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dotD1ctr) at (-0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot00ctr) at (0.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot01ctr) at (0.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot10ctr) at (1.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot11ctr) at (1.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot20ctr) at (2.5*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (dot21ctr) at (2.5*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+coordinate (txtAnchor) at (2*
+\backslash
+ra,
+ 0*
+\backslash
+ra);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD0) at (dotD0ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-1.25*
+\backslash
+ra,
+ -0.5*
+\backslash
+ra) {
+\backslash
+small dot 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dotD1) at (dotD1ctr) [schemdotstyle,
+ dashed] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=west] at (-0.25*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) {
+\backslash
+small dot 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ dashed] (dotD0) -- (dotD1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (-0.5*
+\backslash
+ra,
+ -1) {driver};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % 
+\backslash
+node (q0) at (dotD0) [chargestyle,
+ fill=red] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1*
+\backslash
+ra) {
+\backslash
+large $
+\backslash
+ket{0}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 
+\backslash
+node [anchor=north] at (-1.5*
+\backslash
+ra,
+ -1.625*
+\backslash
+ra) {
+\backslash
+large $P = -1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot00) at (dot00ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot01) at (dot01ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot00) -- (dot01);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (0.5*
+\backslash
+ra,
+ -1) {cell 0};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot10) at (dot10ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot11) at (dot11ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot10) -- (dot11);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (1.5*
+\backslash
+ra,
+ -1) {cell 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node (dot20) at (dot20ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node (dot21) at (dot21ctr) [schemdotstyle] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick] (dot20) -- (dot21);
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node [anchor = north] at (2.5*
+\backslash
+ra,
+ -1) {cell 2};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-1*
+\backslash
+ra,
+ 0.5*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(0,
+ -1*
+\backslash
+ra) node [midway,
+ left] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (-0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+draw [very thick,
+ |<->|] (0.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [very thick,
+ |<->|] (1.5*
+\backslash
+ra,
+ 1*
+\backslash
+ra) --
+\end_layout
+
+\begin_layout Plain Layout
+
+        ++(1*
+\backslash
+ra,
+ 0) node [midway,
+ above] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A neighboring driver molecule provides the classical bias,
+ 
+\begin_inset Formula $\Delta$
+\end_inset
+
+,
+ for a row of three QCA cells.
+ Fixed neutralizing charge of 
+\begin_inset Formula $+q_{e}/2$
+\end_inset
+
+ resides at each dot so that with one mobile electron,
+ each molecular cell is charge neutral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DrivenDQDrowN3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Consider a three-cell circuit (i.e.,
+ 
+\begin_inset Formula $N=3$
+\end_inset
+
+) as in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenDQDrowN3"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Find the free Hamiltonian,
+ 
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+,
+ for the circuit.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>As before,
+ only cell 0 is biased by the driver,
+ so we have
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\left[\begin{array}{cc}
+-\frac{\Delta}{2} & -\gamma\\
+-\gamma & \frac{\Delta}{2}
+\end{array}\right].
+\]
+
+\end_inset
+
+The Hamiltonians for cell 1 and cell 2 are of the same form,
+ given by Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianRespondentCell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\hat{H}_{1},\hat{H}_{2}=\left[\begin{array}{cc}
+0 & -\gamma\\
+-\gamma & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+We may explicitly expand the individual Hamiltonian operators into the full Hilbert space and sum them:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{free}}=\mathbf{1}\otimes\mathbf{1}\otimes\hat{H}_{0}+\mathbf{1}\otimes\hat{H}_{1}\otimes\mathbf{1}+\hat{H}_{2}\otimes\mathbf{1}\otimes\mathbf{1}.
+\]
+
+\end_inset
+
+More concisely,
+ we will write this as
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=\hat{H}_{0}+\hat{H}_{1}+\hat{H}_{2},
+\]
+
+\end_inset
+
+with the expansion into the full three-cell Hilbert space left implicit.
+ We will not bother writing the matrix representation for 
+\begin_inset Formula $\hat{H}_{\text{free}}$
+\end_inset
+
+,
+ since this is a 
+\begin_inset Formula $8\times8$
+\end_inset
+
+ matrix (tedious).
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the the interaction term,
+ 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>To find the interaction Hamiltonian,
+ we can include only nearest-neighbor interactions,
+ i.e.,
+ those of the form 
+\begin_inset Formula $-\left(E_{k}/2\right)\hat{\sigma}_{z}^{\left(k+1\right)}\otimes\hat{\sigma}_{z}^{\left(k\right)}$
+\end_inset
+
+.
+ We could write this as a sum:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=-\frac{E_{k}}{2}\sum_{k=0}^{N-1}\hat{\sigma}_{z}^{\left(k+1\right)}\otimes\hat{\sigma}_{z}^{\left(k\right)}=-\frac{E_{k}}{2}\left(\hat{\sigma}_{z}^{\left(1\right)}\otimes\hat{\sigma}_{z}^{\left(0\right)}+\hat{\sigma}_{z}^{\left(2\right)}\otimes\hat{\sigma}_{z}^{\left(1\right)}\right),
+\]
+
+\end_inset
+
+where,
+ if we wish to explicitly show the expansion into the full Hilbert space,
+ we would write
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=-\frac{E_{k}}{2}\left(\mathbf{1}\otimes\hat{\sigma}_{z}\otimes\hat{\sigma}_{z}+\hat{\sigma}_{z}\otimes\hat{\sigma}_{z}\otimes\mathbf{1}\right).
+\]
+
+\end_inset
+
+Here,
+ I have neglected to write the superscript Hilbert space labels,
+ since the order of the tensor product makes it clear which cells are being treated in each interaction term.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.12
+\end_layout
+
+\begin_layout Plain Layout
+Find the ground state of the three-cell system from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:DrivenDQDrowN3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ under the simplifications 
+\begin_inset Formula $\Delta\rightarrow0$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma\rightarrow0$
+\end_inset
+
+,
+ but now with each cell experiencing internal bias 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+ and external bias,
+ 
+\begin_inset Formula $\Delta_{e}$
+\end_inset
+
+.
+ For now,
+ let us combine the internal and external bias as
+\begin_inset Formula 
+\[
+\Delta=\Delta_{o}+\Delta_{e}.
+\]
+
+\end_inset
+
+This will make our calculations simpler.
+ When we want to explore the competition between 
+\begin_inset Formula $\Delta_{o}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta_{e}$
+\end_inset
+
+,
+ we can add that level of granularity and complexity.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+Now,
+ both cells have the same Hamiltonian form:
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\hat{H}_{1}=\hat{H}_{2}=-\gamma\hat{\sigma}_{x}+\frac{\Delta}{2}\hat{\sigma}_{z}
+\]
+
+\end_inset
+
+The free Hamiltonian in the limit of 
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{\text{free}} & =\hat{H}_{2}\otimes\hat{1}_{1}\otimes\hat{1}_{0}+\hat{1}_{2}\otimes\hat{H}_{1}\otimes\hat{1}_{0}+\hat{1}_{2}\otimes\hat{1}_{1}\otimes\hat{H}_{0}\\
+ & =\left[\begin{array}{cccccccc}
+-\frac{3\Delta}{2}\\
+ & -\frac{\Delta}{2}\\
+ &  & -\frac{\Delta}{2}\\
+ &  &  & \frac{\Delta}{2}\\
+ &  &  &  & -\frac{\Delta}{2}\\
+ &  &  &  &  & \frac{\Delta}{2}\\
+ &  &  &  &  &  & \frac{\Delta}{2}\\
+ &  &  &  &  &  &  & \frac{3\Delta}{2}
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+The energy of the isolated cells simply decreases by 
+\begin_inset Formula $\Delta/2$
+\end_inset
+
+ for each cell in the 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ state and increase by 
+\begin_inset Formula $\Delta/2$
+\end_inset
+
+ for each cell in the 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ state.
+ Below is a table to visualize this principle:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+State
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Contribution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $-\frac{\Delta}{2}+-\frac{\Delta}{2}+-\frac{\Delta}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{3\Delta}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $-\frac{\Delta}{2}+-\frac{\Delta}{2}+\frac{\Delta}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{\Delta}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $-\frac{\Delta}{2}+\frac{\Delta}{2}+-\frac{\Delta}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{\Delta}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+The interaction term,
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=-\frac{E_{k}}{2}\hat{\sigma}_{z}^{(2)}\otimes\hat{\sigma}_{z}^{(1)}\otimes\hat{1}_{0}-\frac{E_{k}}{2}\hat{1}_{2}\otimes\hat{\sigma}_{z}^{(1)}\otimes\hat{\sigma}_{z}^{(0)}
+\]
+
+\end_inset
+
+contributes 
+\begin_inset Formula $E_{k}/2$
+\end_inset
+
+ for each kink and 
+\begin_inset Formula $-E_{k}/2$
+\end_inset
+
+ for each antialignment:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{int}}=\left[\begin{array}{cccccccc}
+E_{k}\\
+ & 0\\
+ &  & -E_{k}\\
+ &  &  & 0\\
+ &  &  &  & 0\\
+ &  &  &  &  & -E_{k}\\
+ &  &  &  &  &  & 0\\
+ &  &  &  &  &  &  & E_{k}
+\end{array}\right]
+\]
+
+\end_inset
+
+Thus,
+ the total Hamiltonian is
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{\text{free}}+\hat{H}_{\text{int}}=\left[\begin{array}{cccccccc}
+-\frac{3\Delta}{2}+E_{k}\\
+ & -\frac{\Delta}{2}\\
+ &  & -\frac{\Delta}{2}-E_{k}\\
+ &  &  & \frac{\Delta}{2}\\
+ &  &  &  & -\frac{\Delta}{2}\\
+ &  &  &  &  & \frac{\Delta}{2}-E_{k}\\
+ &  &  &  &  &  & \frac{\Delta}{2}\\
+ &  &  &  &  &  &  & \frac{3\Delta}{2}+E_{k}
+\end{array}\right]
+\]
+
+\end_inset
+
+Thus,
+ when 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is small,
+ we expect the ground state to be
+\begin_inset Formula 
+\[
+\frac{1}{2}\left(\ket{010}+\ket{101}\right),
+\]
+
+\end_inset
+
+which makes sense:
+ the cells tend to antialign.
+\end_layout
+
+\begin_layout Plain Layout
+When 
+\begin_inset Formula $\Delta>0$
+\end_inset
+
+ is non-zero,
+ 
+\begin_inset Formula $\ket{010}$
+\end_inset
+
+ remains the lowest state as long as 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is small.
+ There may come a time when state 
+\begin_inset Formula $\ket{000}$
+\end_inset
+
+ with energy 
+\begin_inset Formula $-3\Delta/2+E_{k}$
+\end_inset
+
+ is lower than 
+\begin_inset Formula $-\Delta/2-E_{k}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+-\frac{3\Delta}{2}+E_{k}<-\frac{\Delta}{2}-E_{k},
+\]
+
+\end_inset
+
+which leads us to
+\begin_inset Formula 
+\[
+-\frac{\Delta}{2}<-E_{k}\qquad\rightarrow\qquad\Delta>2E_{k}.
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Time Evolution of a Composite System (Quantum Mechanics)
+\end_layout
+
+\begin_layout Subsection
+Product Initial State
+\end_layout
+
+\begin_layout Itemize
+Let systems 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ of Hilbert spaces 
+\begin_inset Formula $\mathcal{H}_{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{B}$
+\end_inset
+
+,
+ respectively,
+ have initial states 
+\begin_inset Formula $\ket{\psi_{A}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{B}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can form a product initial state,
+ 
+\begin_inset Formula $\ket{\Psi\left(0\right)}=\ket{\psi_{B}}\ket{\psi_{A}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The time dependent state 
+\begin_inset Formula $\ket{\Psi\left(t\right)}$
+\end_inset
+
+ will be
+\begin_inset Formula 
+\[
+\ket{\Psi\left(t\right)}=\hat{U}\left(t\right)\ket{\Psi\left(0\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The composite system undergoes unitary dynamics,
+ and 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+ remains pure
+\end_layout
+
+\begin_layout Itemize
+The subsystems 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ do not undergo unitary dynamics.
+ Generally:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+although initially pure,
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ do not remain pure
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ become entangled in time
+\end_layout
+
+\begin_layout Itemize
+there does not exist 
+\begin_inset Formula $\ket{\psi_{A}\left(t\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{\psi_{B}\left(t\right)}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\ket{\Psi\left(t\right)}=\ket{\psi_{B}\left(t\right)}\ket{\psi_{A}\left(t\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ have an orthonormal bases 
+\begin_inset Formula $\left\{ \ket{a}\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ \ket{b}\right\} $
+\end_inset
+
+,
+ respectively:
+\begin_inset Formula 
+\[
+\ket{\psi_{A}}=\sum_{a}\alpha_{a}\ket{a}\qquad\text{and}\qquad\ket{\psi_{B}}=\sum_{b}\beta_{b}\ket{b}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then we can write the product state 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ as:
+\begin_inset Formula 
+\begin{equation}
+\ket{\Psi}=\sum_{b,a}\beta_{b}\alpha_{a}\ket{b}\ket{a}\label{eq:PsiProduct}
+\end{equation}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\hat{\rho}\left(0\right)=\Ket{\Psi}\Bra{\Psi}=\sum_{b,b^{\prime},a,a^{\prime}}\beta_{b}\alpha_{a}\beta_{b^{\prime}}^{\ast}\alpha_{a^{\prime}}^{\ast}\ket{b}\ket{a}\bra{a^{\prime}}\bra{b^{\prime}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+At some 
+\begin_inset Formula $t>0$
+\end_inset
+
+,
+ we have
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)=\sum_{b,b^{\prime},a,a^{\prime}}\rho_{c,c^{\prime}}\beta_{b}\left(t\right)\alpha_{a}\left(t\right)\beta_{b^{\prime}}^{\ast}\left(t\right)\alpha_{a^{\prime}}^{\ast}\left(t\right)\ket{b}\ket{a}\bra{a^{\prime}}\bra{b^{\prime}}
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\alpha_{a}\left(0\right)=\alpha_{a}\qquad\text{and}\qquad
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Although 
+\begin_inset Formula $\ket{\psi_{A}\left(t\right)}$
+\end_inset
+
+ does not exist,
+ the best possible local description of system 
+\begin_inset Formula $A$
+\end_inset
+
+ we can obtain is its reduced density operator,
+ 
+\begin_inset Formula $\hat{\rho}_{A}^{\left(\text{r}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{\rho}_{A}^{\left(\text{r}\right)}$
+\end_inset
+
+ is obtained by taking the partial trace of the full density operator 
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+ over an orthonormal basis,
+ 
+\begin_inset Formula $\left\{ \ket{b}\right\} $
+\end_inset
+
+ of 
+\begin_inset Formula $B$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{\rho}_{A}^{\left(\text{r}\right)}\left(t\right) & =\text{Tr}_{B}\hat{\rho}\left(t\right)=\sum_{b^{\prime\prime}}\braket{b^{\prime\prime}|\hat{\rho}\left(t\right)|b^{\prime\prime}}\\
+ & =\sum_{b,b^{\prime},b^{\prime\prime},a,a^{\prime}}\beta_{b}\left(t\right)\alpha_{a}\left(t\right)\beta_{b^{\prime}}\left(t\right)\alpha_{a^{\prime}}\left(t\right)\braket{b^{\prime\prime}|b}\ket{a}\bra{a^{\prime}}\braket{b^{\prime}|b^{\prime\prime}}\\
+ & =\sum_{b,a,a^{\prime}}\beta_{b}\left(t\right)\alpha_{a}\left(t\right)\beta_{b}^{\ast}\left(t\right)\alpha_{a^{\prime}}^{\ast}\left(t\right)\ket{a}\bra{a^{\prime}}\\
+ & =\sum_{b,a,a^{\prime}}\left|\beta_{b}\left(t\right)\right|^{2}\alpha_{a}\left(t\right)\alpha_{a^{\prime}}^{\ast}\left(t\right)\ket{a}\bra{a^{\prime}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+While 
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+ acts on the Hilbert space 
+\begin_inset Formula $\mathcal{H}_{AB}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\hat{\rho}_{A}^{\left(\text{r}\right)}$
+\end_inset
+
+ acts only on 
+\begin_inset Formula $\mathcal{H}_{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Some information about system 
+\begin_inset Formula $A$
+\end_inset
+
+ and all information about 
+\begin_inset Formula $B$
+\end_inset
+
+ is discarded
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Only 
+\begin_inset Formula $\left|\beta_{b}\left(t\right)\right|^{2}$
+\end_inset
+
+ is present in 
+\begin_inset Formula $\hat{\rho}_{A}^{\left(\text{r}\right)}$
+\end_inset
+
+,
+ not 
+\begin_inset Formula $\beta_{b}\beta_{b^{\prime}}^{\ast}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Similarly,
+ we can obtain the best possible local description of 
+\begin_inset Formula $B$
+\end_inset
+
+ by tracing over the basis 
+\begin_inset Formula $\left\{ \ket{a}\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{\rho}_{B}^{\left(\text{r}\right)}\left(t\right) & =\text{Tr}_{B}\hat{\rho}\left(t\right)=\sum_{a^{\prime\prime}}\braket{a^{\prime\prime}|\hat{\rho}\left(t\right)|a^{\prime\prime}}\\
+ & =\sum_{a,b,b^{\prime}}\left|\alpha_{a}\left(t\right)\right|^{2}\beta_{b}\left(t\right)\beta_{b^{\prime}}^{\ast}\left(t\right)\ket{b}\bra{b^{\prime}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Observations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+ acts only on 
+\begin_inset Formula $\mathcal{H}_{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Some information about 
+\begin_inset Formula $B$
+\end_inset
+
+ and all information about 
+\begin_inset Formula $A$
+\end_inset
+
+ is discarded
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+In general,
+ we cannot reconstruct 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+ from 
+\begin_inset Formula $\hat{\rho}_{A}^{\text{(r)}}\left(t\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}_{B}^{\text{(r)}}\left(t\right)$
+\end_inset
+
+,
+ because we have discarded some information already:
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)\neq\hat{\rho}_{B}^{\text{(r)}}\left(t\right)\otimes\hat{\rho}_{A}^{\text{(r)}}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In the special case that 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+ is a product:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{\rho}\left(t\right)=\hat{\rho}_{B}\left(t\right)\otimes\hat{\rho}_{A}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{\rho}_{B}^{\text{(r)}}\left(t\right)=\hat{\rho}_{B}\left(t\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}_{A}^{\text{(r)}}\left(t\right)=\hat{\rho}_{A}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{\rho}\left(t\right)=\hat{\rho}_{B}^{\text{(r)}}\left(t\right)\otimes\hat{\rho}_{A}^{\text{(r)}}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+From now on,
+ we'll drop the superscript 
+\begin_inset Formula $\left(\text{r}\right)$
+\end_inset
+
+ for simplicity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.13
+\end_layout
+
+\begin_layout Plain Layout
+Consider the general two-qubit state for qubits labeled 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $A$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ket{\Psi}=c_{00}\ket{00}+c_{01}\ket{01}+c_{10}\ket{10}+c_{11}\ket{11},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\ket{\beta\alpha}=\ket{\beta_{B}}\ket{\alpha_{A}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Find the matrix representation 
+\begin_inset Formula $\tilde{\rho}$
+\end_inset
+
+ for the density operator 
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>In braket notation,
+ we have
+\begin_inset Formula 
+\[
+\hat{\rho}=\sum_{\beta\alpha,\beta^{\prime}\alpha^{\prime}}c_{\beta\alpha}c_{\beta^{\prime}\alpha^{\prime}}^{\ast}\ket{\beta_{B}}\ket{\alpha_{A}}\bra{\alpha_{A}}\bra{\beta_{B}}
+\]
+
+\end_inset
+
+Start with the vectors for 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Bra{\Psi}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ket{\Psi}\leftrightarrow\tilde{\Psi}=\left[\begin{array}{c}
+c_{00}\\
+c_{01}\\
+c_{10}\\
+c_{11}
+\end{array}\right]\qquad\text{and}\qquad\bra{\Psi}\leftrightarrow\tilde{\Psi}^{\dagger}=\left[\begin{array}{cccc}
+c_{00}^{\ast} & c_{01}^{\ast} & c_{10}^{\ast} & c_{11}^{\ast}\end{array}\right]
+\]
+
+\end_inset
+
+Then,
+ use matrix multiplication to find 
+\begin_inset Formula $\tilde{\rho}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\rho}=\ket{\Psi}\bra{\Psi}\leftrightarrow\tilde{\rho}=\left[\begin{array}{cccc}
+c_{00}c_{00}^{\ast} & c_{00}c_{01}^{\ast} & c_{00}c_{10}^{\ast} & c_{00}c_{11}^{\ast}\\
+c_{01}c_{00}^{\ast} & c_{01}c_{01}^{\ast} & c_{01}c_{10}^{\ast} & c_{01}c_{11}^{\ast}\\
+c_{10}c_{00}^{\ast} & c_{10}c_{01}^{\ast} & c_{10}c_{10}^{\ast} & c_{10}c_{11}^{\ast}\\
+c_{11}c_{00}^{\ast} & c_{11}c_{01}^{\ast} & c_{11}c_{10}^{\ast} & c_{11}c_{11}^{\ast}
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the reduced density operators 
+\begin_inset Formula $\hat{\rho}_{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Start with 
+\begin_inset Formula $\hat{\rho}_{A}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\rho}_{A}=\text{Tr}_{B}\;\hat{\rho}=\sum_{\beta}\braket{\beta_{B}|\hat{\rho}|\beta_{B}}=\braket{0_{B}|\hat{\rho}|0_{B}}+\braket{1_{B}|\hat{\rho}|1_{B}}
+\]
+
+\end_inset
+
+What are 
+\begin_inset Formula $\braket{0_{B}|\hat{\rho}|0_{B}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\braket{1_{B}|\hat{\rho}|1_{B}}$
+\end_inset
+
+ in a matrix representation?
+ 
+\begin_inset Formula $\braket{0_{B}|\hat{\rho}|0_{B}}$
+\end_inset
+
+ selects only those elements in 
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+ where 
+\begin_inset Formula $c_{\beta\alpha}=c_{0\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{\beta\alpha}^{\ast}=c_{0\alpha}^{\ast}$
+\end_inset
+
+.
+ Thus:
+\begin_inset Formula 
+\[
+\braket{0_{B}|\hat{\rho}|0_{B}}\leftrightarrow\left[\begin{array}{cc}
+c_{00}c_{00}^{\ast} & c_{00}c_{01}^{\ast}\\
+c_{01}c_{00}^{\ast} & c_{01}c_{01}^{\ast}
+\end{array}\right]\qquad\text{and}\qquad\braket{1_{B}|\hat{\rho}|1_{B}}\leftrightarrow\left[\begin{array}{cc}
+c_{10}c_{10}^{\ast} & c_{10}c_{11}^{\ast}\\
+c_{11}c_{10}^{\ast} & c_{11}c_{11}^{\ast}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\rho}_{A}=\left[\begin{array}{cc}
+c_{00}c_{00}^{\ast}+c_{10}c_{10}^{\ast} & c_{00}c_{01}^{\ast}+c_{10}c_{11}^{\ast}\\
+c_{01}c_{00}^{\ast}+c_{11}c_{10}^{\ast} & c_{01}c_{01}^{\ast}+c_{11}c_{11}^{\ast}
+\end{array}\right]
+\]
+
+\end_inset
+
+Now,
+ calculate 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\rho}_{B}=\text{Tr}_{A}\;\hat{\rho}=\sum_{\alpha}\braket{\alpha_{A}|\hat{\rho}|\alpha_{A}}=\braket{0_{A}|\hat{\rho}|0_{A}}+\braket{1_{A}|\hat{\rho}|1_{A}}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\braket{0_{A}|\hat{\rho}|0_{A}}\leftrightarrow\left[\begin{array}{cc}
+c_{00}c_{00}^{\ast} & c_{00}c_{10}^{\ast}\\
+c_{10}c_{00}^{\ast} & c_{10}c_{10}^{\ast}
+\end{array}\right]\qquad\text{and}\qquad\braket{1_{A}|\hat{\rho}|1_{A}}\leftrightarrow\left[\begin{array}{cc}
+c_{01}c_{01}^{\ast} & c_{01}c_{11}^{\ast}\\
+c_{11}c_{01}^{\ast} & c_{11}c_{11}^{\ast}
+\end{array}\right]
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\tilde{\rho}_{B}=\left[\begin{array}{cc}
+c_{00}c_{00}^{\ast}+c_{01}c_{01}^{\ast} & c_{00}c_{10}^{\ast}+c_{01}c_{11}^{\ast}\\
+c_{10}c_{00}^{\ast}+c_{11}c_{01}^{\ast} & c_{01}c_{10}^{\ast}+c_{11}c_{11}^{\ast}
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

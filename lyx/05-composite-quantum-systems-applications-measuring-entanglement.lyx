@@ -1,0 +1,1921 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Measuring Entanglement
+\end_layout
+
+\begin_layout Itemize
+The von Neumann entropy is an important measure of entanglement in a quantum system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The von Neumann entropy,
+ 
+\begin_inset Formula $S_{V}$
+\end_inset
+
+,
+ of a quantum system can be calculated from its density matrix
+\end_layout
+
+\begin_layout Itemize
+For a quantum system that is disentangled from the rest of the universe,
+ 
+\begin_inset Formula $S_{V}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For a quantum system that is disentangled from the rest of the universe,
+ 
+\begin_inset Formula $S_{V}>0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In order to understand von Neumann entropy,
+ we first understand Shannon entropy
+\end_layout
+
+\begin_layout Subsection
+Shannon Entropy
+\end_layout
+
+\begin_layout Itemize
+The Shannon entropy,
+ 
+\begin_inset Formula $S_{S}$
+\end_inset
+
+,
+ for a syststem is a measure of uncertainty in the system,
+ and it is defined as
+\begin_inset Formula 
+\begin{equation}
+S_{S}=-\sum_{x}p(x)\log_{10}\left(p(x)\right),\label{eq:EntropyShannon}
+\end{equation}
+
+\end_inset
+
+where the sum is over all the possible outcomes 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ is the probability of outcome 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.14
+\end_layout
+
+\begin_layout Plain Layout
+Suppose we had rigged a coin toss,
+ and we knew that there is a 100% probability of getting 
+\begin_inset Quotes eld
+\end_inset
+
+heads
+\begin_inset Quotes erd
+\end_inset
+
+ (1),
+ and 0% chance of getting 
+\begin_inset Quotes eld
+\end_inset
+
+tails
+\begin_inset Quotes erd
+\end_inset
+
+ (0)
+\begin_inset Formula 
+\[
+p\left(0\right)=0\qquad\text{and}\qquad p\left(1\right)=1
+\]
+
+\end_inset
+
+Find the Shannon entropy of this system.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The Shannon entropy for this example is
+\begin_inset Formula 
+\[
+S_{s}=-0\cdot\log_{10}\left(p(0)\right)-1\cdot\log_{10}\left(p(1)\right)=0.
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the above example,
+ we have zero entropy.
+ This means we have:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+zero uncertainty about the outcome,
+ and
+\end_layout
+
+\begin_layout Itemize
+complete knowledge about the outcome of the system
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.15
+\end_layout
+
+\begin_layout Plain Layout
+Suppose we have a fair coin toss,
+ and the outcome is completely random:
+ there is a 50% probability of getting 
+\begin_inset Quotes eld
+\end_inset
+
+heads
+\begin_inset Quotes erd
+\end_inset
+
+ (1),
+ and a 50% chance of getting 
+\begin_inset Quotes eld
+\end_inset
+
+tails
+\begin_inset Quotes erd
+\end_inset
+
+ (0)
+\begin_inset Formula 
+\[
+p\left(0\right)=p\left(1\right)=0.5
+\]
+
+\end_inset
+
+Find the Shannon entropy of this system.
+\begin_inset CommandInset label
+LatexCommand label
+name "exer:EntropyFairConToss"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The Shannon entropy for this example is
+\begin_inset Formula 
+\begin{align*}
+S_{s} & =-p(0)\log_{10}\left(p(0)\right)-p(1)\cdot\log_{10}\left(p(1)\right)=-\frac{1}{2}\log_{10}\left(\frac{1}{2}\right)-\frac{1}{2}\cdot\log_{10}\left(\frac{1}{2}\right)\\
+ & =-0.301
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In computing and quantum computing,
+ it may be desirable to measure entropy as an uncertainty in bits.
+ Thus,
+ we use
+\begin_inset Formula 
+\begin{equation}
+S_{S}=-\sum_{x}p(x)\log_{2}\left(p(x)\right),\label{eq:EntropyShannonBits}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.16
+\end_layout
+
+\begin_layout Plain Layout
+Repeat Exercise 5.15,
+ but this time,
+ calculate entropy in bits.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+The Shannon entropy for this example is
+\begin_inset Formula 
+\begin{align*}
+S_{s} & =-p(0)\log_{2}\left(p(0)\right)-p(1)\cdot\log_{2}\left(p(1)\right)=-\frac{1}{2}\log_{2}\left(\frac{1}{2}\right)-\frac{1}{2}\cdot\log_{2}\left(\frac{1}{2}\right)\\
+ & =-\log_{2}\left(\frac{1}{2}\right)=-\left(-1\right)=1
+\end{align*}
+
+\end_inset
+
+For the fair coin toss,
+ we have one bit of entropy.
+ That is,
+ we lack one bit of information about the outcome of the measurement.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+They Python 
+\begin_inset listings
+lstparams "language=Matlab,basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+scipy
+\end_layout
+
+\end_inset
+
+ package provides an 
+\begin_inset listings
+lstparams "language=Matlab,basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+entropy()
+\end_layout
+
+\end_inset
+
+ function
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+riggedCoin = np.array([0,
+ 1])
+\end_layout
+
+\begin_layout Plain Layout
+
+fairCoin = np.array([0.5,
+ 0.5])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculate entropies
+\end_layout
+
+\begin_layout Plain Layout
+
+Srigged = scipy.stats.entropy( riggedCoin,
+ base=2 )
+\end_layout
+
+\begin_layout Plain Layout
+
+Sfair = scipy.stats.entropy( fairCoin,
+ base=2 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'Entropy,
+ rigged coin:
+ {Srigged}')
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'Entropy,
+ fair coin:
+ {Sfair}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+von Neumann Entropy
+\end_layout
+
+\begin_layout Itemize
+The von Neumann entropy of system 
+\begin_inset Formula $X$
+\end_inset
+
+,
+ 
+\begin_inset Formula $S_{VN}$
+\end_inset
+
+,
+ is the information about 
+\begin_inset Formula $X$
+\end_inset
+
+ missing locally from 
+\begin_inset Formula $X$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $S_{X}=0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\hat{\rho}_{X}$
+\end_inset
+
+ is pure (not entangled with any other system)
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $S_{X}>0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $X$
+\end_inset
+
+ is entangled with another system
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The von Neumann entropy of a system with density matrix 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+S_{VN}=-\text{Tr}\;\left(\rho\;\text{\ensuremath{\ln}\ensuremath{\rho}}\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\ln\rho$
+\end_inset
+
+ denotes the matrix natural logarithm of 
+\begin_inset Formula $\rho$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\text{Tr}$
+\end_inset
+
+ denotes the trace
+\end_layout
+
+\begin_layout Itemize
+If the density matrix is written in a basis of measurement eigenvectors 
+\begin_inset Formula $\left\{ \ket{i}\right\} $
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $\rho=\sum_{ij}\rho_{ij}\ket{i}\bra{j}$
+\end_inset
+
+,
+ then the von Neumann entropy may be calculated from the diagonal elements,
+ 
+\begin_inset Formula $\rho_{ii},$
+\end_inset
+
+which are probabilities:
+\begin_inset Formula 
+\[
+S_{VN}=-\sum_{i}\rho_{ii}\ln\rho_{ii}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can see that the von Neumann entropy is nothing more than the Shannon entropy applied to the diagonal of the density matrix
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.17
+\end_layout
+
+\begin_layout Plain Layout
+Consider the two-qubit state for qubits 1 and 0:
+\begin_inset Formula 
+\[
+\ket{\psi}=\ket{0}\otimes\ket{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Discuss whether 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ is entangled.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Since 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ can be factored into 
+\begin_inset Formula $\ket{0}\otimes\ket{1}$
+\end_inset
+
+,
+ we can say this is a product state,
+ not an entangled state.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the density operator 
+\begin_inset Formula $\rho$
+\end_inset
+
+ for the composite two-qubit system.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We can write 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ as 
+\begin_inset Formula $\ket{01}=\ket{1_{2}}$
+\end_inset
+
+.
+ Thus,
+ we can write its density matrix as 
+\begin_inset Formula $\rho=\ket{\psi}\bra{\psi}=\ket{1_{2}}\bra{1_{2}}$
+\end_inset
+
+.
+ As a matrix,
+ this is
+\begin_inset Formula 
+\[
+\ket{\psi}=\ket{1_{2}}\leftrightarrow\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right]\qquad\rightarrow\qquad\rho=\left[\begin{array}{cccc}
+0 & 1 & 0 & 0\end{array}\right]\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0
+\end{array}\right]=\left[\begin{array}{cccc}
+0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the reduced density operators,
+ 
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+ for qubits 1 and 0,
+ respectively.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Following the result of Exercise 5.13,
+ we can write
+\begin_inset Formula 
+\begin{align*}
+\rho_{0} & =\Braket{0_{1}|\rho|0_{1}}+\Braket{1_{1}|\rho|1_{1}}\\
+ & =\left[\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right]+\left[\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right]=\left[\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\rho_{1} & =\Braket{0_{0}|\rho|0_{0}}+\Braket{1_{0}|\rho|1_{0}}\\
+ & =\left[\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right]+\left[\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right]=\left[\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Calculate the entropy of the density operators,
+ 
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We can see that the von Neumann entropy for either density matrix is zero.
+ They are disentangled from one another.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.18
+\end_layout
+
+\begin_layout Plain Layout
+Consider the two-qubit state for qubits 1 and 0:
+\begin_inset Formula 
+\[
+\ket{\psi}=\frac{1}{2}\left(\ket{0}\ket{0}+\ket{1}\ket{1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Discuss whether 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ is entangled..
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Since 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ cannot be factored into 
+\begin_inset Formula $\ket{0}\otimes\ket{1}$
+\end_inset
+
+,
+ we can recognize that this is not a product state,
+ but rather an entangled state.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the density operator 
+\begin_inset Formula $\rho$
+\end_inset
+
+ for the composite two-qubit system.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We can write 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ as 
+\begin_inset Formula $\ket{01}=\ket{1_{2}}$
+\end_inset
+
+.
+ Thus,
+ we can write its density matrix as 
+\begin_inset Formula $\rho=\ket{\psi}\bra{\psi}=\ket{1_{2}}\bra{1_{2}}$
+\end_inset
+
+.
+ As a matrix,
+ this is
+\begin_inset Formula 
+\[
+\ket{\psi}\leftrightarrow\frac{1}{\sqrt{2}}\left[\begin{array}{c}
+1\\
+0\\
+0\\
+1
+\end{array}\right]\qquad\rightarrow\qquad\rho=\frac{1}{2}\left[\begin{array}{cccc}
+1 & 0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+1\\
+0\\
+0\\
+1
+\end{array}\right]=\frac{1}{2}\left[\begin{array}{cccc}
+1 & 0 & 0 & 1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+1 & 0 & 0 & 1
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the reduced density operators,
+ 
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+ for qubits 1 and 0,
+ respectively.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Following the result of Exercise 5.13,
+ we can write
+\begin_inset Formula 
+\begin{align*}
+\rho_{0} & =\Braket{0_{1}|\rho|0_{1}}+\Braket{1_{1}|\rho|1_{1}}\\
+ & =\frac{1}{2}\left[\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right]+\frac{1}{2}\left[\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right]=\frac{1}{2}\left[\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\rho_{1} & =\Braket{0_{0}|\rho|0_{0}}+\Braket{1_{0}|\rho|1_{0}}\\
+ & =\frac{1}{2}\left[\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right]+\frac{1}{2}\left[\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right]=\frac{1}{2}\left[\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Calculate the entropy of the density operators,
+ 
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We can see that the entropy for each density matrix 
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+ is one bit in each case.
+ Why?
+ In each case the probability is 
+\begin_inset Formula $1/2$
+\end_inset
+
+.
+ For each density matrix,
+ we have
+\begin_inset Formula 
+\[
+S=-\sum_{b}p_{b}\ln_{2}\left(p_{b}\right)=-\left(\frac{1}{2}\ln_{2}\left(\frac{1}{2}\right)+\frac{1}{2}\ln_{2}\left(\frac{1}{2}\right)\right)=1\;\text{bit}
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Since we are focusing on quantum mechanics and quantum computing,
+ we will simply work with 
+\begin_inset Formula $S_{VN}$
+\end_inset
+
+,
+ and we drop the subscript so we can just write 
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 5.19
+\end_layout
+
+\begin_layout Plain Layout
+Write and test a function to calculate the entropy of a density matrix.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import scipy
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def entropy_von_neumann( rho ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the von Neumann entropy for a density
+\end_layout
+
+\begin_layout Plain Layout
+
+       operator (matrix).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      rho:
+ an numpy.ndarray representing a density matrix.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The entropy of the density matrix.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return scipy.stats.entropy( np.diag( rho.real ) )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def dag( qobj ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the Hermitian adjoint of a quantum object
+\end_layout
+
+\begin_layout Plain Layout
+
+       (vector or operator).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      qobj:
+ an numpy.ndarray representing a operator,
+ bra,
+\end_layout
+
+\begin_layout Plain Layout
+
+            or ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The Hermitian adjoint of qobj.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return np.conj( qobj.transpose() )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def density_matrix( psi ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''Calculates the density matrix rho for state psi.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Args:
+\end_layout
+
+\begin_layout Plain Layout
+
+      psi:
+ an numpy.ndarray representing a ket.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Returns:
+\end_layout
+
+\begin_layout Plain Layout
+
+      The density matrix rho.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    '''
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    return psi @ dag( psi )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def bipartite_traceout( rho,
+ dX,
+ dY,
+ verbose=False ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+       BipartiteTraceout returns the reduced density matrix of the two
+\end_layout
+
+\begin_layout Plain Layout
+
+       components in a bipartite system XY
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+       rho_r_X,
+ rho_r_Y = BipartiteTraceout( rho,
+ dX,
+ dY )
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+       INPUTS
+\end_layout
+
+\begin_layout Plain Layout
+
+       ======
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       rho      Density matrix for the global system XY.
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+       dX       The dimension of subsystem X.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       dY       The dimension of subsystem Y.
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+       Assume that the global system is initially in a product state
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+           rho(0) = kron( rhoX(0),
+ rhoY(0) ) ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       and that it undergoes unitary evolution under the quantum
+\end_layout
+
+\begin_layout Plain Layout
+
+       Liouville equation:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+           rho(t) = U(H,t) * ( rho(0) ) * (U(H,t)') ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       where U(H,
+ t) = expm( - ( 1i/hbar ) * H * t).
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho_r_X = np.zeros([dX,
+ dX],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+    rho_r_Y = np.zeros([dY,
+ dY],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Trace rho over the degrees of freedom of Y to get rho_r_X
+\end_layout
+
+\begin_layout Plain Layout
+
+    for k in range(dY):
+\end_layout
+
+\begin_layout Plain Layout
+
+        """
+\end_layout
+
+\begin_layout Plain Layout
+
+        MATLAB source:
+\end_layout
+
+\begin_layout Plain Layout
+
+        Xaddend = rho[k:dY:k+(dX-1)*dY,
+ k:dY:k+(dX-1)*dY]
+\end_layout
+
+\begin_layout Plain Layout
+
+        """
+\end_layout
+
+\begin_layout Plain Layout
+
+        """
+\end_layout
+
+\begin_layout Plain Layout
+
+           Slicing ranges are:
+ start:end:[step]
+\end_layout
+
+\begin_layout Plain Layout
+
+           By default,
+ step=1
+\end_layout
+
+\begin_layout Plain Layout
+
+        """
+\end_layout
+
+\begin_layout Plain Layout
+
+        rho_r_X += rho[k:k+(dX-1)*dY+1:dY,
+ k:k+(dX-1)*dY+1:dY]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    # Trace rho over the degrees of freedom of X to get rho_r_Y
+\end_layout
+
+\begin_layout Plain Layout
+
+    for k in range(dX):
+\end_layout
+
+\begin_layout Plain Layout
+
+        """
+\end_layout
+
+\begin_layout Plain Layout
+
+        MATLAB source:
+\end_layout
+
+\begin_layout Plain Layout
+
+        Yaddend = rho[dY*k-(dY-1):dY*k,
+ dY*k-(dY-1):dY*k ]
+\end_layout
+
+\begin_layout Plain Layout
+
+        """
+\end_layout
+
+\begin_layout Plain Layout
+
+        rho_r_Y += rho[dY*k:dY*(k+1),
+ dY*k:dY*(k+1)]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return (rho_r_X,
+ rho_r_Y)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form some state vectors
+\end_layout
+
+\begin_layout Plain Layout
+
+ket0 = np.array([[1],
+ [0]],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+ket1 = np.array([[0],
+ [1]],
+ dtype='complex')
+\end_layout
+
+\begin_layout Plain Layout
+
+ket10 = np.kron( ket1,
+ ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form some density operators
+\end_layout
+
+\begin_layout Plain Layout
+
+rho0 = density_matrix( ket0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+rho1 = density_matrix( ket1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+print(rho0)
+\end_layout
+
+\begin_layout Plain Layout
+
+print(rho1)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculate entropies
+\end_layout
+
+\begin_layout Plain Layout
+
+S0 = entropy_von_neumann( rho0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+S1 = entropy_von_neumann( rho1 )
+\end_layout
+
+\begin_layout Plain Layout
+
+print(f'S0 = {S0};
+ S1 = {S1}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Quantum Mutual Information
+\end_layout
+
+\begin_layout Itemize
+Another measure of entanglement is quantum mutual information
+\end_layout
+
+\begin_layout Itemize
+Consider a system 
+\begin_inset Formula $AB$
+\end_inset
+
+ with reduced density matrices 
+\begin_inset Formula $\hat{\rho}_{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The quantum mutual information,
+ 
+\begin_inset Formula $I$
+\end_inset
+
+,
+ of 
+\begin_inset Formula $AB$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+I=S_{A}+S_{B}-S_{AB}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the total information missing locally from 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ but not missing from the composite 
+\begin_inset Formula $AB$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We can think of this as the information content of the entanglement between 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Python Environment :noexport:
+\end_layout
+
+\begin_layout Standard
+I think at compile time,
+ I've already set the environment.
+ This does it for this notebook only.
+ This does not export.
+ Test.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset listings
+lstparams "language=elisp,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval never-export
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+(setq-local org-babel-python-command (expand-file-name "~/anaconda3/envs/mQCA-intro-env/bin/python3"))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

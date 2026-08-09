@@ -1,0 +1,6724 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}% sets 1-inch margins all about
+\usepackage{braket}
+% \usepackage{hyperref}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-bytype
+theorems-sec-bytype
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style MyQuotation
+    Category              MainText
+    Margin                Static
+    LatexType             Environment
+    LatexName             myquotation
+    NextNoIndent          1
+    LeftMargin            MMM
+    RightMargin           MMM
+    ParIndent             MM
+    ParSkip               0
+    ItemSep               0
+    TopSep                0.5
+    BottomSep             0.5
+    ParSep                0
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    Preamble
+    \usepackage{mdframed}
+    \usepackage{xcolor}
+    \newenvironment{myquotation}
+      {\begin{mdframed}[linecolor=red]\quotation}
+      {\endquotation\end{mdframed}}
+    EndPreamble
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Operators
+\end_layout
+
+\begin_layout Itemize
+To process information,
+ we need a way to transform quantum states
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To do this,
+ we introduce operators
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The general operator 
+\begin_inset Formula $\mathbf{O}$
+\end_inset
+
+ transforms a quantum state 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+ into another state 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathbf{O}\ket{\psi}=\ket{\chi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+ operator 
+\begin_inset Formula $\mathbf{O}$
+\end_inset
+
+ is said to 
+\series bold
+act
+\series default
+ on 
+\begin_inset Formula $\ket{\psi}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+The NOT operator
+\end_layout
+
+\begin_layout Itemize
+Consider a bit flip operator,
+ 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+,
+ that transforms a bit 
+\begin_inset Formula $\ket{x}$
+\end_inset
+
+ into its complement,
+ 
+\begin_inset Formula $\ket{\bar{x}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Explicitly,
+ this is
+\begin_inset Formula 
+\begin{equation}
+\mathbf{X}\ket{0}=\ket{1}\qquad\text{and}\qquad\mathbf{X}\ket{1}=\ket{0}\label{eq:NOTaction}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the linear algebraic world,
+ a matrix is used to transform vectors,
+ just as operators transform kets
+\end_layout
+
+\begin_layout Itemize
+If we continue to use the state-to-vector assignments of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ElementaryBasisKets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ we have chosen to work in the computational basis
+\end_layout
+
+\begin_layout Subsection
+Finding the Matrix Representation in a given Basis
+\end_layout
+
+\begin_layout Subsubsection
+Matrix Columns
+\end_layout
+
+\begin_layout Itemize
+Since we've made the state-to-vector assignments as in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ElementaryBasisKets"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we can find the matrix representation of an operator in the basis 
+\begin_inset Formula $\left\{ \ket{0},\ket{1}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We may use a fact from linear algebra to find the matrix representation of some operator:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\vec{e_{k}}$
+\end_inset
+
+ be the elementary vector of all zeros,
+ except for 
+\begin_inset Formula $k$
+\end_inset
+
+-th element,
+ which is 1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Example:
+ in three dimensions,
+ we can define three elementary vectors:
+\begin_inset Formula 
+\[
+\vec{e}_{1}=\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right],\qquad\vec{e}_{2}=\left[\begin{array}{c}
+0\\
+1\\
+0
+\end{array}\right],\qquad\text{and}\qquad\vec{e}_{3}=\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can use 
+\begin_inset Formula $\vec{e}_{k}$
+\end_inset
+
+ to pick out the 
+\begin_inset Formula $k$
+\end_inset
+
+-th column of a matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+M\vec{e}_{k}=k\text{-th colum of }M\label{eq:FindMatrixColumn}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Example:
+ let
+\begin_inset Formula 
+\begin{equation}
+M=\left[\begin{array}{ccc}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{array}\right]\label{eq:M3x3}
+\end{equation}
+
+\end_inset
+
+Then:
+\begin_inset Formula 
+\[
+M\vec{e}_{1}=\left[\begin{array}{ccc}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{array}\right]\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+a\\
+d\\
+g
+\end{array}\right]\quad\left(\text{first column of }M\right),
+\]
+
+\end_inset
+
+and we could also show that
+\begin_inset Formula 
+\[
+M\vec{e}_{2}=\left[\begin{array}{c}
+b\\
+e\\
+h
+\end{array}\right]\quad\left(\text{second col. of }M\right),\quad\text{and}\quad M\vec{e}_{3}=\left[\begin{array}{c}
+c\\
+f\\
+i
+\end{array}\right]\quad\left(\text{third col. of }M\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.1
+\end_layout
+
+\begin_layout Plain Layout
+Find 
+\begin_inset Formula $X$
+\end_inset
+
+,
+ the matrix representation of 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ in the computational basis.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+To do this,
+ we can build the matrix column by column:
+\begin_inset Formula 
+\[
+X=\left[\begin{array}{cc}
+\mathbf{X}\ket{0} & \mathbf{X}\ket{1}\end{array}\right]=\left[\begin{array}{cc}
+\ket{1} & \ket{0}\end{array}\right]=\left[\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.2
+\end_layout
+
+\begin_layout Plain Layout
+Verify that 
+\begin_inset Formula $X$
+\end_inset
+
+ transforms the basis states consistent with Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:NOTaction"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\mathbf{X}\ket{0} & =\left[\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right]\begin{bmatrix}1\\
+0
+\end{bmatrix}=\begin{bmatrix}0\\
+1
+\end{bmatrix}=\ket{1}\\
+\mathbf{X}\ket{1} & =\left[\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right]\begin{bmatrix}0\\
+1
+\end{bmatrix}=\begin{bmatrix}1\\
+0
+\end{bmatrix}=\ket{0}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Matrix Elements
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\mathbf{M}\ket{\psi}$
+\end_inset
+
+ is a state 
+\begin_inset Formula $\ket{\chi}$
+\end_inset
+
+,
+ then we can take an inner product of 
+\begin_inset Formula $\mathbf{M}\ket{\psi}$
+\end_inset
+
+ with another state,
+ 
+\begin_inset Formula $\ket{\phi}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\braket{\phi|\mathbf{M}|\psi}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\braket{\phi|\mathbf{M}|\psi}$
+\end_inset
+
+ is a scalar,
+ we call 
+\begin_inset Formula $\braket{\phi|\mathbf{M}|\psi}$
+\end_inset
+
+ the 
+\begin_inset Formula $\left(\phi,\psi\right)$
+\end_inset
+
+ matrix element of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A matrix element 
+\begin_inset Formula $\braket{\psi|\mathbf{M}|\psi}$
+\end_inset
+
+ is said to be a diagonal element of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall that the trace of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+ is the sum of diagonal elements
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we have an orthonormal basis 
+\begin_inset Formula $\left\{ \ket{\psi_{j}}\right\} $
+\end_inset
+
+ for the Hilbert space of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+,
+ we can write the trace of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+ as the sum of the diagonal elements:
+\begin_inset Formula 
+\begin{equation}
+\text{Tr}\;\left(\mathbf{M}\right)=\sum_{j}\Braket{\psi_{j}|\mathbf{M}|\psi_{j}}\label{eq:trace}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Interestingly,
+ the trace is basis-independent
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can choose any two orthonormal bases 
+\begin_inset Formula $\left\{ \ket{\psi_{j}}\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ \ket{\psi_{j}^{\prime}}\right\} $
+\end_inset
+
+,
+ and if we evaluate the trace of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+ in both bases,
+ we get the same number
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.3
+\end_layout
+
+\begin_layout Plain Layout
+Find the following matrix elements of the 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ operator.
+\begin_inset CommandInset label
+LatexCommand label
+name "exer:MatrixElementsOfNOT"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Braket{0|\mathbf{X}|0}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{align*}
+\braket{0|\mathbf{X}|0} & =\bra{0}\left(\mathbf{X}\ket{0}\right)=\bra{0}\left(\ket{1}\right)\\
+ & =\braket{0|1}=0
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Braket{0|\mathbf{X}|1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{align*}
+\braket{0|\mathbf{X}|1} & =\bra{0}\left(\mathbf{X}\ket{1}\right)=\bra{0}\left(\ket{0}\right)\\
+ & =\braket{0|0}=1
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Braket{1|\mathbf{X}|0}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{align*}
+\braket{1|\mathbf{X}|0} & =\bra{1}\left(\mathbf{X}\ket{0}\right)=\bra{1}\left(\ket{1}\right)\\
+ & =\braket{1|1}=1
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Braket{1|\mathbf{X}|1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{align*}
+\braket{1|\mathbf{X}|1} & =\bra{1}\left(\mathbf{X}\ket{1}\right)=\bra{1}\left(\ket{0}\right)\\
+ & =\braket{1|0}=0
+\end{align*}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.4
+\end_layout
+
+\begin_layout Plain Layout
+Calculate the inner products 
+\begin_inset Formula $\vec{e}_{2}^{T}M\vec{e}_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{e}_{3}^{T}M\vec{e}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution..</summary>
+\begin_inset Formula 
+\[
+\vec{e}_{2}^{T}M\vec{e}_{3}=\left[\begin{array}{ccc}
+0 & 1 & 0\end{array}\right]\left[\begin{array}{ccc}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{array}\right]\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]=\left[\begin{array}{ccc}
+0 & 1 & 0\end{array}\right]\left[\begin{array}{c}
+c\\
+f\\
+i
+\end{array}\right]=f=M_{2,3}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\vec{e}_{3}^{T}M\vec{e}_{2}=\left[\begin{array}{ccc}
+0 & 0 & 1\end{array}\right]\left[\begin{array}{ccc}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1\\
+0
+\end{array}\right]=\left[\begin{array}{ccc}
+0 & 0 & 1\end{array}\right]\left[\begin{array}{c}
+b\\
+e\\
+h
+\end{array}\right]=h=M_{3,2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We can see that 
+\begin_inset Formula $\vec{e}_{2}^{T}M\vec{e}_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{e}_{3}^{T}M\vec{e}_{2}$
+\end_inset
+
+ are 
+\begin_inset Formula $M_{2,3}$
+\end_inset
+
+ and 
+\begin_inset Formula $M_{3,2}$
+\end_inset
+
+,
+ respectively,
+ the 
+\begin_inset Formula $\left(2,3\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(3,2\right)$
+\end_inset
+
+ 
+\series bold
+matrix elements
+\series default
+ of 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ This is in direct analogy to 
+\begin_inset Formula $\braket{\chi|\mathbf{M}|\psi}$
+\end_inset
+
+ being the 
+\begin_inset Formula $\left(\chi,\psi\right)$
+\end_inset
+
+ matrix element of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+A Basic Quantum Circuit 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-timeline.png
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single-Qbit timeline.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitTimeline"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-NOT.png
+	width 30text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue}Initial state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{X}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue}Final state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+mathbf{X} 
+\backslash
+ket{0}=
+\backslash
+ket{1}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single Qbit timeline with a NOT operation.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitNotCircuit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-timeline-with-ops.png
+	width 30text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue}Initial state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{A}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op2) at (2*
+\backslash
+dx,0) {$
+\backslash
+mathbf{B}$} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (3*
+\backslash
+dx,0) {} edge [-] (op2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue}Final state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+mathbf{B} 
+\backslash
+mathbf{A} 
+\backslash
+ket{0} $}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=south] at (1.5*
+\backslash
+dx,0) {
+\backslash
+small {
+\backslash
+color{blue} $
+\backslash
+mathbf{A} 
+\backslash
+ket{0} $}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single Qbit timeline with a series of operations.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitBA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quantum circuits are represented as timelines that are read from left to right.
+ By convention,
+ it is assumed that each qubit starts at the left in state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+ Blocks or symbols along the timeline indicate qubit operations (quantum gates).
+ Typically,
+ each qubit gets its own timeline.
+ (a) A straight line indicates a single-qubit timeline with no transformations,
+ such that an initial 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ is untransformed,
+ leading to a final state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+ (b) A single-qubit timeline has a NOT gate (
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+) that turns the initial state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ into the final state 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ .
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BasicSingleQubitCircuits"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let's learn about quantum circuits and see what a circuit with a NOT gate looks like
+\end_layout
+
+\begin_layout Itemize
+In quantum circuits,
+ each qubit gets its own timeline that we read from left to right
+\end_layout
+
+\begin_layout Itemize
+By convention,
+ it is assumed that the initial state of the qubit is 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Basic single-qubit quantum circuits are shown
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitTimeline"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ A straight line indicates a single-qubit timeline without any transformations
+\end_layout
+
+\begin_layout Itemize
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitNotCircuit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ A single qubit transformed from 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ using a NOT operator is drawn as a straight line connecting to boxed 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ (NOT gate)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The gate input is on the left and is the conventional 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The gate output is on the right (final state) and is 
+\begin_inset Formula $\mathbf{X}\ket{0}=\ket{1}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitBA"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ two operations,
+ 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+,
+ transform the initial state 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ in sequence
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is on the left,
+ it is applied first to 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+,
+ leading to an intermediate state 
+\begin_inset Formula $\mathbf{A}\ket{0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+The intermediate state is transformed by 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ to the final state,
+ 
+\begin_inset Formula $\mathbf{B}\mathbf{A}\ket{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note that the the ordering for the mathematical expression 
+\begin_inset Formula $\mathbf{B}\mathbf{A}\ket{0}$
+\end_inset
+
+ is consistent with the linear algebraic representation by a transformation by 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ first and then 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In other words,
+ the linear algebraic expression is written in sequence from right to left,
+ but the circuit transformations are drawn in sequence from left to right
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Python Code for Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitTimeline"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Single-qubit timeline.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-timeline'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% single-qubit timeline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (0,0) coordinate (q1) -- (2*
+\backslash
+dx,0) coordinate (end1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,
+ align=right] at (q1) {{
+\backslash
+color{blue}Initial state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue}$
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,
+ align=left] at (end1) {{
+\backslash
+color{blue}Final state:}
+\backslash
+
+\backslash
+ {
+\backslash
+color{blue}$
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Python Code for Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitNotCircuit"
+
+\end_inset
+
+.
+ Single-qubit timeline with a NOT operator.
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-NOT'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue}Initial state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{X}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue}Final state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+mathbf{X} 
+\backslash
+ket{0}=
+\backslash
+ket{1}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+Python Code for Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitBA"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ (single-qubit timeline with operators).
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide code.</summary>
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-timeline-with-ops'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue}Initial state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{A}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op2) at (2*
+\backslash
+dx,0) {$
+\backslash
+mathbf{B}$} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (3*
+\backslash
+dx,0) {} edge [-] (op2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue}Final state:}
+\backslash
+
+\backslash
+{
+\backslash
+color{blue} $
+\backslash
+mathbf{B} 
+\backslash
+mathbf{A} 
+\backslash
+ket{0} $}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=south] at (1.5*
+\backslash
+dx,0*
+\backslash
+dx) {
+\backslash
+small {
+\backslash
+color{blue} $
+\backslash
+mathbf{A} 
+\backslash
+ket{0} $}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Pauli Operators
+\end_layout
+
+\begin_layout Itemize
+The NOT operator 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ is equivalent to the Pauli operator,
+\begin_inset Formula 
+\begin{equation}
+\mathbf{X}=\sigma_{x}=\left[\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right]\label{eq:sigmax}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In addition to 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+,
+ there are two other Pauli operators,
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Y}=\sigma_{y}=\left[\begin{array}{cc}
+0 & i\\
+-i & 0
+\end{array}\right],\qquad\text{and}\qquad\mathbf{Z}=\sigma_{z}=\left[\begin{array}{cc}
+-1 & 0\\
+0 & 1
+\end{array}\right]\label{eq:sigmayz}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note:
+ most often,
+ 
+\begin_inset Formula $\mathbf{Y}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ will be written as
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Y}=\sigma_{y}=\left[\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right],\qquad\text{and}\qquad\mathbf{Z}=\sigma_{z}=\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]\label{eq:sigma_y_z_more_common}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+There are two conventions here
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The least popular convention orders the eigenvalues of 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ from least to greatest going down the diagonal
+\end_layout
+
+\begin_layout Itemize
+It is more common in quantum computing literature to use the definitions of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigma_y_z_more_common"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Thus,
+ we will prefer the convention of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigma_y_z_more_common"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) for quantum computing applications,
+ and we may use the convention of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmayz"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) when doing quantum mechanics
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+While 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ can be understood classically,
+ 
+\begin_inset Formula $\mathbf{Y}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ do not have a classical meaning
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These gates introduce a complex phase
+\end_layout
+
+\begin_layout Itemize
+Complex phase is important because it allows for constructive and destructive interference of quantum wave functions
+\end_layout
+
+\begin_layout Itemize
+In generally,
+ we can think of quantum computations as interference experiments:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We set up a quantum circuit to cancel probabilities of unwanted answers
+\end_layout
+
+\begin_layout Itemize
+After measurement,
+ we achieve the desired answer,
+ or some combination of desirable answers
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.5
+\end_layout
+
+\begin_layout Plain Layout
+How does 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ transform the states 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Plain Layout
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Z}\ket{0}=\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]\begin{bmatrix}1\\
+0
+\end{bmatrix}=\begin{bmatrix}1\\
+0
+\end{bmatrix}=\ket{0}\label{eq:Zket0}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Z}\ket{1}=\left[\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right]\begin{bmatrix}0\\
+1
+\end{bmatrix}=\begin{bmatrix}0\\
+-1
+\end{bmatrix}=-\ket{1}\label{eq:Zket1}
+\end{equation}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Complex Phase and Interference
+\end_layout
+
+\begin_layout Itemize
+What does it mean for 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ to transform 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ into 
+\begin_inset Formula $-\ket{1}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The NOT operation (
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+) has classical significance,
+ but 
+\begin_inset Formula $\mathbf{Z}$
+\end_inset
+
+ cannot be understood in a way that is classical
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The negative sign,
+ that is,
+ a factor of 
+\begin_inset Formula $-1=e^{i\pi}$
+\end_inset
+
+,
+ is said to be a 
+\series bold
+complex phase factor
+\series default
+ (also:
+ 
+\series bold
+complex phase
+\series default
+ or 
+\series bold
+phase factor
+\series default
+ or 
+\series bold
+phase
+\series default
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This has no classical meaning,
+ but phase allows for constructive or destructive interference
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Interference
+\end_layout
+
+\begin_layout Itemize
+To understand interference,
+ let's introduce another operator,
+ the Hadamard transformation,
+ 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\mathbf{H}=\frac{1}{\sqrt{2}}\left(\mathbf{X}+\mathbf{Z}\right)\label{eq:defHadamard}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The next exercise will prepare us to discover interference in quantum states.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+lyx2org_list_scope:
+ detach
+\end_layout
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.6
+\end_layout
+
+\begin_layout Plain Layout
+Consider 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ from Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:defHadamard"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Determine how 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ transforms the classical states 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>Start with 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\mathbf{H}\ket{0} & =\left(\frac{1}{\sqrt{2}}\left(\mathbf{X}+\mathbf{Z}\right)\right)\ket{0}\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\mathbf{X}\ket{0}+\mathbf{Z}\ket{0}\right)\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\ket{1}+\ket{0}\right)=\frac{1}{\sqrt{2}}\left(\ket{0}+\ket{1}\right)\equiv\ket{+}\label{eq:Hket0}
+\end{align}
+
+\end_inset
+
+Here,
+ we have used Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:defHadamard"
+
+\end_inset
+
+ to expand 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+,
+ and we have used the action of 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ on 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ from the previous exercise,
+ see 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Zket0"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Zket1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align}
+\mathbf{H}\ket{1} & =\left(\frac{1}{\sqrt{2}}\left(\mathbf{X}+\mathbf{Z}\right)\right)\ket{1}\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\mathbf{X}\ket{1}+\mathbf{Z}\ket{1}\right)\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\ket{0}-\ket{1}\right)\equiv\ket{-}\label{eq:Hket1}
+\end{align}
+
+\end_inset
+
+Here,
+ we have defined the kets 
+\begin_inset Formula $\ket{\pm}$
+\end_inset
+
+ as a compact shorthand for writing 
+\begin_inset Formula $\left(1/\sqrt{2}\right)\left(\ket{0}\pm\ket{1}\right)$
+\end_inset
+
+.
+ We can then write these states as column vectors:
+\begin_inset Formula 
+\[
+\ket{\pm}=\frac{1}{\sqrt{2}}\left(\ket{0}\pm\ket{1}\right)\qquad\leftrightarrow\qquad\frac{1}{\sqrt{2}}\left[\begin{array}{c}
+1\\
+\pm1
+\end{array}\right]
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the matrix representation of 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ in the computational basis.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We can construct the matrix representation of 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ in a column-wise manner:
+\begin_inset Formula 
+\[
+\mathbf{H}=\left[\begin{array}{cc}
+\mathbf{H}\ket{0} & \mathbf{H}\ket{1}\end{array}\right]=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}\right]
+\]
+
+\end_inset
+
+Alternately,
+ we could use Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigmax"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sigma_y_z_more_common"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Sketch a single-qubit circuit to transform 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ using the Hadamard operation.
+ Calculate the probabilities of measuring 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ for both the initial and final states.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>The circuit is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitH0Circuit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ For the initial state,
+ we have a 100% probability for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and a 0% probability of measuring state 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(0\right)=1,\qquad p\left(1\right)=0
+\]
+
+\end_inset
+
+For the final state,
+ we have
+\begin_inset Formula 
+\[
+\ket{+}=\frac{1}{\sqrt{2}}\left(\ket{0}+\ket{1}\right)=\frac{1}{\sqrt{2}}\ket{0}+\frac{1}{\sqrt{2}}\ket{1},
+\]
+
+\end_inset
+
+so we can calculate an equal probability for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(0\right)=p\left(1\right)=\left(\frac{1}{\sqrt{2}}\right)^{2}=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-H-ket0.png
+	width 30text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue} $
+\backslash
+mathbf{H} 
+\backslash
+ket{0}=
+\backslash
+ket{+}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single qubit timeline with a 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ operation on 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitH0Circuit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Sketch a single-qubit circuit to transform 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ using the Hadamard operation.
+ Calculate the probabilities of measuring 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+ for both the initial and final states.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>To achieve 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+,
+ we must first transform the conventional inital 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+ using the 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ operator.
+ Then,
+ we can apply a 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ operation.
+ The circuit is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitH1Circuit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ For the initial state,
+ we have a 100% probability for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ and a 0% probability of measuring state 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(0\right)=0,\qquad p\left(1\right)=1
+\]
+
+\end_inset
+
+For the final state,
+ we have
+\begin_inset Formula 
+\[
+\ket{-}=\frac{1}{\sqrt{2}}\left(\ket{0}-\ket{1}\right)=\frac{1}{\sqrt{2}}\ket{0}-\frac{1}{\sqrt{2}}\ket{1},
+\]
+
+\end_inset
+
+so we can calculate an equal probability for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(0\right)=\left(\frac{1}{\sqrt{2}}\right)^{2}=\frac{1}{2},\qquad p\left(1\right)=\left(-\frac{1}{\sqrt{2}}\right)^{2}=\frac{1}{2}.
+\]
+
+\end_inset
+
+From the standpoint of measurement probabilities,
+ we cannot tell the difference between the kets 
+\begin_inset Formula $\ket{\pm}$
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-H-ket1.png
+	width 30text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue} $
+\backslash
+mathbf{H} 
+\backslash
+ket{0}=
+\backslash
+ket{+}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single qubit timeline with a 
+\begin_inset Formula $\mathbf{H}$
+\end_inset
+
+ operation on 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitH1Circuit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.7
+\end_layout
+
+\begin_layout Plain Layout
+Consider the circuit of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitHsq0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-Hsq.png
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single Qbit timeline with an 
+\begin_inset Formula $\mathbf{H}^{2}$
+\end_inset
+
+ operation on 
+\begin_inset Formula $\ket{0}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitHsq0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find the final state 
+\begin_inset Formula $\ket{\psi_{0}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{align}
+\ket{\psi_{0}} & =\mathbf{H}\ket{+}=\frac{1}{\sqrt{2}}\mathbf{H}\left(\ket{0}+\ket{1}\right)\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\mathbf{H}\ket{0}+\mathbf{H}\ket{1}\right)\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\left(\ket{0}+\ket{1}\right)+\frac{1}{\sqrt{2}}\left(\ket{0}-\ket{1}\right)\right)\nonumber \\
+ & =\frac{1}{2}\left(\ket{0}+\ket{1}+\ket{0}-\ket{1}\right)\nonumber \\
+ & =\frac{1}{2}\left(\left(1+1\right)\ket{0}+\left(1-1\right)\right)\\
+ & =\ket{0}\label{eq:Hsq0}
+\end{align}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the final probabilities for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We see here that we have full probability of measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and zero probability of measuring 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(0\right)=1,\qquad p\left(1\right)=0
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+#+begin_note
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Exercise 3.8
+\end_layout
+
+\begin_layout Plain Layout
+Consider the circuit of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitHsq1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/single-qubit-Hsq-ket1.png
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A single Qbit timeline with an 
+\begin_inset Formula $\mathbf{H}^{2}$
+\end_inset
+
+ operation on 
+\begin_inset Formula $\ket{1}$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SingleQbitHsq1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find the final state 
+\begin_inset Formula $\ket{\psi_{1}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>
+\begin_inset Formula 
+\begin{align}
+\ket{\psi_{1}} & =\mathbf{H}\ket{-}=\frac{1}{\sqrt{2}}\mathbf{H}\left(\ket{0}-\ket{1}\right)\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\mathbf{H}\ket{0}-\mathbf{H}\ket{1}\right)\nonumber \\
+ & =\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\left(\ket{0}+\ket{1}\right)-\frac{1}{\sqrt{2}}\left(\ket{0}-\ket{1}\right)\right)\nonumber \\
+ & =\frac{1}{2}\left(\ket{0}+\ket{1}-\ket{0}+\ket{1}\right)\nonumber \\
+ & =\frac{1}{2}\left(\left(1-1\right)\ket{0}+\left(1+1\right)\ket{1}\right)\\
+ & =\ket{1}\label{eq:Hsq1}
+\end{align}
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Enumerate
+Find the final probabilities for measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+#+html:
+ <details><summary>Show/hide solution...</summary>We see here that we have full probability of measuring 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ and zero probability of measuring 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(0\right)=0,\qquad p\left(1\right)=1
+\]
+
+\end_inset
+
+#+html:
+ </details>
+\end_layout
+
+\begin_layout Plain Layout
+#+end_note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the previous two exercises,
+ we have probability amplitudes 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ canceling in the lines prior to Equations (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hsq0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hsq1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is a destructive interference,
+ which leads to zero probability 
+\begin_inset Formula $c_{k}^{\ast}c_{k}=\left|c_{k}\right|^{2}$
+\end_inset
+
+ of measuring certain outcomes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similarly,
+ we have the constructive interference of certain other probability amplitudes 
+\begin_inset Formula $c_{k^{\prime}}$
+\end_inset
+
+ which enhances the probability 
+\begin_inset Formula $c_{k^{\prime}}^{\ast}c_{k^{\prime}}=\left|c_{k^{\prime}}\right|^{2}$
+\end_inset
+
+ of measuring these outcomes
+\end_layout
+
+\begin_layout Itemize
+We have now seen constructive and destructive interference at work in a very simple case with quantum information
+\end_layout
+
+\begin_layout Itemize
+It turns out that interference is one of the key principles in quantum computing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+quantum circuits use destructive interference to suppress the probability of measuring certain unwanted outcomes
+\end_layout
+
+\begin_layout Itemize
+other more-desirable outcomes have enhanced measurement probabilities via constructive interference
+\end_layout
+
+\begin_layout Itemize
+measurement is a probabilistic process that returns one of the outcomes with a non-zero probability of measurement
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Graphics :noexport:
+\end_layout
+
+\begin_layout Enumerate
+Python code used to generate Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitH0Circuit"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-H-ket0'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (2*
+\backslash
+dx,0) {} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue} $
+\backslash
+mathbf{H} 
+\backslash
+ket{0}=
+\backslash
+ket{+}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Python code used to generate Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SingleQbitH0Circuit"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-H-ket1'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{X}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op2) at (2*
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (3*
+\backslash
+dx,0) {} edge [-] (op2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue} $
+\backslash
+ket{-} $}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=south] at (1.5*
+\backslash
+dx,0) {
+\backslash
+small {
+\backslash
+color{blue} $ 
+\backslash
+ket{1} $}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Python code for the figure for Exercise 3.7
+\lang american
+
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-Hsq'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op2) at (2*
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (3*
+\backslash
+dx,0) {} edge [-] (op2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue} $
+\backslash
+ket{
+\backslash
+psi_0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=south] at (1.5*
+\backslash
+dx,0) {{
+\backslash
+color{blue} $
+\backslash
+ket{+}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Python code for the figure for Exercise 3.
+\lang american
+8
+\begin_inset listings
+lstparams "language=Python,float,basicstyle={\ttfamily},keywordstyle={\color{blue}},frame=single"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#eval yes
+\end_layout
+
+\begin_layout Plain Layout
+
+#exports both
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+This Python script creates a stand-alone LaTeX figure.
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from pathlib import Path
+\end_layout
+
+\begin_layout Plain Layout
+
+import subprocess as sp
+\end_layout
+
+\begin_layout Plain Layout
+
+import os
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+homedir = os.getcwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+targetdir = os.path.join(homedir,
+ 'img')
+\end_layout
+
+\begin_layout Plain Layout
+
+Path(targetdir).mkdir(exist_ok=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+jobname = 'single-qubit-Hsq-ket1'
+\end_layout
+
+\begin_layout Plain Layout
+
+pdftex = '/Library/TeX/texbin/pdflatex'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tex_script = r"""
+\backslash
+documentclass{standalone}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+dx}{1.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage{tikz,
+ graphicx,
+ braket,
+ adjustbox}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usetikzlibrary{patterns}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[thick]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{operator} = [draw,fill=white,minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{phase} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+% Initial state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=east,align=right] at (0,0) (q1) {{
+\backslash
+color{blue} $
+\backslash
+ket{0}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+% Single-Qbit operator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op1) at (
+\backslash
+dx,0) {$
+\backslash
+mathbf{X}$} edge [-] (q1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op2) at (2*
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (op1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[operator] (op3) at (3*
+\backslash
+dx,0) {$
+\backslash
+mathbf{H}$} edge [-] (op2);
+\end_layout
+
+\begin_layout Plain Layout
+
+% Final state
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (end1) at (4*
+\backslash
+dx,0) {} edge [-] (op3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=west,align=left] at (end1) (q1f) {{
+\backslash
+color{blue} $
+\backslash
+ket{
+\backslash
+psi_1}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=south] at (1.5*
+\backslash
+dx,0) {{
+\backslash
+color{blue} $
+\backslash
+ket{1}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [anchor=south] at (2.5*
+\backslash
+dx,0) {{
+\backslash
+color{blue} $
+\backslash
+ket{-}$}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+#end"""
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(targetdir)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# with open(filename,
+ 'w') as f:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     f.write(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Form the Python command
+\end_layout
+
+\begin_layout Plain Layout
+
+cmdlist = [pdftex,
+ f'-jobname={jobname}']
+\end_layout
+
+\begin_layout Plain Layout
+
+p = sp.Popen(cmdlist,
+\end_layout
+
+\begin_layout Plain Layout
+
+             stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+	         universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out,
+ err = p.communicate(tex_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# if len(out) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+#     print(f'LaTeX output:
+ {out}')
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors.
+\backslash
+nLaTeX errors:
+ {err}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Run imagemagick conversion from PDF to PNG
+\end_layout
+
+\begin_layout Plain Layout
+
+convert_script = """#This is a multiline script
+\end_layout
+
+\begin_layout Plain Layout
+
+source ~/.zshrc
+\end_layout
+
+\begin_layout Plain Layout
+
+/opt/local/bin/convert -density 180 {jobname}.pdf -quality 85 {jobname}.png
+\end_layout
+
+\begin_layout Plain Layout
+
+#end""".format(**locals())
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+conv = sp.Popen('/bin/zsh',
+\end_layout
+
+\begin_layout Plain Layout
+
+                 stdin=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stdout=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            stderr=sp.PIPE,
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	            universal_newlines=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# run the script
+\end_layout
+
+\begin_layout Plain Layout
+
+out_conv,
+ err_conv = conv.communicate(convert_script)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if len(err_conv) > 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+    print(f'There were errors in running ImageMagick:
+\backslash
+n{err_conv}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# clean up
+\end_layout
+
+\begin_layout Plain Layout
+
+ext_list = ('log',
+ 'aux')
+\end_layout
+
+\begin_layout Plain Layout
+
+for ext in ext_list:
+\end_layout
+
+\begin_layout Plain Layout
+
+   os.remove( f'{jobname}.{ext}')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+os.chdir(homedir)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
